@@ -63,7 +63,6 @@
 		70562D531BD1156900E16999 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D431BD1156900E16999 /* UIView+WebCacheOperation.m */; settings = {ASSET_TAGS = (); }; };
 		70562D561BD146BC00E16999 /* JOYUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D551BD146BC00E16999 /* JOYUser.m */; settings = {ASSET_TAGS = (); }; };
 		CA37639B1BD1968C00237A8D /* JOYNGODetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA37639A1BD1968B00237A8D /* JOYNGODetailViewController.m */; settings = {ASSET_TAGS = (); }; };
-		CA7A597C1BD19B3F00D6ABAF /* Partners.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7A597A1BD19B3F00D6ABAF /* Partners.storyboard */; settings = {ASSET_TAGS = (); }; };
 		CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565F61BD122BE000E8F21 /* JOYDonationSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565F51BD122BE000E8F21 /* JOYDonationSelectViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565FA1BD12913000E8F21 /* JOYDonationSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565F91BD12913000E8F21 /* JOYDonationSelectTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -194,7 +193,6 @@
 		70562D551BD146BC00E16999 /* JOYUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYUser.m; sourceTree = "<group>"; };
 		CA3763991BD1968B00237A8D /* JOYNGODetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYNGODetailViewController.h; sourceTree = "<group>"; };
 		CA37639A1BD1968B00237A8D /* JOYNGODetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYNGODetailViewController.m; sourceTree = "<group>"; };
-		CA7A597B1BD19B3F00D6ABAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Partners.storyboard; sourceTree = "<group>"; };
 		CAE565EA1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYPartnerTableViewCell.h; sourceTree = "<group>"; };
 		CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYPartnerTableViewCell.m; sourceTree = "<group>"; };
 		CAE565F41BD122BE000E8F21 /* JOYDonationSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYDonationSelectViewController.h; sourceTree = "<group>"; };
@@ -350,7 +348,6 @@
 				CAE565E91BD0FA60000E8F21 /* PartnerTableview */,
 				70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */,
 				70562CD41BD0DE4E00E16999 /* Main.storyboard */,
-				CA7A597A1BD19B3F00D6ABAF /* Partners.storyboard */,
 				11BEB1761BD16F4D0097EC27 /* login.storyboard */,
 				1171E40C1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.h */,
 				1171E40D1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m */,
@@ -590,7 +587,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				70562D081BD0DFF300E16999 /* Info.plist in Resources */,
-				CA7A597C1BD19B3F00D6ABAF /* Partners.storyboard in Resources */,
 				70562CDC1BD0DE4E00E16999 /* Main.storyboard in Resources */,
 				70562CD61BD0DE4E00E16999 /* Assets.xcassets in Resources */,
 				11BEB1771BD16F4D0097EC27 /* login.storyboard in Resources */,
@@ -723,14 +719,6 @@
 				70562CD51BD0DE4E00E16999 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CA7A597A1BD19B3F00D6ABAF /* Partners.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA7A597B1BD19B3F00D6ABAF /* Base */,
-			);
-			name = Partners.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
