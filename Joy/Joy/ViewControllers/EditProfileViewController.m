@@ -28,6 +28,11 @@
 #pragma mark Setup Methods
 - (void)setupStyles {
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.profilePicContainerView.layer.cornerRadius = 50;
+    self.profilePicContainerView.layer.masksToBounds = YES;
+    self.overlayView.layer.cornerRadius = 50;
+    self.overlayView.layer.masksToBounds = YES;
+    [self.overlayView setAlpha:0.5f];
 }
 
 - (void)setupObservers  {

@@ -10,14 +10,19 @@
 #import "ProfileViewControllerTableViewCell.h"
 
 @interface ProfileViewController ()<UITableViewDataSource, UITableViewDelegate>
-
-
 @end
 
 @implementation ProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupStyles];
+}
+
+#pragma mark Styling Methods
+- (void)setupStyles {
+    self.profilePicContainerView.layer.cornerRadius = 50;
+    self.profilePicContainerView.layer.masksToBounds = YES;
 }
 
 #pragma mark TableView DataSource Methods
