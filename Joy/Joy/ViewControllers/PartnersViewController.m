@@ -29,15 +29,8 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.NGOArray = [NSArray array];
-//    self.NGODisplayArray = [NSArray array];
-    self.donatee = [[JOYDonatee alloc] init];
-    self.donatee.name = @"Avanti Fellow";
-    self.donatee.descriptionText = @"Avanti Fellow description";
-    self.donatee.iconImageURL = @"https://images-housing.s3.amazonaws.com/static_assets/cards/hdpi/profile.png";
-    self.donatee.accpetedDonationCategories = JOYAcceptedDonationCategoriesBooks | JOYAcceptedDonationCategoriesToys;
-    
-    self.NGODisplayArray = [NSArray arrayWithObjects:self.donatee, self.donatee, self.donatee, self.donatee, self.donatee, self.donatee, self.donatee, self.donatee, self.donatee, self.donatee, nil];
     self.NGOArray = self.NGODisplayArray;
+    [self fetchNGOListings];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -93,9 +86,7 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     searchBar.showsCancelButton = NO;
-    if(self.NGODisplayArray.count == 0){
-        self.NGODisplayArray = self.NGOArray;
-    }
+    self.NGODisplayArray = self.NGOArray;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         [self.searchBar layoutIfNeeded];
     } completion:^(BOOL finished) {
@@ -111,6 +102,9 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@",searchText];
     self.NGODisplayArray = [NSMutableArray arrayWithArray:[self.NGOArray filteredArrayUsingPredicate:predicate]];
+    if([searchText isEqualToString:@""]){
+        self.NGODisplayArray = self.NGOArray;
+    }
     [self.tableView reloadData];
 }
 
@@ -124,6 +118,27 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
         [searchBar resignFirstResponder];
     }];
 
+}
+
+- (void)fetchNGOListings{
+    NSURLSessionDataTask *ngoLists = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/ngos"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if(error || !data) return;
+        NSMutableArray *array = [NSMutableArray array];
+        NSArray *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        
+        [dataDict enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            JOYDonatee *donatee = [MTLJSONAdapter modelOfClass:JOYDonatee.class fromJSONDictionary:obj error:nil];
+            [array addObject:donatee];
+        }];
+        
+        self.NGOArray = array;
+        self.NGODisplayArray = self.NGOArray;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+    [ngoLists resume];
 }
 
 @end

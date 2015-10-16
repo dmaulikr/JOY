@@ -8,13 +8,15 @@
 
 #import "MTLModel.h"
 
-@interface JOYDonatee : MTLModel
+@interface JOYDonatee : MTLModel<MTLJSONSerializing>
 
-@property (copy, nonatomic, readonly) NSString* donateeID;
-@property (copy, nonatomic) NSString* iconImageURL;
-@property (copy, nonatomic) NSString* name;
-@property (copy, nonatomic, readonly) NSString* slogan;
-@property (copy, nonatomic) NSString* descriptionText;
+@property (copy, nonatomic, readonly) NSString *donateeID;
+@property (copy, nonatomic) NSString *iconImageURL;
+@property (copy, nonatomic) NSString *url;
+@property (copy, nonatomic) NSString *mobileNum;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic, readonly) NSString *slogan;
+@property (copy, nonatomic) NSString *descriptionText;
 @property (assign, nonatomic) JOYAcceptedDonationCategories accpetedDonationCategories;
 
 @end
