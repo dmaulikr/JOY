@@ -10,11 +10,13 @@
 
 @interface JOYDonation : MTLModel
 
+@property (copy, nonatomic, readonly) NSString* donationID;
+@property (copy, nonatomic, readonly) NSString* descriptionText;
+@property (copy, nonatomic, readonly) NSString* donateeID;
+
 @property (assign, nonatomic, readonly) JOYDonationItemCategory category;
 @property (assign, nonatomic, readonly) JOYDonationStatus status;
-@property (copy, nonatomic, readonly) NSString*  donateeID;
 @property (assign, nonatomic, readonly) NSUInteger minQuantity;
 @property (assign, nonatomic, readonly) NSUInteger maxQuantity;
-@property (copy, nonatomic, readonly) NSString*  descriptionText;
 
 @end
