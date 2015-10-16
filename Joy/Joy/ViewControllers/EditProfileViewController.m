@@ -103,10 +103,10 @@
     // Params for the request
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setObject:self.emailIDField.text forKey:@"email"];
-    [params setObject:self.phoneNumberField.text forKey:@"phone"];
-    [params setObject:self.flatNoField.text forKey:@"add_one"];
-    [params setObject:self.societyNameField.text forKey:@"add_two"];
-    [params setObject:self.landmarkField.text forKey:@"add_three"];
+    [params setObject:self.phoneNumberField.text forKey:@"number"];
+    [params setObject:self.flatNoField.text forKey:@"address_1"];
+    [params setObject:self.societyNameField.text forKey:@"address_2"];
+    [params setObject:self.landmarkField.text forKey:@"address_3"];
     // Base 64 String for image
     [params setObject:[self encodeToBase64String:self.profilePicImageView.image] forKey:@"profile_image"];
     // Creating the request
