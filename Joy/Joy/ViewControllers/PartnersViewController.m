@@ -27,12 +27,10 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
     [super viewDidLoad];
     self.NGOArray = [NSArray array];
     self.NGODisplayArray = self.NGOArray;
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -67,15 +65,5 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
