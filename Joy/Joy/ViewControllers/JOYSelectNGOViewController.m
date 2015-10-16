@@ -81,7 +81,7 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"" sender:self];
+    [self performSegueWithIdentifier:@"showTimeSlots" sender:self];
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {

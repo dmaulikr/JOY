@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *createAccountButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *signInButtonBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *createAccountButtonBottomConstraint;
+@property (nonatomic) BOOL firstTime;
 
 
 @end
@@ -37,6 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self changeToSignUp:nil];
+    self.firstTime = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillAppers:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillDisappers:) name:UIKeyboardWillHideNotification object:nil];
 }
@@ -45,8 +47,8 @@
 {
     NSDictionary* info = [notif userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    self.signInButtonBottomConstraint.constant = kbSize.height - self.signInButton.frame.size.height;
-    self.createAccountButtonBottomConstraint.constant = kbSize.height - self.createAccountButton.frame.size.height;
+    self.signInButtonBottomConstraint.constant = kbSize.height;
+    self.createAccountButtonBottomConstraint.constant = kbSize.height;;
     self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, kbSize.height, 0);
     
 }
@@ -70,6 +72,7 @@
     self.changeToSignUpButton.titleLabel.textColor = [UIColor colorWithWhite:1 alpha:0.8];
     self.signinView.hidden = NO;
     self.signupView.hidden = YES;
+    self.firstTime = YES;
 }
 
 - (IBAction)changeToSignUp:(id)sender
@@ -80,39 +83,95 @@
     self.changeToSignUpButton.titleLabel.textColor = [UIColor whiteColor];
     self.signupView.hidden = NO;
     self.signinView.hidden = YES;
-}
-
-- (IBAction)signInButtonClicked:(id)sender
-{
-}
-
-- (IBAction)createAccountButtonClicked:(id)sender
-{
-    
+    self.firstTime = YES;
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     CGFloat height = 0;
+    CGFloat lastHeight = self.scrollView.contentOffset.y;
     if (self.signInButton.hidden)//signup
     {
-        if (textField == self.signunPasswordTextField)
-            height = 100.0;
-        else if (textField == self.signupNumberTextField)
-            height = 40.0;
-        else if (textField == self.signupEmailTextField)
-            height = 90.0;
-        else if (textField == self.signupNameTextField)
-            height = 20.0;
+        height = lastHeight;
+        if (self.firstTime)
+            height = 120.0;
+        
     }
     else//signin
     {
-        if (textField == self.signinEmailTextField)
-            height = 20.0;
-        else if (textField == self.signinPasswordTextField)
-            height = 40.0;
+        height = lastHeight;
     }
     self.scrollView.contentOffset = CGPointMake(0, height);
+    self.firstTime = NO;
+}
+
+
+- (IBAction)signInButtonClicked:(id)sender
+{
+    NSURLSession *defaultSession = [NSURLSession sharedSession];
+    
+    NSURL * url = [NSURL URLWithString:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/login"];
+    NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:self.signinEmailTextField.text forKey:@"email"];
+    [param setObject:self.signinPasswordTextField.text forKey:@"password"];
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:param options:kNilOptions error:nil];
+    
+    [urlRequest setHTTPMethod:@"POST"];
+    [urlRequest setHTTPBody:data];
+    
+    NSURLSessionDataTask * dataTask = [defaultSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        if (dict && [dict[@"status"] isEqualToString:@"ok"])
+        {
+            
+        }
+        else
+        {
+            //show error
+        }
+        NSLog(@"%@", dict);
+        
+        
+    }];
+    [dataTask resume];
+}
+
+- (IBAction)createAccountButtonClicked:(id)sender
+{
+    NSURLSession *defaultSession = [NSURLSession sharedSession];
+    
+    NSURL * url = [NSURL URLWithString:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/login"];
+    NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    [param setObject:self.signupEmailTextField.text forKey:@"email"];
+    [param setObject:self.signunPasswordTextField.text forKey:@"password"];
+    [param setObject:self.signupNameTextField.text forKey:@"name"];
+    [param setObject:self.signupNumberTextField.text forKey:@"number"];
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:param options:kNilOptions error:nil];
+    
+    [urlRequest setHTTPMethod:@"POST"];
+    [urlRequest setHTTPBody:data];
+    
+    NSURLSessionDataTask * dataTask = [defaultSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        if (dict && [dict[@"status"] isEqualToString:@"ok"])
+        {
+            
+        }
+        else
+        {
+            //show error
+        }
+        NSLog(@"%@", dict);
+        
+        
+    }];
+    [dataTask resume];
 }
 
 

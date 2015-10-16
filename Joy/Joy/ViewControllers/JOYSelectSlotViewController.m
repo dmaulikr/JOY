@@ -10,27 +10,33 @@
 
 @interface JOYSelectSlotViewController ()
 
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePickerView;
+
 @end
 
 @implementation JOYSelectSlotViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.datePickerView.minimumDate = [NSDate date];
+    self.datePickerView.maximumDate = [NSDate dateWithTimeInterval:604800 sinceDate:[NSDate date]];//max 5 days ahead
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)dateChanged:(UIDatePicker *)picker
+{
+    NSData *selectedDate = [NSDate dateWithTimeInterval:86400 sinceDate:picker.date];
+    
+}
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
 }
 
 
