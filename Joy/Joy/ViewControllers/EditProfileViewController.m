@@ -15,6 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupUserInfo];
     [self setupViews];
     [self setupObservers];
     [self setupGestureRecognizers];
@@ -36,6 +37,21 @@
 }
 
 #pragma mark Setup Methods
+- (void)setupUserInfo {
+    
+    // Writing image to the disk
+    NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
+    // Retrieving the image from disk
+    NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
+    self.profilePicImageView.image = loadedImage;
+    
+    if(self.user != nil){
+        self.userName.text = self.user.name;
+    } else {
+        self.userName.text = @"Vivek Ravi";
+    }
+}
 - (void)setupViews {
     [self disableSaveButton];
 }
@@ -52,13 +68,6 @@
 }
 
 - (void)setupStyles {
-    // Writing image to the disk
-    NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
-    // Retrieving the image from disk
-    NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
-    UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
-    self.profilePicImageView.image = loadedImage;
-    
     self.tabBarController.tabBar.hidden = YES;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.profilePicContainerView.layer.cornerRadius = 50;
@@ -89,7 +98,55 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)saveChangeButtonPressed:(UIButton *)sender {
+    // Disabling the button until request is processed
+    [self disableSaveButton];
+    // Params for the request
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:self.emailIDField.text forKey:@"email"];
+    [params setObject:self.phoneNumberField.text forKey:@"phone"];
+    [params setObject:self.flatNoField.text forKey:@"add_one"];
+    [params setObject:self.societyNameField.text forKey:@"add_two"];
+    [params setObject:self.landmarkField.text forKey:@"add_three"];
+    // Base 64 String for image
+    [params setObject:[self encodeToBase64String:self.profilePicImageView.image] forKey:@"profile_image"];
+    // Creating the request
+    NSError *error;
+    NSData *json = [NSJSONSerialization dataWithJSONObject:params options:0 error:&error];
+    NSString *postURLString = @"http://bhargavs-macbook-pro.local/hackathon/api/v1/user/abc/update";
+    NSURL *postURL = [NSURL URLWithString:postURLString];
     
+    NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] init];
+    [postRequest setURL:postURL];
+    [postRequest setHTTPMethod:@"POST"];
+    [postRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [postRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [postRequest setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[json length]] forHTTPHeaderField:@"Content-Length"];
+    [postRequest setHTTPBody:json];
+    // Sending the request and handling the response
+    [[[NSURLSession sharedSession] dataTaskWithRequest:postRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if(error != nil) {
+            [self showAlertWithMessage:@"Connection Failed. Please try again"];
+            [self enableSaveButton];
+            return;
+        }
+        
+        if(response != nil) {
+            NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
+            if(statusCode == 200) {
+                dispatch_async(dispatch_get_main_queue(), ^(void){
+                    [self showAlertWithMessage:@"Changes saved successfully"];
+                });
+            }else if (statusCode == 422) {
+                [self showAlertWithMessage:@"Unprocessable Entity. Please try again"];
+            }else {
+                [self showAlertWithMessage:@"Unable to send request. Please try again"];
+            }
+        } else {
+            [self showAlertWithMessage:@"Unable to send request. Please try again"];
+        }
+        self.saveChangeButton.enabled = YES;
+    }] resume];
 }
 
 #pragma mark Action Methods
@@ -235,6 +292,17 @@
     }else {
         return false;
     }
+}
+
+- (NSString *)encodeToBase64String:(UIImage *)image {
+    return [UIImagePNGRepresentation(image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+}
+
+- (void)showAlertWithMessage:(NSString *)message{
+    UIAlertView *alertEmpty = [[UIAlertView alloc] initWithTitle:@"Housing" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        [alertEmpty show];
+    });
 }
 
 @end

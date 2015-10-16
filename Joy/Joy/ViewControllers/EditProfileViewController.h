@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JOYUser.h"
 
 @interface EditProfileViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *saveChangeButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *saveChangeButtonBottomConstraint;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
 
 @property (weak, nonatomic) IBOutlet UIView *overlayView;
 
@@ -33,4 +35,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *cameraIconImageView;
 
 @property (weak, nonatomic) IBOutlet UIButton *saveChangesButtonView;
+@property (strong, nonatomic) JOYUser *user;
+
 @end

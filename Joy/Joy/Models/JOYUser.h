@@ -17,6 +17,8 @@
 @property (copy, nonatomic, readonly) NSString *name;
 @property (copy, nonatomic, readonly) NSString *mobileNumber;
 @property (copy, nonatomic, readonly) NSString *emailID;
-@property (copy, nonatomic, readonly) NSString *address;
-
+@property (copy, nonatomic, readonly) NSString *addOne;
+@property (copy, nonatomic, readonly) NSString *addTwo;
+@property (copy, nonatomic, readonly) NSString *addThree;
+@property (assign, nonatomic) BOOL isVerified;
 @end
