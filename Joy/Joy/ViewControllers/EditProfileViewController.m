@@ -37,7 +37,7 @@
 
 #pragma mark Setup Methods
 - (void)setupViews {
-    self.saveChangeButton.enabled = NO;
+    [self disableSaveButton];
 }
 
 
@@ -52,6 +52,13 @@
 }
 
 - (void)setupStyles {
+    // Writing image to the disk
+    NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
+    // Retrieving the image from disk
+    NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
+    self.profilePicImageView.image = loadedImage;
+    
     self.tabBarController.tabBar.hidden = YES;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.profilePicContainerView.layer.cornerRadius = 50;
@@ -68,11 +75,13 @@
 - (void)setupObservers  {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldChanged:) name:UITextFieldTextDidChangeNotification object:nil];
 }
 
 - (void)removeObservers {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
 }
 
 #pragma mark IBAction Methods
@@ -80,6 +89,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)saveChangeButtonPressed:(UIButton *)sender {
+    
 }
 
 #pragma mark Action Methods
@@ -127,7 +137,7 @@
     
     // Setting the retrieved imafge
     self.profilePicImageView.image = loadedImage;
-    self.saveChangeButton.enabled = YES;
+    [self enableSaveButton];
 }
 
 #pragma mark Selector Methods
@@ -156,7 +166,16 @@
     
 }
 
-#pragma mark Listener Methods 
+#pragma mark Selector Listener Methods
+
+- (void)textFieldChanged:(NSNotification *)notif {
+    if([self areAllFieldsEmpty]){
+        [self disableSaveButton];
+    }else{
+        [self enableSaveButton];
+    }
+}
+
 - (void)keyboardWillShow:(NSNotification *)notif {
     [self setContentInsetForScrollView:notif];
     [self animateSaveButton:notif];
@@ -168,6 +187,16 @@
 }
 
 #pragma mark Utility Methods
+- (void)disableSaveButton {
+    self.saveChangeButton.alpha = 0.7;
+    self.saveChangeButton.enabled = NO;
+}
+
+- (void)enableSaveButton {
+    self.saveChangeButton.alpha = 1.0;
+    self.saveChangeButton.enabled = YES;
+}
+
 - (void)animateSaveButton: (NSNotification *) notif{
     NSDictionary* userInfo = [notif userInfo];
     // Keyboard animation attributes from the userInfo object
@@ -197,6 +226,14 @@
         self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, keyboardEventualFrame.size.height, 0);
     }else {
         self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    }
+}
+
+- (BOOL)areAllFieldsEmpty {
+    if([self.phoneNumberField.text  isEqual: @""] && [self.emailIDField.text  isEqual: @""] && [self.flatNoField.text  isEqual: @""] && [self.societyNameField.text  isEqual: @""] && [self.landmarkField.text  isEqual: @""]) {
+        return true;
+    }else {
+        return false;
     }
 }
 
