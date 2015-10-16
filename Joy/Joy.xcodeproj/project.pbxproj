@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1171E3FF1BD0E8EF006FBCB9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E3FE1BD0E8EF006FBCB9 /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1171E4021BD0E900006FBCB9 /* PartnersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E4011BD0E900006FBCB9 /* PartnersViewController.m */; settings = {ASSET_TAGS = (); }; };
-		1171E4051BD0E90F006FBCB9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E4041BD0E90F006FBCB9 /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1171E40B1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E40A1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		1171E40E1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E40D1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		70562C931BD0DDB700E16999 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562C921BD0DDB700E16999 /* main.m */; };
@@ -62,6 +61,11 @@
 		70562D531BD1156900E16999 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D431BD1156900E16999 /* UIView+WebCacheOperation.m */; settings = {ASSET_TAGS = (); }; };
 		70562D561BD146BC00E16999 /* JOYUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D551BD146BC00E16999 /* JOYUser.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		CAE565F61BD122BE000E8F21 /* JOYDonationSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565F51BD122BE000E8F21 /* JOYDonationSelectViewController.m */; settings = {ASSET_TAGS = (); }; };
+		CAE565FA1BD12913000E8F21 /* JOYDonationSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565F91BD12913000E8F21 /* JOYDonationSelectTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		CC0C428E1BD14169007E86C3 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C42891BD14169007E86C3 /* EditProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
+		CC0C428F1BD14169007E86C3 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C428B1BD14169007E86C3 /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
+		CC0C42901BD14169007E86C3 /* ProfileViewControllerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C428D1BD14169007E86C3 /* ProfileViewControllerTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,8 +90,6 @@
 		1171E3FE1BD0E8EF006FBCB9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		1171E4001BD0E900006FBCB9 /* PartnersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnersViewController.h; sourceTree = "<group>"; };
 		1171E4011BD0E900006FBCB9 /* PartnersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnersViewController.m; sourceTree = "<group>"; };
-		1171E4031BD0E90F006FBCB9 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		1171E4041BD0E90F006FBCB9 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		1171E4091BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYMakeDonationTableViewCell.h; sourceTree = "<group>"; };
 		1171E40A1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYMakeDonationTableViewCell.m; sourceTree = "<group>"; };
 		1171E40C1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYPreviousDonationsTableViewCell.h; sourceTree = "<group>"; };
@@ -185,6 +187,16 @@
 		70562D551BD146BC00E16999 /* JOYUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYUser.m; sourceTree = "<group>"; };
 		CAE565EA1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYPartnerTableViewCell.h; sourceTree = "<group>"; };
 		CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYPartnerTableViewCell.m; sourceTree = "<group>"; };
+		CAE565F41BD122BE000E8F21 /* JOYDonationSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYDonationSelectViewController.h; sourceTree = "<group>"; };
+		CAE565F51BD122BE000E8F21 /* JOYDonationSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYDonationSelectViewController.m; sourceTree = "<group>"; };
+		CAE565F81BD12913000E8F21 /* JOYDonationSelectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYDonationSelectTableViewCell.h; sourceTree = "<group>"; };
+		CAE565F91BD12913000E8F21 /* JOYDonationSelectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYDonationSelectTableViewCell.m; sourceTree = "<group>"; };
+		CC0C42881BD14169007E86C3 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		CC0C42891BD14169007E86C3 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		CC0C428A1BD14169007E86C3 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		CC0C428B1BD14169007E86C3 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		CC0C428C1BD14169007E86C3 /* ProfileViewControllerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewControllerTableViewCell.h; sourceTree = "<group>"; };
+		CC0C428D1BD14169007E86C3 /* ProfileViewControllerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewControllerTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,12 +291,19 @@
 		70562CC71BD0DDF600E16999 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CC0C42881BD14169007E86C3 /* EditProfileViewController.h */,
+				CC0C42891BD14169007E86C3 /* EditProfileViewController.m */,
+				CC0C428A1BD14169007E86C3 /* ProfileViewController.h */,
+				CC0C428B1BD14169007E86C3 /* ProfileViewController.m */,
+				CC0C428C1BD14169007E86C3 /* ProfileViewControllerTableViewCell.h */,
+				CC0C428D1BD14169007E86C3 /* ProfileViewControllerTableViewCell.m */,
+				CAE565F01BD1210F000E8F21 /* HomeControllers */,
+				CAE565F41BD122BE000E8F21 /* JOYDonationSelectViewController.h */,
+				CAE565F51BD122BE000E8F21 /* JOYDonationSelectViewController.m */,
 				1171E3FD1BD0E8EF006FBCB9 /* HomeViewController.h */,
 				1171E3FE1BD0E8EF006FBCB9 /* HomeViewController.m */,
 				1171E4001BD0E900006FBCB9 /* PartnersViewController.h */,
 				1171E4011BD0E900006FBCB9 /* PartnersViewController.m */,
-				1171E4031BD0E90F006FBCB9 /* ProfileViewController.h */,
-				1171E4041BD0E90F006FBCB9 /* ProfileViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -313,6 +332,7 @@
 		70562CD11BD0DE4E00E16999 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CAE565F71BD128B4000E8F21 /* DonationSelectTableViewCell */,
 				CAE565E91BD0FA60000E8F21 /* PartnerTableview */,
 				70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */,
 				70562CD41BD0DE4E00E16999 /* Main.storyboard */,
@@ -431,6 +451,22 @@
 				CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */,
 			);
 			name = PartnerTableview;
+			sourceTree = "<group>";
+		};
+		CAE565F01BD1210F000E8F21 /* HomeControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HomeControllers;
+			sourceTree = "<group>";
+		};
+		CAE565F71BD128B4000E8F21 /* DonationSelectTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CAE565F81BD12913000E8F21 /* JOYDonationSelectTableViewCell.h */,
+				CAE565F91BD12913000E8F21 /* JOYDonationSelectTableViewCell.m */,
+			);
+			name = DonationSelectTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -577,21 +613,25 @@
 				70562D521BD1156900E16999 /* UIImageView+WebCache.m in Sources */,
 				70562D161BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */,
 				1171E40E1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m in Sources */,
+				CC0C42901BD14169007E86C3 /* ProfileViewControllerTableViewCell.m in Sources */,
 				1171E4021BD0E900006FBCB9 /* PartnersViewController.m in Sources */,
 				70562D451BD1156900E16999 /* NSData+ImageContentType.m in Sources */,
 				70562D141BD0DFF300E16999 /* NSObject+MTLComparisonAdditions.m in Sources */,
 				70562D4D1BD1156900E16999 /* UIButton+WebCache.m in Sources */,
 				70562D4C1BD1156900E16999 /* SDWebImagePrefetcher.m in Sources */,
 				1171E3FF1BD0E8EF006FBCB9 /* HomeViewController.m in Sources */,
-				1171E4051BD0E90F006FBCB9 /* ProfileViewController.m in Sources */,
+				CC0C428E1BD14169007E86C3 /* EditProfileViewController.m in Sources */,
+				CAE565FA1BD12913000E8F21 /* JOYDonationSelectTableViewCell.m in Sources */,
 				70562D0B1BD0DFF300E16999 /* MTLModel.m in Sources */,
 				70562D511BD1156900E16999 /* UIImageView+HighlightedWebCache.m in Sources */,
 				70562D121BD0DFF300E16999 /* NSDictionary+MTLMappingAdditions.m in Sources */,
 				70562D211BD10F8C00E16999 /* JOYDonatee.m in Sources */,
 				70562D4B1BD1156900E16999 /* SDWebImageManager.m in Sources */,
+				CC0C428F1BD14169007E86C3 /* ProfileViewController.m in Sources */,
 				70562D0F1BD0DFF300E16999 /* NSArray+MTLManipulationAdditions.m in Sources */,
 				70562D131BD0DFF300E16999 /* NSError+MTLModelException.m in Sources */,
 				70562D061BD0DFF300E16999 /* EXTRuntimeExtensions.m in Sources */,
+				CAE565F61BD122BE000E8F21 /* JOYDonationSelectViewController.m in Sources */,
 				70562D4E1BD1156900E16999 /* UIImage+GIF.m in Sources */,
 				70562C961BD0DDB700E16999 /* AppDelegate.m in Sources */,
 				70562D0E1BD0DFF300E16999 /* MTLValueTransformer.m in Sources */,
