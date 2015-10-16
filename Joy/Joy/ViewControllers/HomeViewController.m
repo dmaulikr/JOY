@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "JOYPreviousDonationsTableViewCell.h"
 #import "JOYMakeDonationTableViewCell.h"
+#import "JOYUser.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -27,6 +28,7 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self fetchData];
     self.noDonationsView.hidden = YES;
     self.donationsView.hidden = NO;
     self.donationsArray = @[@"abc", @"def", @"ghi", @"as", @"asas", @"qwiyd", @"duqw"];
@@ -103,6 +105,19 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
     if ([[segue identifier] isEqualToString:kSelectDonationSegueKey]) {
         
     }
+}
+
+- (void)fetchData
+{
+    NSURLSessionDataTask *ngoLists = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[ NSString stringWithFormat:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/user/%@/donations", [JOYUser sharedUser].userID]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if(error || !data) return;
+        NSMutableArray *array = [NSMutableArray array];
+        NSArray *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        
+        }];
+    [ngoLists resume];
+
 }
 
 @end
