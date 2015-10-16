@@ -52,6 +52,13 @@
 }
 
 - (void)setupStyles {
+    // Writing image to the disk
+    NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
+    // Retrieving the image from disk
+    NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
+    self.profilePicImageView.image = loadedImage;
+    
     self.tabBarController.tabBar.hidden = YES;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.profilePicContainerView.layer.cornerRadius = 50;
