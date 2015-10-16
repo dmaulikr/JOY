@@ -8,7 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "ProfileViewControllerTableViewCell.h"
-
+#import "JOYUser.h"
 @interface ProfileViewController ()<UITableViewDataSource, UITableViewDelegate>
 @end
 
@@ -33,15 +33,23 @@
 #pragma mark Styling Methods
 - (void)setupUserInfo {
     
-    // Retrieving the image from disk
-    NSString *path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
-    NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
-    UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
-    //Setting the image as the profile image
-    self.profilePicImageView.image = loadedImage;
+    if([JOYUser sharedUser].profileImageURL != nil){
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[JOYUser sharedUser].profileImageURL]];
+        self.profilePicImageView.image = [UIImage imageWithData:imageData];
+    }else {
+        // Writing image to the disk
+        NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
+        
+        // Retrieving the image from disk
+        NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+        UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
+        
+        // Setting the retrieved imafge
+        self.profilePicImageView.image = loadedImage;
+    }
     
-    if(self.user != nil){
-        self.userName.text = self.user.name;
+    if([JOYUser sharedUser].name){
+        self.userName.text = [JOYUser sharedUser].name;
     }else{
         self.userName.text = @"Vivek Ravi";
     }

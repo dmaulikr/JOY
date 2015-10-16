@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JOYUser.h"
 
 @interface ProfileViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *profilePicContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
-@property (strong, nonatomic) JOYUser *user;
 @end
