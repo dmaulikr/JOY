@@ -59,6 +59,7 @@
 		70562D511BD1156900E16999 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D3F1BD1156900E16999 /* UIImageView+HighlightedWebCache.m */; settings = {ASSET_TAGS = (); }; };
 		70562D521BD1156900E16999 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D411BD1156900E16999 /* UIImageView+WebCache.m */; settings = {ASSET_TAGS = (); }; };
 		70562D531BD1156900E16999 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D431BD1156900E16999 /* UIView+WebCacheOperation.m */; settings = {ASSET_TAGS = (); }; };
+		70562D561BD146BC00E16999 /* JOYUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D551BD146BC00E16999 /* JOYUser.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565F61BD122BE000E8F21 /* JOYDonationSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565F51BD122BE000E8F21 /* JOYDonationSelectViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565FA1BD12913000E8F21 /* JOYDonationSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565F91BD12913000E8F21 /* JOYDonationSelectTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -182,6 +183,8 @@
 		70562D411BD1156900E16999 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		70562D421BD1156900E16999 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		70562D431BD1156900E16999 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		70562D541BD146BC00E16999 /* JOYUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYUser.h; sourceTree = "<group>"; };
+		70562D551BD146BC00E16999 /* JOYUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYUser.m; sourceTree = "<group>"; };
 		CAE565EA1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYPartnerTableViewCell.h; sourceTree = "<group>"; };
 		CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYPartnerTableViewCell.m; sourceTree = "<group>"; };
 		CAE565F41BD122BE000E8F21 /* JOYDonationSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYDonationSelectViewController.h; sourceTree = "<group>"; };
@@ -312,6 +315,8 @@
 				70562D181BD0F9E100E16999 /* JOYDonation.m */,
 				70562D1F1BD10F8C00E16999 /* JOYDonatee.h */,
 				70562D201BD10F8C00E16999 /* JOYDonatee.m */,
+				70562D541BD146BC00E16999 /* JOYUser.h */,
+				70562D551BD146BC00E16999 /* JOYUser.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -641,6 +646,7 @@
 				70562D471BD1156900E16999 /* SDWebImageCompat.m in Sources */,
 				70562C931BD0DDB700E16999 /* main.m in Sources */,
 				CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */,
+				70562D561BD146BC00E16999 /* JOYUser.m in Sources */,
 				70562D111BD0DFF300E16999 /* NSDictionary+MTLManipulationAdditions.m in Sources */,
 				70562D491BD1156900E16999 /* SDWebImageDownloader.m in Sources */,
 				70562D441BD1156900E16999 /* MKAnnotationView+WebCache.m in Sources */,
