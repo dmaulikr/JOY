@@ -1,15 +1,13 @@
 //
-//  FirstViewController.h
+//  JOYDonatee.m
 //  Joy
 //
 //  Created by Anil Giri on 16/10/15.
 //  Copyright © 2015 Pirates of Powai. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "JOYDonatee.h"
 
-@interface FirstViewController : UIViewController
-
+@implementation JOYDonatee
 
 @end
-
