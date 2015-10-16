@@ -20,6 +20,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *phoneNumberIconImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *emailIDIconImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *addressIconImageView;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberField;
+@property (weak, nonatomic) IBOutlet UITextField *emailIDField;
+@property (weak, nonatomic) IBOutlet UITextField *flatNoField;
+@property (weak, nonatomic) IBOutlet UITextField *societyNameField;
+@property (weak, nonatomic) IBOutlet UITextField *landmarkField;
 
 @property (weak, nonatomic) IBOutlet UIView *profilePicContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicImageView;

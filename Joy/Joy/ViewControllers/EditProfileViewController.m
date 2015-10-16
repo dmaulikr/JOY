@@ -68,11 +68,13 @@
 - (void)setupObservers  {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldChanged:) name:UITextFieldTextDidChangeNotification object:nil];
 }
 
 - (void)removeObservers {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
 }
 
 #pragma mark IBAction Methods
@@ -80,6 +82,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)saveChangeButtonPressed:(UIButton *)sender {
+    
 }
 
 #pragma mark Action Methods
@@ -156,7 +159,16 @@
     
 }
 
-#pragma mark Listener Methods 
+#pragma mark Selector Listener Methods
+
+- (void)textFieldChanged:(NSNotification *)notif {
+    if([self areAllFieldsEmpty]){
+        self.saveChangeButton.enabled = NO;
+    }else{
+        self.saveChangeButton.enabled = YES;
+    }
+}
+
 - (void)keyboardWillShow:(NSNotification *)notif {
     [self setContentInsetForScrollView:notif];
     [self animateSaveButton:notif];
@@ -197,6 +209,14 @@
         self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, keyboardEventualFrame.size.height, 0);
     }else {
         self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    }
+}
+
+- (BOOL)areAllFieldsEmpty {
+    if([self.phoneNumberField.text  isEqual: @""] && [self.emailIDField.text  isEqual: @""] && [self.flatNoField.text  isEqual: @""] && [self.societyNameField.text  isEqual: @""] && [self.landmarkField.text  isEqual: @""]) {
+        return true;
+    }else {
+        return false;
     }
 }
 

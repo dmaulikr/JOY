@@ -1024,8 +1024,12 @@
                         <outlet property="cameraIconContainerView" destination="V66-Zi-D5K" id="UAv-WR-aRV"/>
                         <outlet property="cameraIconImageView" destination="gqd-U0-p1B" id="yCB-y8-8iF"/>
                         <outlet property="contentView" destination="qih-4A-dg7" id="xWZ-t6-FcL"/>
+                        <outlet property="emailIDField" destination="E9V-7u-w7J" id="cwa-qU-VQR"/>
                         <outlet property="emailIDIconImageView" destination="ViR-Yh-qoR" id="a2x-dE-Ncq"/>
+                        <outlet property="flatNoField" destination="vl8-Up-Rwr" id="DM4-UB-Hhx"/>
+                        <outlet property="landmarkField" destination="Chj-ql-F3y" id="wfD-5b-2Yt"/>
                         <outlet property="overlayView" destination="f7B-Am-zed" id="ZYd-Sw-2CQ"/>
+                        <outlet property="phoneNumberField" destination="a6P-fK-nzU" id="X8z-1w-mRq"/>
                         <outlet property="phoneNumberIconImageView" destination="z4g-il-9h2" id="dJv-K9-ygh"/>
                         <outlet property="profilePicContainerView" destination="p4u-Kn-H8L" id="jfe-4i-6go"/>
                         <outlet property="profilePicImageView" destination="W3B-re-VoO" id="mID-Om-DOW"/>
@@ -1033,6 +1037,7 @@
                         <outlet property="saveChangeButtonBottomConstraint" destination="LWK-iw-4Np" id="dFC-hE-381"/>
                         <outlet property="saveChangesButtonView" destination="LxK-eB-9LU" id="q79-RZ-PDe"/>
                         <outlet property="scrollView" destination="Gtl-10-aRO" id="ZXm-fm-SLr"/>
+                        <outlet property="societyNameField" destination="xsR-zB-Moj" id="42Z-ox-KhF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCS-tU-qNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1088,7 +1093,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="fi6-iK-d8S"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aLJ-lW-BAq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aLJ-lW-BAq">
                                 <rect key="frame" x="-4" y="255" width="383" height="225"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
