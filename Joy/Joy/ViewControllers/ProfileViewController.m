@@ -2,13 +2,15 @@
 //  ProfileViewController.m
 //  Joy
 //
-//  Created by SANCHIT GOEL on 16/10/2015.
+//  Created by Tejas Nikumbh on 10/16/15.
 //  Copyright © 2015 Pirates of Powai. All rights reserved.
 //
 
 #import "ProfileViewController.h"
+#import "ProfileViewControllerTableViewCell.h"
 
-@interface ProfileViewController ()
+@interface ProfileViewController ()<UITableViewDataSource, UITableViewDelegate>
+
 
 @end
 
@@ -16,22 +18,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark TableView DataSource Methods
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ProfileViewControllerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"profileViewCell"];
+
+    switch (indexPath.row) {
+        case 0:
+            cell.title.text = @"Edit Profile";
+            break;
+        case 1:
+            cell.title.text = @"About Us";
+            break;
+        case 2:
+            cell.title.text = @"Feedback";
+            break;
+        case 3:
+            cell.title.text = @"Rate";
+            break;
+        default:
+            cell.title.text = @"Default";
+            break;
+    }
+    
+    return cell;
+
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 4;
 }
-*/
 
+#pragma mark TableView Delegate Methods
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.row) {
+        case 0: // Edit Profile is clicked
+            [self performSegueWithIdentifier:@"showEditProfile" sender:nil];
+            break;
+        default:
+            break;
+    }
+}
 @end
