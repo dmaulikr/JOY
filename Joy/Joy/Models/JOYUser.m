@@ -19,7 +19,7 @@
               @"addOne"                 :           @"address_1",
               @"addTwo"           :           @"address_2",
               @"addThree"                   :            @"address_3",
-              @"profileImageURL"   :   @""
+              @"profileImageURL"   :   @"profile_image_url"
               };
 }
 
