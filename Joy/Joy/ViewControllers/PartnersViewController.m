@@ -36,6 +36,7 @@ static NSString * const kDetailSegueIdentifier = @"detailNGOView";
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = YES;
+    self.navigationController.tabBarController.tabBar.hidden = NO;
 
 }
 
