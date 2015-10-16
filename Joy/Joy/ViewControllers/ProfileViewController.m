@@ -16,13 +16,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setupStyles];
 }
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self removeStyles];
+}
+
 
 #pragma mark Styling Methods
 - (void)setupStyles {
     self.profilePicContainerView.layer.cornerRadius = 50;
     self.profilePicContainerView.layer.masksToBounds = YES;
+    self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)removeStyles {
+    self.navigationController.navigationBarHidden = NO;
 }
 
 #pragma mark TableView DataSource Methods

@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupObservers];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self setupStyles];
 }
 
@@ -93,6 +97,6 @@
 
 #pragma mark IBAction Methods
 - (IBAction)backButtonPressed:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
