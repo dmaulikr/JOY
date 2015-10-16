@@ -111,9 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				70562CCE1BD0DE4E00E16999 /* Models */,
-				70562CCF1BD0DE4E00E16999 /* Resources */,
-				70562CD11BD0DE4E00E16999 /* Views */,
 				70562CC71BD0DDF600E16999 /* ViewControllers */,
+				70562CD11BD0DE4E00E16999 /* Views */,
+				70562CCF1BD0DE4E00E16999 /* Resources */,
 				70562C911BD0DDB700E16999 /* Supporting Files */,
 			);
 			path = Joy;
