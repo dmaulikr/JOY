@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1171E3FF1BD0E8EF006FBCB9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E3FE1BD0E8EF006FBCB9 /* HomeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1171E4021BD0E900006FBCB9 /* PartnersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E4011BD0E900006FBCB9 /* PartnersViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1171E4051BD0E90F006FBCB9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E4041BD0E90F006FBCB9 /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
 		70562C931BD0DDB700E16999 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562C921BD0DDB700E16999 /* main.m */; };
 		70562C961BD0DDB700E16999 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562C951BD0DDB700E16999 /* AppDelegate.m */; };
 		70562CAF1BD0DDB700E16999 /* JoyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CAE1BD0DDB700E16999 /* JoyTests.m */; };
@@ -59,6 +62,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1171E3FD1BD0E8EF006FBCB9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		1171E3FE1BD0E8EF006FBCB9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		1171E4001BD0E900006FBCB9 /* PartnersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartnersViewController.h; sourceTree = "<group>"; };
+		1171E4011BD0E900006FBCB9 /* PartnersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnersViewController.m; sourceTree = "<group>"; };
+		1171E4031BD0E90F006FBCB9 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		1171E4041BD0E90F006FBCB9 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		70562C8E1BD0DDB700E16999 /* Joy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70562C921BD0DDB700E16999 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70562C941BD0DDB700E16999 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -209,6 +218,12 @@
 				70562CC91BD0DDF600E16999 /* FirstViewController.m */,
 				70562CCA1BD0DDF600E16999 /* SecondViewController.h */,
 				70562CCB1BD0DDF600E16999 /* SecondViewController.m */,
+				1171E3FD1BD0E8EF006FBCB9 /* HomeViewController.h */,
+				1171E3FE1BD0E8EF006FBCB9 /* HomeViewController.m */,
+				1171E4001BD0E900006FBCB9 /* PartnersViewController.h */,
+				1171E4011BD0E900006FBCB9 /* PartnersViewController.m */,
+				1171E4031BD0E90F006FBCB9 /* ProfileViewController.h */,
+				1171E4041BD0E90F006FBCB9 /* ProfileViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -436,8 +451,11 @@
 				70562D071BD0DFF300E16999 /* EXTScope.m in Sources */,
 				70562D151BD0DFF300E16999 /* NSValueTransformer+MTLInversionAdditions.m in Sources */,
 				70562D161BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */,
+				1171E4021BD0E900006FBCB9 /* PartnersViewController.m in Sources */,
 				70562CCD1BD0DDF600E16999 /* SecondViewController.m in Sources */,
 				70562D141BD0DFF300E16999 /* NSObject+MTLComparisonAdditions.m in Sources */,
+				1171E3FF1BD0E8EF006FBCB9 /* HomeViewController.m in Sources */,
+				1171E4051BD0E90F006FBCB9 /* ProfileViewController.m in Sources */,
 				70562D0B1BD0DFF300E16999 /* MTLModel.m in Sources */,
 				70562D121BD0DFF300E16999 /* NSDictionary+MTLMappingAdditions.m in Sources */,
 				70562D0F1BD0DFF300E16999 /* NSArray+MTLManipulationAdditions.m in Sources */,
@@ -678,6 +696,7 @@
 				70562CC01BD0DDB800E16999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70562CC11BD0DDB800E16999 /* Build configuration list for PBXNativeTarget "JoyTests" */ = {
 			isa = XCConfigurationList;
@@ -686,6 +705,7 @@
 				70562CC31BD0DDB800E16999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70562CC41BD0DDB800E16999 /* Build configuration list for PBXNativeTarget "JoyUITests" */ = {
 			isa = XCConfigurationList;
@@ -694,6 +714,7 @@
 				70562CC61BD0DDB800E16999 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
