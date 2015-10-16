@@ -2,12 +2,13 @@
 //  ProfileViewController.h
 //  Joy
 //
-//  Created by SANCHIT GOEL on 16/10/2015.
+//  Created by Tejas Nikumbh on 10/16/15.
 //  Copyright © 2015 Pirates of Powai. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface ProfileViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIView *profilePicContainerView;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicImageView;
 @end
