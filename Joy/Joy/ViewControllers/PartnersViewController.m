@@ -31,6 +31,7 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
     self.NGOArray = [NSArray array];
     self.NGOArray = self.NGODisplayArray;
     [self fetchNGOListings];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
