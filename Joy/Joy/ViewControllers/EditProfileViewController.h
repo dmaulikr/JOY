@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *saveChangeButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *saveChangeButtonBottomConstraint;
 
+@property (weak, nonatomic) IBOutlet UIView *overlayView;
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 

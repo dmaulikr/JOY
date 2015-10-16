@@ -17,7 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupObservers];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self setupStyles];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self removeStyles];
 }
 
 - (void)viewDidUnload {
@@ -27,7 +36,17 @@
 
 #pragma mark Setup Methods
 - (void)setupStyles {
+    self.tabBarController.tabBar.hidden = YES;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.profilePicContainerView.layer.cornerRadius = 50;
+    self.profilePicContainerView.layer.masksToBounds = YES;
+    self.overlayView.layer.cornerRadius = 50;
+    self.overlayView.layer.masksToBounds = YES;
+    [self.overlayView setAlpha:0.5f];
+}
+
+- (void)removeStyles {
+    self.tabBarController.tabBar.hidden = NO;
 }
 
 - (void)setupObservers  {
@@ -88,6 +107,6 @@
 
 #pragma mark IBAction Methods
 - (IBAction)backButtonPressed:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
