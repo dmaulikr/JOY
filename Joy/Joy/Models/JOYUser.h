@@ -9,16 +9,20 @@
 #import "MTLModel.h"
 #import "UIImage+MultiFormat.h"
 
-@interface JOYUser : MTLModel
+@interface JOYUser : MTLModel <MTLJSONSerializing>
 
 @property (assign, nonatomic, readonly) JOYUserRole role;   // Assume JOYUserRoleDonor always in this implementation.
-@property (copy, nonatomic, readonly) NSString *profileImageURL;
-@property (strong, nonatomic) UIImage *image;
-@property (copy, nonatomic, readonly) NSString *name;
-@property (copy, nonatomic, readonly) NSString *mobileNumber;
-@property (copy, nonatomic, readonly) NSString *emailID;
-@property (copy, nonatomic, readonly) NSString *addOne;
-@property (copy, nonatomic, readonly) NSString *addTwo;
-@property (copy, nonatomic, readonly) NSString *addThree;
+@property (copy, nonatomic) NSString *profileImageURL;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *number;
+@property (copy, nonatomic) NSString *emailID;
+@property (copy, nonatomic) NSString *addOne;
+@property (copy, nonatomic) NSString *addTwo;
+@property (copy, nonatomic) NSString *addThree;
 @property (assign, nonatomic) BOOL isVerified;
+@property (copy, nonatomic) NSString *userID;
+@property (nonatomic) BOOL isLoggedIn;
+
++ (JOYUser *)sharedUser;
++ (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue;
 @end

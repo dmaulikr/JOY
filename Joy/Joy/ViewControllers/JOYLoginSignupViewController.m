@@ -7,6 +7,7 @@
 //
 
 #import "JOYLoginSignupViewController.h"
+#import "JOYUser.h"
 
 @interface JOYLoginSignupViewController () <UITextFieldDelegate>
 
@@ -126,7 +127,22 @@
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         if (dict && [dict[@"status"] isEqualToString:@"ok"])
         {
-            
+            JOYUser *new = [JOYUser initWithDictionary:dict[@"data"]];
+            JOYUser *user = [JOYUser sharedUser];
+            user.name = new.name;
+            user.userID = new.userID;
+            user.number = new.number;
+            user.addOne = new.addOne;
+            user.addTwo = new.addTwo;
+            user.addThree = new.addThree;
+            user.emailID = new.emailID;
+            user.isVerified = new.isVerified;
+            user.profileImageURL = new.profileImageURL;
+            user.isLoggedIn = YES;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self startMainFlow];
+            });
+            NSLog(@"here");
         }
         else
         {
@@ -174,6 +190,12 @@
     [dataTask resume];
 }
 
+- (void)startMainFlow
+{
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UITabBarController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"tabVC"];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "JOYUser.h"
 
 @interface AppDelegate ()
 
