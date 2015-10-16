@@ -10,5 +10,6 @@
 #define PrefixHeader_pch
 
 #import "JOYConstants.h"
+#import "Mantle.h"
 
 #endif /* PrefixHeader_pch */

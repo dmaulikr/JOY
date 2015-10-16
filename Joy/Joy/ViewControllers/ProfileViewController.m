@@ -31,6 +31,12 @@
 
 #pragma mark Styling Methods
 - (void)setupStyles {
+    // Retrieving the image from disk
+    NSString *path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
+    NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
+    // Setting the image as the profile image
+    self.profilePicImageView.image = loadedImage;
     self.profilePicContainerView.layer.cornerRadius = 50;
     self.profilePicContainerView.layer.masksToBounds = YES;
     self.navigationController.navigationBarHidden = YES;

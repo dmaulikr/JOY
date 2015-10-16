@@ -8,15 +8,16 @@
 
 #import "EditProfileViewController.h"
 
-@interface EditProfileViewController ()
-
+@interface EditProfileViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @end
 
 @implementation EditProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupViews];
     [self setupObservers];
+    [self setupGestureRecognizers];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -35,6 +36,21 @@
 }
 
 #pragma mark Setup Methods
+- (void)setupViews {
+    self.saveChangeButton.enabled = NO;
+}
+
+
+- (void)setupGestureRecognizers {
+    self.overlayView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGestureRecognizerForOverlay = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickOrChoosePicture)];
+    [self.overlayView addGestureRecognizer:tapGestureRecognizerForOverlay];
+    
+    self.cameraIconImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGestureRecognizersForCamera = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickOrChoosePicture)];
+    [self.cameraIconImageView addGestureRecognizer:tapGestureRecognizersForCamera];
+}
+
 - (void)setupStyles {
     self.tabBarController.tabBar.hidden = YES;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -57,6 +73,87 @@
 - (void)removeObservers {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+}
+
+#pragma mark IBAction Methods
+- (IBAction)backButtonPressed:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)saveChangeButtonPressed:(UIButton *)sender {
+}
+
+#pragma mark Action Methods
+- (void)redirectToCamera {
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController *pickerView = [[UIImagePickerController alloc] init];
+        pickerView.allowsEditing = YES;
+        pickerView.delegate = self;
+        pickerView.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:pickerView animated:YES completion:nil];
+    }
+}
+
+- (void)redirectToGallery {
+    UIImagePickerController *pickerView = [[UIImagePickerController alloc] init];
+    pickerView.allowsEditing = YES;
+    pickerView.delegate = self;
+    pickerView.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:pickerView animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(nonnull NSDictionary<NSString *,id> *)info {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
+    // Writing image to the disk
+    NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
+    
+    BOOL ok = [[NSFileManager defaultManager] createFileAtPath:path
+                                                      contents:nil attributes:nil];
+    
+    if (!ok)
+    {
+        NSLog(@"Error creating file %@", path);
+    }
+    else
+    {
+        NSFileHandle* myFileHandle = [NSFileHandle fileHandleForWritingAtPath:path];
+        [myFileHandle writeData:UIImagePNGRepresentation(image)];
+        [myFileHandle closeFile];
+    }
+    
+    // Retrieving the image from disk
+    NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
+    
+    // Setting the retrieved imafge
+    self.profilePicImageView.image = loadedImage;
+    self.saveChangeButton.enabled = YES;
+}
+
+#pragma mark Selector Methods
+- (void)clickOrChoosePicture {
+    UIAlertController *choosePictureController = [UIAlertController alertControllerWithTitle:@"PLEASE CHOOSE A METHOD" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *camera = [UIAlertAction actionWithTitle:@"Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self redirectToCamera];
+        });
+        
+        [choosePictureController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *gallery = [UIAlertAction actionWithTitle:@"Gallery" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self redirectToGallery];
+        });
+        
+        [choosePictureController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [choosePictureController addAction:camera];
+    [choosePictureController addAction:gallery];
+    [self presentViewController:choosePictureController animated:YES completion:nil];
+    
+    
 }
 
 #pragma mark Listener Methods 
@@ -101,12 +198,6 @@
     }else {
         self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     }
-    
-    
 }
 
-#pragma mark IBAction Methods
-- (IBAction)backButtonPressed:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
 @end
