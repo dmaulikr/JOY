@@ -11,5 +11,6 @@
 
 #import "JOYConstants.h"
 #import "Mantle.h"
+#import "UIImageView+WebCache.h"
 
 #endif /* PrefixHeader_pch */

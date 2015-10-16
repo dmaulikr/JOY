@@ -26,9 +26,6 @@
 		70562CD91BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		70562CDA1BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		70562CDB1BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
-		70562CDC1BD0DE4E00E16999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD41BD0DE4E00E16999 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		70562CDD1BD0DE4E00E16999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD41BD0DE4E00E16999 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		70562CDE1BD0DE4E00E16999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD41BD0DE4E00E16999 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		70562D061BD0DFF300E16999 /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CE41BD0DFF300E16999 /* EXTRuntimeExtensions.m */; settings = {ASSET_TAGS = (); }; };
 		70562D071BD0DFF300E16999 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CE61BD0DFF300E16999 /* EXTScope.m */; settings = {ASSET_TAGS = (); }; };
 		70562D081BD0DFF300E16999 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70562CE81BD0DFF300E16999 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
@@ -65,6 +62,8 @@
 		70562D521BD1156900E16999 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D411BD1156900E16999 /* UIImageView+WebCache.m */; settings = {ASSET_TAGS = (); }; };
 		70562D531BD1156900E16999 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D431BD1156900E16999 /* UIView+WebCacheOperation.m */; settings = {ASSET_TAGS = (); }; };
 		70562D561BD146BC00E16999 /* JOYUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D551BD146BC00E16999 /* JOYUser.m */; settings = {ASSET_TAGS = (); }; };
+		CA37639B1BD1968C00237A8D /* JOYNGODetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA37639A1BD1968B00237A8D /* JOYNGODetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		CA7A59801BD1B35500D6ABAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7A597F1BD1B35500D6ABAF /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565F61BD122BE000E8F21 /* JOYDonationSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565F51BD122BE000E8F21 /* JOYDonationSelectViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565FA1BD12913000E8F21 /* JOYDonationSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565F91BD12913000E8F21 /* JOYDonationSelectTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -121,7 +120,6 @@
 		70562CBB1BD0DDB800E16999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70562CD01BD0DE4E00E16999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70562CD31BD0DE4E00E16999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		70562CD51BD0DE4E00E16999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70562CE21BD0DFF300E16999 /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTKeyPathCoding.h; sourceTree = "<group>"; };
 		70562CE31BD0DFF300E16999 /* EXTRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTRuntimeExtensions.h; sourceTree = "<group>"; };
 		70562CE41BD0DFF300E16999 /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTRuntimeExtensions.m; sourceTree = "<group>"; };
@@ -199,6 +197,9 @@
 		70562D431BD1156900E16999 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		70562D541BD146BC00E16999 /* JOYUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYUser.h; sourceTree = "<group>"; };
 		70562D551BD146BC00E16999 /* JOYUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYUser.m; sourceTree = "<group>"; };
+		CA3763991BD1968B00237A8D /* JOYNGODetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYNGODetailViewController.h; sourceTree = "<group>"; };
+		CA37639A1BD1968B00237A8D /* JOYNGODetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYNGODetailViewController.m; sourceTree = "<group>"; };
+		CA7A597F1BD1B35500D6ABAF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CAE565EA1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYPartnerTableViewCell.h; sourceTree = "<group>"; };
 		CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYPartnerTableViewCell.m; sourceTree = "<group>"; };
 		CAE565F41BD122BE000E8F21 /* JOYDonationSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYDonationSelectViewController.h; sourceTree = "<group>"; };
@@ -326,6 +327,8 @@
 				1171E4011BD0E900006FBCB9 /* PartnersViewController.m */,
 				11BEB16C1BD11D460097EC27 /* JOYLoginSignupViewController.h */,
 				11BEB16D1BD11D460097EC27 /* JOYLoginSignupViewController.m */,
+				CA3763991BD1968B00237A8D /* JOYNGODetailViewController.h */,
+				CA37639A1BD1968B00237A8D /* JOYNGODetailViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -357,7 +360,7 @@
 				CAE565F71BD128B4000E8F21 /* DonationSelectTableViewCell */,
 				CAE565E91BD0FA60000E8F21 /* PartnerTableview */,
 				70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */,
-				70562CD41BD0DE4E00E16999 /* Main.storyboard */,
+				CA7A597F1BD1B35500D6ABAF /* Main.storyboard */,
 				11BEB1761BD16F4D0097EC27 /* login.storyboard */,
 				1171E40C1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.h */,
 				1171E40D1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m */,
@@ -597,8 +600,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				70562D081BD0DFF300E16999 /* Info.plist in Resources */,
-				70562CDC1BD0DE4E00E16999 /* Main.storyboard in Resources */,
 				70562CD61BD0DE4E00E16999 /* Assets.xcassets in Resources */,
+				CA7A59801BD1B35500D6ABAF /* Main.storyboard in Resources */,
 				11BEB1771BD16F4D0097EC27 /* login.storyboard in Resources */,
 				70562CD91BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -608,7 +611,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70562CDD1BD0DE4E00E16999 /* Main.storyboard in Resources */,
 				70562CD71BD0DE4E00E16999 /* Assets.xcassets in Resources */,
 				70562CDA1BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -618,7 +620,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70562CDE1BD0DE4E00E16999 /* Main.storyboard in Resources */,
 				70562CD81BD0DE4E00E16999 /* Assets.xcassets in Resources */,
 				70562CDB1BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -669,6 +670,7 @@
 				70562D0C1BD0DFF300E16999 /* MTLReflection.m in Sources */,
 				70562D101BD0DFF300E16999 /* NSDictionary+MTLJSONKeyPath.m in Sources */,
 				70562D481BD1156900E16999 /* SDWebImageDecoder.m in Sources */,
+				CA37639B1BD1968C00237A8D /* JOYNGODetailViewController.m in Sources */,
 				70562D501BD1156900E16999 /* UIImage+WebP.m in Sources */,
 				70562D471BD1156900E16999 /* SDWebImageCompat.m in Sources */,
 				70562C931BD0DDB700E16999 /* main.m in Sources */,
@@ -723,14 +725,6 @@
 				70562CD31BD0DE4E00E16999 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		70562CD41BD0DE4E00E16999 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				70562CD51BD0DE4E00E16999 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -826,7 +820,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = Joy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.housing.iphone.hack2.joy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -839,7 +833,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = Joy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.housing.iphone.hack2.joy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
