@@ -11,12 +11,13 @@
 @interface JOYDonatee : MTLModel<MTLJSONSerializing>
 
 @property (copy, nonatomic, readonly) NSString *donateeID;
-@property (copy, nonatomic) NSString *iconImageURL;
-@property (copy, nonatomic) NSString *url;
-@property (copy, nonatomic) NSString *mobileNum;
-@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic, readonly) NSString *address;
+@property (copy, nonatomic, readonly) NSString *iconImageURL;
+@property (copy, nonatomic, readonly) NSString *url;
+@property (copy, nonatomic, readonly) NSString *mobileNum;
+@property (copy, nonatomic, readonly) NSString *name;
 @property (copy, nonatomic, readonly) NSString *slogan;
-@property (copy, nonatomic) NSString *descriptionText;
-@property (assign, nonatomic) JOYAcceptedDonationCategories accpetedDonationCategories;
+@property (copy, nonatomic, readonly) NSString *descriptionText;
+@property (assign, nonatomic, readonly) JOYAcceptedDonationCategories accpetedDonationCategories;
 
 @end
