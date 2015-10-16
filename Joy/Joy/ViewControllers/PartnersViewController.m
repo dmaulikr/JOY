@@ -35,7 +35,7 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.NGODisplayArray.count;
+    return 10;//self.NGODisplayArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
