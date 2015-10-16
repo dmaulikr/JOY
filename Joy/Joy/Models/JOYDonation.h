@@ -14,7 +14,7 @@
 @property (copy, nonatomic, readonly) NSString* descriptionText;
 @property (copy, nonatomic, readonly) NSString* donateeID;
 
-@property (assign, nonatomic, readonly) JOYDonationItemCategory category;
+@property (assign, nonatomic, readonly) JOYAcceptedDonationCategories category;
 @property (assign, nonatomic, readonly) JOYDonationStatus status;
 @property (assign, nonatomic, readonly) NSUInteger minQuantity;
 @property (assign, nonatomic, readonly) NSUInteger maxQuantity;
