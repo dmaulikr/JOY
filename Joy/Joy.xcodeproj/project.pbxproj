@@ -42,6 +42,7 @@
 		70562D141BD0DFF300E16999 /* NSObject+MTLComparisonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D011BD0DFF300E16999 /* NSObject+MTLComparisonAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		70562D151BD0DFF300E16999 /* NSValueTransformer+MTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D031BD0DFF300E16999 /* NSValueTransformer+MTLInversionAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		70562D161BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D051BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		70562D191BD0F9E100E16999 /* JOYDonation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D181BD0F9E100E16999 /* JOYDonation.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,10 @@
 		70562D031BD0DFF300E16999 /* NSValueTransformer+MTLInversionAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+MTLInversionAdditions.m"; sourceTree = "<group>"; };
 		70562D041BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+MTLPredefinedTransformerAdditions.h"; sourceTree = "<group>"; };
 		70562D051BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+MTLPredefinedTransformerAdditions.m"; sourceTree = "<group>"; };
+		70562D171BD0F9E100E16999 /* JOYDonation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYDonation.h; sourceTree = "<group>"; };
+		70562D181BD0F9E100E16999 /* JOYDonation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYDonation.m; sourceTree = "<group>"; };
+		70562D1B1BD1037000E16999 /* JOYConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JOYConstants.h; sourceTree = "<group>"; };
+		70562D1E1BD1089D00E16999 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +192,8 @@
 			children = (
 				70562C941BD0DDB700E16999 /* AppDelegate.h */,
 				70562C951BD0DDB700E16999 /* AppDelegate.m */,
+				70562D1B1BD1037000E16999 /* JOYConstants.h */,
+				70562D1E1BD1089D00E16999 /* PrefixHeader.pch */,
 				70562CA51BD0DDB700E16999 /* Info.plist */,
 				70562C921BD0DDB700E16999 /* main.m */,
 			);
@@ -231,6 +238,8 @@
 		70562CCE1BD0DE4E00E16999 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				70562D171BD0F9E100E16999 /* JOYDonation.h */,
+				70562D181BD0F9E100E16999 /* JOYDonation.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,6 +382,7 @@
 		70562C861BD0DDB700E16999 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JOY;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Pirates of Powai";
 				TargetAttributes = {
@@ -470,6 +480,7 @@
 				70562D101BD0DFF300E16999 /* NSDictionary+MTLJSONKeyPath.m in Sources */,
 				70562C931BD0DDB700E16999 /* main.m in Sources */,
 				70562D111BD0DFF300E16999 /* NSDictionary+MTLManipulationAdditions.m in Sources */,
+				70562D191BD0F9E100E16999 /* JOYDonation.m in Sources */,
 				70562D0D1BD0DFF300E16999 /* MTLTransformerErrorHandling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +562,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = Joy/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -593,6 +605,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = Joy/PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -611,9 +624,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = Joy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.housing.iphone.hack2.joy.Joy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.housing.iphone.hack2.joy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -622,9 +637,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = Joy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.housing.iphone.hack2.joy.Joy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.housing.iphone.hack2.joy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
