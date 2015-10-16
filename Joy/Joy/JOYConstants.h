@@ -27,4 +27,10 @@ typedef NS_ENUM(NSUInteger, JOYDonationItemCategory) {
     JOYDonationItemCategoryToys
 };
 
+typedef NS_ENUM(NSUInteger, JOYUserRole) {
+    JOYUserRoleUnknown,
+    JOYUserRoleDonor,
+    JOYUserRoleDonatee
+};
+
 #endif /* JOYConstants_h */
