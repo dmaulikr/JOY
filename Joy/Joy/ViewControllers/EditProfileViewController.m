@@ -79,6 +79,8 @@
 - (IBAction)backButtonPressed:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+- (IBAction)saveChangeButtonPressed:(UIButton *)sender {
+}
 
 #pragma mark Action Methods
 - (void)redirectToCamera {
