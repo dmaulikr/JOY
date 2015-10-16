@@ -14,6 +14,8 @@
 		11BEB16E1BD11D460097EC27 /* JOYLoginSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB16D1BD11D460097EC27 /* JOYLoginSignupViewController.m */; settings = {ASSET_TAGS = (); }; };
 		11BEB1771BD16F4D0097EC27 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BEB1761BD16F4D0097EC27 /* login.storyboard */; settings = {ASSET_TAGS = (); }; };
 		11BEB17B1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB17A1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11BEB17E1BD18A090097EC27 /* JOYSelectNGOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB17D1BD18A090097EC27 /* JOYSelectNGOViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11BEB1811BD18E3E0097EC27 /* JOYSelectSlotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB1801BD18E3E0097EC27 /* JOYSelectSlotViewController.m */; settings = {ASSET_TAGS = (); }; };
 		70562C931BD0DDB700E16999 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562C921BD0DDB700E16999 /* main.m */; };
 		70562C961BD0DDB700E16999 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562C951BD0DDB700E16999 /* AppDelegate.m */; };
 		70562CAF1BD0DDB700E16999 /* JoyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CAE1BD0DDB700E16999 /* JoyTests.m */; };
@@ -102,6 +104,10 @@
 		11BEB1761BD16F4D0097EC27 /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		11BEB1791BD17E5F0097EC27 /* JOYSelectQuantityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYSelectQuantityViewController.h; sourceTree = "<group>"; };
 		11BEB17A1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYSelectQuantityViewController.m; sourceTree = "<group>"; };
+		11BEB17C1BD18A090097EC27 /* JOYSelectNGOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYSelectNGOViewController.h; sourceTree = "<group>"; };
+		11BEB17D1BD18A090097EC27 /* JOYSelectNGOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYSelectNGOViewController.m; sourceTree = "<group>"; };
+		11BEB17F1BD18E3E0097EC27 /* JOYSelectSlotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYSelectSlotViewController.h; sourceTree = "<group>"; };
+		11BEB1801BD18E3E0097EC27 /* JOYSelectSlotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYSelectSlotViewController.m; sourceTree = "<group>"; };
 		70562C8E1BD0DDB700E16999 /* Joy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70562C921BD0DDB700E16999 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70562C941BD0DDB700E16999 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -310,6 +316,10 @@
 				CAE565F51BD122BE000E8F21 /* JOYDonationSelectViewController.m */,
 				11BEB1791BD17E5F0097EC27 /* JOYSelectQuantityViewController.h */,
 				11BEB17A1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m */,
+				11BEB17C1BD18A090097EC27 /* JOYSelectNGOViewController.h */,
+				11BEB17D1BD18A090097EC27 /* JOYSelectNGOViewController.m */,
+				11BEB17F1BD18E3E0097EC27 /* JOYSelectSlotViewController.h */,
+				11BEB1801BD18E3E0097EC27 /* JOYSelectSlotViewController.m */,
 				1171E3FD1BD0E8EF006FBCB9 /* HomeViewController.h */,
 				1171E3FE1BD0E8EF006FBCB9 /* HomeViewController.m */,
 				1171E4001BD0E900006FBCB9 /* PartnersViewController.h */,
@@ -633,6 +643,7 @@
 				70562D451BD1156900E16999 /* NSData+ImageContentType.m in Sources */,
 				70562D141BD0DFF300E16999 /* NSObject+MTLComparisonAdditions.m in Sources */,
 				70562D4D1BD1156900E16999 /* UIButton+WebCache.m in Sources */,
+				11BEB1811BD18E3E0097EC27 /* JOYSelectSlotViewController.m in Sources */,
 				70562D4C1BD1156900E16999 /* SDWebImagePrefetcher.m in Sources */,
 				1171E3FF1BD0E8EF006FBCB9 /* HomeViewController.m in Sources */,
 				CC0C428E1BD14169007E86C3 /* EditProfileViewController.m in Sources */,
@@ -667,6 +678,7 @@
 				70562D491BD1156900E16999 /* SDWebImageDownloader.m in Sources */,
 				70562D441BD1156900E16999 /* MKAnnotationView+WebCache.m in Sources */,
 				1171E40B1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m in Sources */,
+				11BEB17E1BD18A090097EC27 /* JOYSelectNGOViewController.m in Sources */,
 				70562D191BD0F9E100E16999 /* JOYDonation.m in Sources */,
 				70562D0D1BD0DFF300E16999 /* MTLTransformerErrorHandling.m in Sources */,
 				70562D461BD1156900E16999 /* SDImageCache.m in Sources */,
