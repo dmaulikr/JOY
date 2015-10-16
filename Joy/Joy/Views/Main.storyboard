@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -673,7 +673,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabVC" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -1158,18 +1158,18 @@
                                         <rect key="frame" x="0.0" y="28" width="383" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gat-qH-sTO" id="U9j-xt-G9R">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G3Z-Uq-sDb">
-                                                    <rect key="frame" x="15" y="14" width="78.5" height="19.5"/>
+                                                    <rect key="frame" x="15" y="14" width="79" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ef4-4Q-bwq">
-                                                    <rect key="frame" x="306.5" y="14" width="41.5" height="19.5"/>
+                                                    <rect key="frame" x="306" y="14" width="42" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1448,21 +1448,45 @@
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgH-0Z-1Ji">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="509"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izi-jx-Dbl" userLabel="content view">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lastly, just pick a slot when you’d like us to come to pick up" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlJ-7x-3eR">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lastly, just pick a slot when you’d like us to come to pick up" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlJ-7x-3eR">
                                                 <rect key="frame" x="15" y="13" width="345" height="41"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT DATE :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-Ed-gaN">
+                                                <rect key="frame" x="15" y="85" width="116" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="poa-S4-L8v">
+                                                <rect key="frame" x="0.0" y="110" width="375" height="216"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="216" id="Bpu-vy-tlb"/>
+                                                </constraints>
+                                                <date key="date" timeIntervalSinceReferenceDate="466720328.74234098">
+                                                    <!--2015-10-16 20:32:08 +0000-->
+                                                </date>
+                                                <connections>
+                                                    <action selector="dateChanged:" destination="kJj-Hj-AUq" eventType="valueChanged" id="GLN-NI-Oq6"/>
+                                                </connections>
+                                            </datePicker>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="poa-S4-L8v" secondAttribute="bottom" constant="341" id="3rI-22-kQm"/>
+                                            <constraint firstItem="poa-S4-L8v" firstAttribute="top" secondItem="EwV-Ed-gaN" secondAttribute="bottom" constant="4" id="F3R-R8-g55"/>
+                                            <constraint firstItem="EwV-Ed-gaN" firstAttribute="top" secondItem="MlJ-7x-3eR" secondAttribute="bottom" constant="31" id="PMM-PF-73e"/>
+                                            <constraint firstItem="poa-S4-L8v" firstAttribute="leading" secondItem="izi-jx-Dbl" secondAttribute="leading" id="R4E-1n-jtc"/>
                                             <constraint firstAttribute="trailing" secondItem="MlJ-7x-3eR" secondAttribute="trailing" constant="15" id="RGo-cP-Fev"/>
+                                            <constraint firstAttribute="trailing" secondItem="poa-S4-L8v" secondAttribute="trailing" id="f5r-vS-Upo"/>
+                                            <constraint firstItem="EwV-Ed-gaN" firstAttribute="leading" secondItem="izi-jx-Dbl" secondAttribute="leading" constant="15" id="hBu-Ex-IXj"/>
                                             <constraint firstItem="MlJ-7x-3eR" firstAttribute="leading" secondItem="izi-jx-Dbl" secondAttribute="leading" constant="15" id="jT0-ly-2f6"/>
                                             <constraint firstItem="MlJ-7x-3eR" firstAttribute="top" secondItem="izi-jx-Dbl" secondAttribute="top" constant="13" id="lCb-Ec-3AB"/>
                                         </constraints>
@@ -1475,23 +1499,37 @@
                                     <constraint firstItem="izi-jx-Dbl" firstAttribute="top" secondItem="kgH-0Z-1Ji" secondAttribute="top" id="fOt-7S-Fm7"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYH-dj-E0M">
+                                <rect key="frame" x="16" y="573" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="21c-LC-OF8"/>
+                                </constraints>
+                                <state key="normal" title="Schedule Visit"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aWj-ay-Vt4" firstAttribute="top" secondItem="UYH-dj-E0M" secondAttribute="bottom" id="4d3-tc-5h2"/>
                             <constraint firstAttribute="trailing" secondItem="df2-UN-IN9" secondAttribute="trailing" id="9kv-3v-HFI"/>
                             <constraint firstItem="izi-jx-Dbl" firstAttribute="height" secondItem="6rW-E3-ZvN" secondAttribute="height" placeholder="YES" id="KHy-by-9ag"/>
+                            <constraint firstItem="UYH-dj-E0M" firstAttribute="top" secondItem="kgH-0Z-1Ji" secondAttribute="bottom" id="LJZ-uQ-pAy"/>
                             <constraint firstItem="kgH-0Z-1Ji" firstAttribute="leading" secondItem="6rW-E3-ZvN" secondAttribute="leading" id="OAL-Ea-5rd"/>
                             <constraint firstItem="df2-UN-IN9" firstAttribute="top" secondItem="6rW-E3-ZvN" secondAttribute="top" id="QwP-a5-2bx"/>
+                            <constraint firstItem="UYH-dj-E0M" firstAttribute="leading" secondItem="6rW-E3-ZvN" secondAttribute="leadingMargin" id="X5h-Yq-2bA"/>
                             <constraint firstItem="izi-jx-Dbl" firstAttribute="width" secondItem="6rW-E3-ZvN" secondAttribute="width" id="ZkK-Px-hPc"/>
                             <constraint firstItem="df2-UN-IN9" firstAttribute="leading" secondItem="6rW-E3-ZvN" secondAttribute="leading" id="bi1-Na-CEi"/>
                             <constraint firstItem="kgH-0Z-1Ji" firstAttribute="top" secondItem="df2-UN-IN9" secondAttribute="bottom" id="cSQ-mf-SKf"/>
-                            <constraint firstItem="aWj-ay-Vt4" firstAttribute="top" secondItem="kgH-0Z-1Ji" secondAttribute="bottom" id="k9N-lM-x3o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UYH-dj-E0M" secondAttribute="trailing" id="eGt-eD-k9d"/>
                             <constraint firstAttribute="trailing" secondItem="kgH-0Z-1Ji" secondAttribute="trailing" id="vag-PJ-ujj"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="datePickerView" destination="poa-S4-L8v" id="Clf-AK-bGr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQk-Pk-QD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
