@@ -15,6 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupUserInfo];
     [self setupViews];
     [self setupObservers];
     [self setupGestureRecognizers];
@@ -36,6 +37,21 @@
 }
 
 #pragma mark Setup Methods
+- (void)setupUserInfo {
+    
+    // Writing image to the disk
+    NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
+    // Retrieving the image from disk
+    NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
+    self.profilePicImageView.image = loadedImage;
+    
+    if(self.user != nil){
+        self.userName.text = self.user.name;
+    } else {
+        self.userName.text = @"Vivek Ravi";
+    }
+}
 - (void)setupViews {
     [self disableSaveButton];
 }
@@ -52,13 +68,6 @@
 }
 
 - (void)setupStyles {
-    // Writing image to the disk
-    NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
-    // Retrieving the image from disk
-    NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
-    UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
-    self.profilePicImageView.image = loadedImage;
-    
     self.tabBarController.tabBar.hidden = YES;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.profilePicContainerView.layer.cornerRadius = 50;
