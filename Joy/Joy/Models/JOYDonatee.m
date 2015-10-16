@@ -10,4 +10,16 @@
 
 @implementation JOYDonatee
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return  @{
+                                   @"donateeID"           :           @"ngo_id",
+                                   @"name"                :           @"name",
+                                   @"descriptionText"     :           @"description",
+                                   @"iconImageURL"        :           @"image_path",
+                                   @"url"                 :           @"link",
+                                   @"mobileNum"           :           @"phone_no"
+                                   };
+}
+
+
 @end
