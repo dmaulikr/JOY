@@ -13,6 +13,7 @@
 		1171E40B1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E40A1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		1171E40E1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E40D1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		11BEB16E1BD11D460097EC27 /* JOYLoginSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB16D1BD11D460097EC27 /* JOYLoginSignupViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11BEB1771BD16F4D0097EC27 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BEB1761BD16F4D0097EC27 /* login.storyboard */; settings = {ASSET_TAGS = (); }; };
 		70562C931BD0DDB700E16999 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562C921BD0DDB700E16999 /* main.m */; };
 		70562C961BD0DDB700E16999 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562C951BD0DDB700E16999 /* AppDelegate.m */; };
 		70562CAF1BD0DDB700E16999 /* JoyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CAE1BD0DDB700E16999 /* JoyTests.m */; };
@@ -77,6 +78,7 @@
 		1171E40D1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYPreviousDonationsTableViewCell.m; sourceTree = "<group>"; };
 		11BEB16C1BD11D460097EC27 /* JOYLoginSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYLoginSignupViewController.h; sourceTree = "<group>"; };
 		11BEB16D1BD11D460097EC27 /* JOYLoginSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYLoginSignupViewController.m; sourceTree = "<group>"; };
+		11BEB1761BD16F4D0097EC27 /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		70562C8E1BD0DDB700E16999 /* Joy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70562C921BD0DDB700E16999 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70562C941BD0DDB700E16999 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				CAE565E91BD0FA60000E8F21 /* PartnerTableview */,
 				70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */,
 				70562CD41BD0DE4E00E16999 /* Main.storyboard */,
+				11BEB1761BD16F4D0097EC27 /* login.storyboard */,
 				1171E40C1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.h */,
 				1171E40D1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m */,
 				1171E4091BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.h */,
@@ -445,6 +448,7 @@
 				70562D081BD0DFF300E16999 /* Info.plist in Resources */,
 				70562CDC1BD0DE4E00E16999 /* Main.storyboard in Resources */,
 				70562CD61BD0DE4E00E16999 /* Assets.xcassets in Resources */,
+				11BEB1771BD16F4D0097EC27 /* login.storyboard in Resources */,
 				70562CD91BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
