@@ -582,7 +582,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="NGODescription" destination="elE-uz-Wo4" id="P5b-VX-B5l"/>
-                                            <outlet property="NGODonationType" destination="2l9-Vi-j1p" id="1uI-vT-dJp"/>
+                                            <outlet property="NGODonationType" destination="B6J-lJ-h7r" id="yqn-7d-I7d"/>
                                             <outlet property="NGOImageView" destination="F6k-5J-VJQ" id="nFg-7J-VDY"/>
                                             <outlet property="NGOName" destination="tUR-ue-DNb" id="TPz-Mn-myf"/>
                                         </connections>

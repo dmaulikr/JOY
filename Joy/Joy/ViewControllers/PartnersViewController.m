@@ -8,6 +8,8 @@
 
 #import "PartnersViewController.h"
 #import "JOYPartnerTableViewCell.h"
+#import "JOYDonatee.h"
+#import "UIImageView+WebCache.h"
 
 @interface PartnersViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
@@ -16,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *NGOArray;
 @property (strong, nonatomic) NSArray *NGODisplayArray;
+@property (strong, nonatomic) JOYDonatee *donatee;
 
 @end
 
@@ -26,7 +29,15 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.NGOArray = [NSArray array];
-    self.NGODisplayArray = self.NGOArray;
+//    self.NGODisplayArray = [NSArray array];
+    self.donatee = [[JOYDonatee alloc] init];
+    self.donatee.name = @"Avanti Fellow";
+    self.donatee.descriptionText = @"Avanti Fellow description";
+    self.donatee.iconImageURL = @"https://images-housing.s3.amazonaws.com/static_assets/cards/hdpi/profile.png";
+    self.donatee.accpetedDonationCategories = JOYAcceptedDonationCategoriesBooks | JOYAcceptedDonationCategoriesToys;
+    
+    self.NGODisplayArray = [NSArray arrayWithObjects:self.donatee, self.donatee, self.donatee, self.donatee, self.donatee, self.donatee, self.donatee, self.donatee, self.donatee, self.donatee, nil];
+    self.NGOArray = self.NGODisplayArray;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,12 +46,43 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 10;//self.NGODisplayArray.count;
+    return self.NGODisplayArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     JOYPartnerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPartnerCellIdentifier];
+    cell.NGOName.text = ((JOYDonatee *)self.NGODisplayArray[indexPath.row]).name;
+    cell.NGODescription.text = ((JOYDonatee *)self.NGODisplayArray[indexPath.row]).descriptionText;
+    NSString *donationString = @"";
+    
+    switch (((JOYDonatee *)self.NGODisplayArray[indexPath.row]).accpetedDonationCategories) {
+        case JOYAcceptedDonationCategoriesBooks:
+            donationString = @"Books";
+            break;
+        case JOYAcceptedDonationCategoriesToys:
+            donationString = @"Toys";
+            break;
+        case JOYAcceptedDonationCategoriesClothes:
+            break;
+        case JOYAcceptedDonationCategoriesToys | JOYAcceptedDonationCategoriesBooks:
+            donationString = @"Toys & Books";
+            break;
+        case JOYAcceptedDonationCategoriesToys | JOYAcceptedDonationCategoriesClothes:
+            donationString = @"Toys & Clothes";
+            break;
+        case JOYAcceptedDonationCategoriesBooks | JOYAcceptedDonationCategoriesClothes:
+            donationString = @"Books & Clothes";
+            break;
+        case JOYAcceptedDonationCategoriesBooks | JOYAcceptedDonationCategoriesClothes | JOYAcceptedDonationCategoriesToys:
+            donationString = @"Books & Clothes & Toys";
+        default:
+            break;
+    }
+    cell.NGODonationType.text = donationString;
+    NSString *imgURL = ((JOYDonatee *)self.NGODisplayArray[indexPath.row]).iconImageURL;
+    [cell.NGOImageView sd_setImageWithURL:[NSURL URLWithString:imgURL]];
+
     return cell;
 }
 
@@ -51,7 +93,17 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     searchBar.showsCancelButton = NO;
-    [searchBar resignFirstResponder];
+    if(self.NGODisplayArray.count == 0){
+        self.NGODisplayArray = self.NGOArray;
+    }
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [self.searchBar layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        [searchBar resignFirstResponder];
+        [self.tableView reloadData];
+        self.searchBar.text = @"";
+    }];
+
 }
 
 
@@ -63,7 +115,15 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    
+   
+    searchBar.showsCancelButton = NO;
+
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [self.searchBar layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        [searchBar resignFirstResponder];
+    }];
+
 }
 
 @end
