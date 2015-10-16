@@ -7,14 +7,18 @@
 //
 
 #import "MTLModel.h"
+#import "UIImage+MultiFormat.h"
 
 @interface JOYUser : MTLModel
 
 @property (assign, nonatomic, readonly) JOYUserRole role;   // Assume JOYUserRoleDonor always in this implementation.
 @property (copy, nonatomic, readonly) NSString *profileImageURL;
+@property (strong, nonatomic) UIImage *image;
 @property (copy, nonatomic, readonly) NSString *name;
 @property (copy, nonatomic, readonly) NSString *mobileNumber;
 @property (copy, nonatomic, readonly) NSString *emailID;
-@property (copy, nonatomic, readonly) NSString *address;
-
+@property (copy, nonatomic, readonly) NSString *addOne;
+@property (copy, nonatomic, readonly) NSString *addTwo;
+@property (copy, nonatomic, readonly) NSString *addThree;
+@property (assign, nonatomic) BOOL isVerified;
 @end

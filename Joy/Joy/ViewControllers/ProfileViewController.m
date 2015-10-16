@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupUserInfo];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -30,6 +31,21 @@
 
 
 #pragma mark Styling Methods
+- (void)setupUserInfo {
+    
+    // Retrieving the image from disk
+    NSString *path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
+    NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+    UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
+    //Setting the image as the profile image
+    self.profilePicImageView.image = loadedImage;
+    
+    if(self.user != nil){
+        self.userName.text = self.user.name;
+    }else{
+        self.userName.text = @"Vivek Ravi";
+    }
+}
 - (void)setupStyles {
     self.profilePicContainerView.layer.cornerRadius = 50;
     self.profilePicContainerView.layer.masksToBounds = YES;

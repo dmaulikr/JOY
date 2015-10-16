@@ -41,9 +41,20 @@ static NSString * const kDonationSelectCellIdentifier = @"donationCell";
     cell.donationType.text = self.donationTypes[indexPath.row];
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"selectQuantity" sender:self];
+}
+
 - (IBAction)BackButtonPressed:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
 }
 
 
