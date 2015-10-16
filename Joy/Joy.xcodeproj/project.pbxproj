@@ -60,6 +60,7 @@
 		70562D511BD1156900E16999 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D3F1BD1156900E16999 /* UIImageView+HighlightedWebCache.m */; settings = {ASSET_TAGS = (); }; };
 		70562D521BD1156900E16999 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D411BD1156900E16999 /* UIImageView+WebCache.m */; settings = {ASSET_TAGS = (); }; };
 		70562D531BD1156900E16999 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D431BD1156900E16999 /* UIView+WebCacheOperation.m */; settings = {ASSET_TAGS = (); }; };
+		CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +180,8 @@
 		70562D411BD1156900E16999 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		70562D421BD1156900E16999 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		70562D431BD1156900E16999 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		CAE565EA1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYPartnerTableViewCell.h; sourceTree = "<group>"; };
+		CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYPartnerTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +308,7 @@
 		70562CD11BD0DE4E00E16999 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CAE565E91BD0FA60000E8F21 /* PartnerTableview */,
 				70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */,
 				70562CD41BD0DE4E00E16999 /* Main.storyboard */,
 				1171E40C1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.h */,
@@ -413,6 +417,15 @@
 				70562D431BD1156900E16999 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		CAE565E91BD0FA60000E8F21 /* PartnerTableview */ = {
+			isa = PBXGroup;
+			children = (
+				CAE565EA1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.h */,
+				CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */,
+			);
+			name = PartnerTableview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -561,7 +574,6 @@
 				1171E40E1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m in Sources */,
 				1171E4021BD0E900006FBCB9 /* PartnersViewController.m in Sources */,
 				70562D451BD1156900E16999 /* NSData+ImageContentType.m in Sources */,
-				70562CCD1BD0DDF600E16999 /* SecondViewController.m in Sources */,
 				70562D141BD0DFF300E16999 /* NSObject+MTLComparisonAdditions.m in Sources */,
 				70562D4D1BD1156900E16999 /* UIButton+WebCache.m in Sources */,
 				70562D4C1BD1156900E16999 /* SDWebImagePrefetcher.m in Sources */,
@@ -581,7 +593,6 @@
 				70562D0A1BD0DFF300E16999 /* MTLModel+NSCoding.m in Sources */,
 				70562D4F1BD1156900E16999 /* UIImage+MultiFormat.m in Sources */,
 				70562D4A1BD1156900E16999 /* SDWebImageDownloaderOperation.m in Sources */,
-				70562CCC1BD0DDF600E16999 /* FirstViewController.m in Sources */,
 				70562D091BD0DFF300E16999 /* MTLJSONAdapter.m in Sources */,
 				70562D0C1BD0DFF300E16999 /* MTLReflection.m in Sources */,
 				70562D101BD0DFF300E16999 /* NSDictionary+MTLJSONKeyPath.m in Sources */,
@@ -589,6 +600,7 @@
 				70562D501BD1156900E16999 /* UIImage+WebP.m in Sources */,
 				70562D471BD1156900E16999 /* SDWebImageCompat.m in Sources */,
 				70562C931BD0DDB700E16999 /* main.m in Sources */,
+				CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */,
 				70562D111BD0DFF300E16999 /* NSDictionary+MTLManipulationAdditions.m in Sources */,
 				70562D491BD1156900E16999 /* SDWebImageDownloader.m in Sources */,
 				70562D441BD1156900E16999 /* MKAnnotationView+WebCache.m in Sources */,
