@@ -21,6 +21,8 @@
 
 @end
 
+static NSString * const kSelectDonationSegueKey = @"selectDonation";
+
 @implementation HomeViewController
 
 - (void)viewDidLoad {
@@ -123,7 +125,13 @@
 
 - (IBAction)makeDonationButtonClicked:(UIButton *)button
 {
-    
+    [self performSegueWithIdentifier:kSelectDonationSegueKey sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:kSelectDonationSegueKey]) {
+        
+    }
 }
 
 @end
