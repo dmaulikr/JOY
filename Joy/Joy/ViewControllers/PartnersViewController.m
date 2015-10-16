@@ -9,7 +9,7 @@
 #import "PartnersViewController.h"
 #import "JOYPartnerTableViewCell.h"
 #import "JOYDonatee.h"
-#import "UIImageView+WebCache.h"
+#import "JOYNGODetailViewController.h"
 
 @interface PartnersViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
@@ -18,11 +18,12 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *NGOArray;
 @property (strong, nonatomic) NSArray *NGODisplayArray;
-@property (strong, nonatomic) JOYDonatee *donatee;
+@property (strong, nonatomic) JOYDonatee *donateeSelected;
 
 @end
 
 static NSString * const kPartnerCellIdentifier = @"PartnerCell";
+static NSString * const kDetailSegueIdentifier = @"detailNGOView";
 
 @implementation PartnersViewController
 
@@ -31,7 +32,11 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
     self.NGOArray = [NSArray array];
     self.NGOArray = self.NGODisplayArray;
     [self fetchNGOListings];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBarHidden = YES;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,6 +83,11 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
     [cell.NGOImageView sd_setImageWithURL:[NSURL URLWithString:imgURL]];
 
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.donateeSelected = self.NGODisplayArray[indexPath.row];
+    [self performSegueWithIdentifier:kDetailSegueIdentifier sender:self];
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
@@ -140,6 +150,13 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
         });
     }];
     [ngoLists resume];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:kDetailSegueIdentifier]) {
+        [((JOYNGODetailViewController *)segue.destinationViewController) setDonatee:self.donateeSelected];
+    }
+
 }
 
 @end

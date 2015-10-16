@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *donationType;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNo;
 @property (weak, nonatomic) IBOutlet UILabel *link;
+@property (weak, nonatomic) IBOutlet UIImageView *NGOImage;
+@property (weak, nonatomic) IBOutlet UILabel *NGOName;
 
 @end
 
@@ -21,7 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self refreshViewForDonateeObject];
+    self.tabBarController.tabBar.hidden = YES;
+    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBar.topItem.title = @"Confirm Organization";
+//    UIButton* customButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [customButton setImage:[UIImage imageNamed:@"backarrow"] forState:UIControlStateNormal];
+//    [customButton sizeToFit];
+//    UIBarButtonItem* customBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:customButton];
+//    self.navigationItem.leftBarButtonItem = customBarButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,14 +42,46 @@
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setDonatee:(JOYDonatee *)donatee {
+    
+    _donatee = donatee;
+    
 }
-*/
+
+- (void)refreshViewForDonateeObject {
+    self.about.text = self.donatee.descriptionText;
+    self.address.text = self.donatee.address;
+    self.phoneNo.text = self.donatee.mobileNum;
+    self.link.text = self.donatee.url;
+    
+    NSString *donationString = @"";
+    switch (_donatee.accpetedDonationCategories) {
+        case JOYAcceptedDonationCategoriesBooks:
+            donationString = @"Books";
+            break;
+        case JOYAcceptedDonationCategoriesToys:
+            donationString = @"Toys";
+            break;
+        case JOYAcceptedDonationCategoriesClothes:
+            break;
+        case JOYAcceptedDonationCategoriesToys | JOYAcceptedDonationCategoriesBooks:
+            donationString = @"Toys & Books";
+            break;
+        case JOYAcceptedDonationCategoriesToys | JOYAcceptedDonationCategoriesClothes:
+            donationString = @"Toys & Clothes";
+            break;
+        case JOYAcceptedDonationCategoriesBooks | JOYAcceptedDonationCategoriesClothes:
+            donationString = @"Books & Clothes";
+            break;
+        case JOYAcceptedDonationCategoriesBooks | JOYAcceptedDonationCategoriesClothes | JOYAcceptedDonationCategoriesToys:
+            donationString = @"Books & Clothes & Toys";
+        default:
+            break;
+    }
+    self.donationType.text = donationString;
+    self.NGOName.text = self.donatee.name;
+    [self.NGOImage sd_setImageWithURL:[NSURL URLWithString:self.donatee.iconImageURL]];
+}
+
 
 @end
