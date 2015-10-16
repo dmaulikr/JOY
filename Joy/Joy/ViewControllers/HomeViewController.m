@@ -82,43 +82,14 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0)
-        return 250.0;
+        return 232.0;
     else
         return 110.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section == 1)
-        return 50;
-    
     return 0;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *headerView;
-    if (section == 0)
-    {
-        headerView = [[UIView alloc] initWithFrame:CGRectZero];
-        headerView.backgroundColor = [UIColor grayColor];
-    }
-    else
-    {
-        headerView = [[UIView alloc] initWithFrame:CGRectZero];
-        CGRect frame = CGRectZero;
-        frame.size.width = self.tableView.bounds.size.width;
-        frame.size.height = 50.0;
-        headerView.frame = frame;
-        
-        UILabel *label = [[UILabel alloc] init];
-        label.text = @"PREVIOUS DONATIONS";
-        label.font = [UIFont systemFontOfSize:14.0];
-        [label sizeToFit];
-        [headerView addSubview:label];
-        headerView.backgroundColor = [UIColor grayColor];
-    }
-    return headerView;
 }
 
 #pragma mark - IBAction Methods
