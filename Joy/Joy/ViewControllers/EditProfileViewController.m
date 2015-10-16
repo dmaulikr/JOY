@@ -37,7 +37,7 @@
 
 #pragma mark Setup Methods
 - (void)setupViews {
-    self.saveChangeButton.enabled = NO;
+    [self disableSaveButton];
 }
 
 
@@ -130,7 +130,7 @@
     
     // Setting the retrieved imafge
     self.profilePicImageView.image = loadedImage;
-    self.saveChangeButton.enabled = YES;
+    [self enableSaveButton];
 }
 
 #pragma mark Selector Methods
@@ -163,9 +163,9 @@
 
 - (void)textFieldChanged:(NSNotification *)notif {
     if([self areAllFieldsEmpty]){
-        self.saveChangeButton.enabled = NO;
+        [self disableSaveButton];
     }else{
-        self.saveChangeButton.enabled = YES;
+        [self enableSaveButton];
     }
 }
 
@@ -180,6 +180,16 @@
 }
 
 #pragma mark Utility Methods
+- (void)disableSaveButton {
+    self.saveChangeButton.alpha = 0.7;
+    self.saveChangeButton.enabled = NO;
+}
+
+- (void)enableSaveButton {
+    self.saveChangeButton.alpha = 1.0;
+    self.saveChangeButton.enabled = YES;
+}
+
 - (void)animateSaveButton: (NSNotification *) notif{
     NSDictionary* userInfo = [notif userInfo];
     // Keyboard animation attributes from the userInfo object
