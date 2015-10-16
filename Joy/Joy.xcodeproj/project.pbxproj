@@ -15,7 +15,6 @@
 		70562CAF1BD0DDB700E16999 /* JoyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CAE1BD0DDB700E16999 /* JoyTests.m */; };
 		70562CBA1BD0DDB800E16999 /* JoyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CB91BD0DDB800E16999 /* JoyUITests.m */; };
 		70562CCC1BD0DDF600E16999 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CC91BD0DDF600E16999 /* FirstViewController.m */; settings = {ASSET_TAGS = (); }; };
-		70562CCD1BD0DDF600E16999 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CCB1BD0DDF600E16999 /* SecondViewController.m */; settings = {ASSET_TAGS = (); }; };
 		70562CD61BD0DE4E00E16999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD01BD0DE4E00E16999 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		70562CD71BD0DE4E00E16999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD01BD0DE4E00E16999 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		70562CD81BD0DE4E00E16999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD01BD0DE4E00E16999 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
@@ -42,6 +41,7 @@
 		70562D141BD0DFF300E16999 /* NSObject+MTLComparisonAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D011BD0DFF300E16999 /* NSObject+MTLComparisonAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		70562D151BD0DFF300E16999 /* NSValueTransformer+MTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D031BD0DFF300E16999 /* NSValueTransformer+MTLInversionAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		70562D161BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D051BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,8 +81,6 @@
 		70562CBB1BD0DDB800E16999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70562CC81BD0DDF600E16999 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		70562CC91BD0DDF600E16999 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		70562CCA1BD0DDF600E16999 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		70562CCB1BD0DDF600E16999 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		70562CD01BD0DE4E00E16999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70562CD31BD0DE4E00E16999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70562CD51BD0DE4E00E16999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +120,8 @@
 		70562D031BD0DFF300E16999 /* NSValueTransformer+MTLInversionAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+MTLInversionAdditions.m"; sourceTree = "<group>"; };
 		70562D041BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+MTLPredefinedTransformerAdditions.h"; sourceTree = "<group>"; };
 		70562D051BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+MTLPredefinedTransformerAdditions.m"; sourceTree = "<group>"; };
+		CAE565EA1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYPartnerTableViewCell.h; sourceTree = "<group>"; };
+		CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYPartnerTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,8 +216,6 @@
 			children = (
 				70562CC81BD0DDF600E16999 /* FirstViewController.h */,
 				70562CC91BD0DDF600E16999 /* FirstViewController.m */,
-				70562CCA1BD0DDF600E16999 /* SecondViewController.h */,
-				70562CCB1BD0DDF600E16999 /* SecondViewController.m */,
 				1171E3FD1BD0E8EF006FBCB9 /* HomeViewController.h */,
 				1171E3FE1BD0E8EF006FBCB9 /* HomeViewController.m */,
 				1171E4001BD0E900006FBCB9 /* PartnersViewController.h */,
@@ -246,6 +244,7 @@
 		70562CD11BD0DE4E00E16999 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CAE565E91BD0FA60000E8F21 /* PartnerTableview */,
 				70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */,
 				70562CD41BD0DE4E00E16999 /* Main.storyboard */,
 			);
@@ -309,6 +308,15 @@
 				70562CE71BD0DFF300E16999 /* metamacros.h */,
 			);
 			path = extobjc;
+			sourceTree = "<group>";
+		};
+		CAE565E91BD0FA60000E8F21 /* PartnerTableview */ = {
+			isa = PBXGroup;
+			children = (
+				CAE565EA1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.h */,
+				CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */,
+			);
+			name = PartnerTableview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,7 +460,6 @@
 				70562D151BD0DFF300E16999 /* NSValueTransformer+MTLInversionAdditions.m in Sources */,
 				70562D161BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */,
 				1171E4021BD0E900006FBCB9 /* PartnersViewController.m in Sources */,
-				70562CCD1BD0DDF600E16999 /* SecondViewController.m in Sources */,
 				70562D141BD0DFF300E16999 /* NSObject+MTLComparisonAdditions.m in Sources */,
 				1171E3FF1BD0E8EF006FBCB9 /* HomeViewController.m in Sources */,
 				1171E4051BD0E90F006FBCB9 /* ProfileViewController.m in Sources */,
@@ -469,6 +476,7 @@
 				70562D0C1BD0DFF300E16999 /* MTLReflection.m in Sources */,
 				70562D101BD0DFF300E16999 /* NSDictionary+MTLJSONKeyPath.m in Sources */,
 				70562C931BD0DDB700E16999 /* main.m in Sources */,
+				CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */,
 				70562D111BD0DFF300E16999 /* NSDictionary+MTLManipulationAdditions.m in Sources */,
 				70562D0D1BD0DFF300E16999 /* MTLTransformerErrorHandling.m in Sources */,
 			);

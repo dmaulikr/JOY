@@ -10,4 +10,9 @@
 
 @interface JOYPartnerTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *NGOImageView;
+@property (weak, nonatomic) IBOutlet UILabel *NGOName;
+@property (weak, nonatomic) IBOutlet UILabel *NGODescription;
+@property (weak, nonatomic) IBOutlet UILabel *NGODonationType;
+
 @end
