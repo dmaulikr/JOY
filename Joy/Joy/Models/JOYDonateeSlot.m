@@ -15,7 +15,7 @@
              @"weekDay" : @"week_day",
              @"to" : @"to",
              @"from":@"from",
-             @"slotID" : @""
+             @"slotID" : @"id"
     };
 }
 

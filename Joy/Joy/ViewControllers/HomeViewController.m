@@ -30,13 +30,20 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self fetchData];
     self.noDonationsView.hidden = YES;
     self.donationsView.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.noDonationsView.hidden = YES;
+    self.donationsView.hidden = YES;
+    [self fetchData];
+
 }
 
 #pragma mark - UITAbleView Delegate/Datasource Methods
