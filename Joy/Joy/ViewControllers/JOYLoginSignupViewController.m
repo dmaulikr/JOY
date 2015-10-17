@@ -138,7 +138,10 @@ static NSString * const kHSGUserPersistenceKey = @"HSGUserInstance";
     
     NSURLSessionDataTask * dataTask = [defaultSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSDictionary *dict = nil;
+        if (data) {
+            dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        }
         if (dict && [dict[@"status"] isEqualToString:@"ok"])
         {
             JOYUser *new = [JOYUser initWithDictionary:dict[@"data"]];
@@ -211,7 +214,11 @@ static NSString * const kHSGUserPersistenceKey = @"HSGUserInstance";
     
     NSURLSessionDataTask * dataTask = [defaultSession dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSDictionary *dict = nil;
+        if (data) {
+            dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        }
+        
         if (dict && [dict[@"status"] isEqualToString:@"ok"])
         {
             
