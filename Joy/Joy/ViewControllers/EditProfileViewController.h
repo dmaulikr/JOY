@@ -33,6 +33,4 @@
 @property (weak, nonatomic) IBOutlet UIView *cameraIconContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *cameraIconImageView;
 
-@property (weak, nonatomic) IBOutlet UIButton *saveChangesButtonView;
-
 @end

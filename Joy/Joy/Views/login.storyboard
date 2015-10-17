@@ -20,10 +20,10 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="741-XH-1ae">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vYS-EL-KX4" userLabel="content view">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYS-EL-KX4" userLabel="content view">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first" translatesAutoresizingMaskIntoConstraints="NO" id="nld-m9-Ghc">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big banner@2x" translatesAutoresizingMaskIntoConstraints="NO" id="nld-m9-Ghc">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="enb-Er-l2T"/>
@@ -32,9 +32,12 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKy-5l-hfc">
                                                 <rect key="frame" x="0.0" y="155" width="375" height="45"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsD-Qn-4fg">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black_gradient@2x" translatesAutoresizingMaskIntoConstraints="NO" id="k25-gb-MPl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsD-Qn-4fg">
                                                         <rect key="frame" x="65" y="7" width="57" height="32"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                         <state key="normal" title="SIGN IN">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -42,9 +45,9 @@
                                                             <action selector="changeToSignIn:" destination="6Zq-hj-UQF" eventType="touchUpInside" id="bGe-OJ-3Be"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOo-28-Mew">
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOo-28-Mew">
                                                         <rect key="frame" x="250" y="7" width="63" height="32"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                         <state key="normal" title="SIGN UP">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -53,12 +56,16 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="k25-gb-MPl" firstAttribute="leading" secondItem="pKy-5l-hfc" secondAttribute="leading" id="F51-Hl-EsA"/>
                                                     <constraint firstItem="vOo-28-Mew" firstAttribute="centerY" secondItem="pKy-5l-hfc" secondAttribute="centerY" id="Gs8-gT-YdB"/>
                                                     <constraint firstItem="vOo-28-Mew" firstAttribute="centerX" secondItem="pKy-5l-hfc" secondAttribute="centerX" multiplier="1.5" id="TP8-t7-hND"/>
+                                                    <constraint firstAttribute="bottom" secondItem="k25-gb-MPl" secondAttribute="bottom" id="UK3-ok-PGc"/>
                                                     <constraint firstItem="SsD-Qn-4fg" firstAttribute="centerX" secondItem="pKy-5l-hfc" secondAttribute="centerX" multiplier="0.5" id="YP8-SL-DRV"/>
                                                     <constraint firstItem="SsD-Qn-4fg" firstAttribute="centerY" secondItem="pKy-5l-hfc" secondAttribute="centerY" id="bjB-ye-8EO"/>
+                                                    <constraint firstItem="k25-gb-MPl" firstAttribute="top" secondItem="pKy-5l-hfc" secondAttribute="top" id="hYT-xe-xV3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="k25-gb-MPl" secondAttribute="trailing" id="olW-x2-r08"/>
                                                     <constraint firstAttribute="height" constant="45" id="yzq-Tb-fI1"/>
                                                 </constraints>
                                             </view>
@@ -67,7 +74,6 @@
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qxB-bW-I8k">
                                                         <rect key="frame" x="30" y="60" width="315" height="20"/>
-                                                        <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -83,9 +89,8 @@
                                                     </view>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c35-ya-8qs">
                                                         <rect key="frame" x="30" y="110" width="315" height="20"/>
-                                                        <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="6Zq-hj-UQF" id="Q8p-1g-ZlD"/>
                                                         </connections>
@@ -120,7 +125,6 @@
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Qn-9z-TJP">
                                                         <rect key="frame" x="30" y="60" width="315" height="20"/>
-                                                        <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -136,7 +140,6 @@
                                                     </view>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qE7-rs-kyF">
                                                         <rect key="frame" x="30" y="110" width="315" height="20"/>
-                                                        <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -152,7 +155,6 @@
                                                     </view>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xdH-r0-IQ1">
                                                         <rect key="frame" x="30" y="160" width="315" height="20"/>
-                                                        <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
@@ -168,9 +170,8 @@
                                                     </view>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xm5-wB-Hit">
                                                         <rect key="frame" x="30" y="210" width="315" height="20"/>
-                                                        <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="6Zq-hj-UQF" id="Cjz-rn-IIj"/>
                                                         </connections>
@@ -309,6 +310,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="big banner@2x" width="375" height="232"/>
+        <image name="black_gradient@2x" width="375" height="44"/>
     </resources>
 </document>
