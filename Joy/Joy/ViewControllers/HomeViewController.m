@@ -69,7 +69,8 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
         ((UILabel *)[previousDonationCell viewWithTag:1]).text = ((JOYDonation *)self.donationsArray[indexPath.row]).donatee.name;
         ((UILabel *)[previousDonationCell viewWithTag:2]).text = [NSString stringWithFormat:@"%@ %@ donations",[((JOYDonation *)self.donationsArray[indexPath.row]) numBoxesToString], [((JOYDonation *)self.donationsArray[indexPath.row]) categoryToString]];
         ((UILabel *)[previousDonationCell viewWithTag:3]).text = [NSString stringWithFormat:@"donation made on %@ at %@ ", ((JOYDonation *)self.donationsArray[indexPath.row]).donationDate, ((JOYDonation *)self.donationsArray[indexPath.row]).timeSlots];
-//        ((UIImageView *)[previousDonationCell viewWithTag:4]).image;
+        UIImageView *imageView = (UIImageView *)[previousDonationCell viewWithTag:4];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:((JOYDonation *)self.donationsArray[indexPath.row]).donatee.iconImageURL]];
 
 
         cell = previousDonationCell;

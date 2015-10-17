@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray <JOYDonateeSlot *>* slotsArray;
 @property (nonatomic) NSInteger selectedRow;
+@property (strong, nonatomic) JOYDonateeSlot *slot;
 
 @end
 
@@ -41,7 +42,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     UILabel *label = (UILabel *)[cell viewWithTag:2000];
     JOYDonateeSlot *slot = self.slotsArray[indexPath.row];
-    label.text = [NSString stringWithFormat:@"%@ %@", [slot date], [slot slot]];
+    label.text = [NSString stringWithFormat:@"Date : %@  Time Slot : %@", [slot date], [slot slot]];
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:3000];
     imageView.image = [UIImage imageNamed:@""];
@@ -54,6 +55,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.selectedRow = indexPath.row;
+    self.slot = self.slotsArray[indexPath.row];
     [self.tableView reloadData];
 }
 
@@ -78,15 +80,17 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     JOYConfirmAddressViewController *vc = segue.destinationViewController;
     vc.donateeNGO = self.donateeNGO;
+    vc.slot = self.slot;
     vc.donationType = self.donationType;
     vc.boxCount = self.boxCount;
-    vc.slotID = self.slotsArray[self.selectedRow].slotID;
+    vc.slotID = self.slotsArray[self.selectedRow].slotID;   
 }
 
 

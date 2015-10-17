@@ -7,6 +7,8 @@
 //
 
 #import "JOYConfirmAddressViewController.h"
+#import "JOYDonationSummaryCancelPickUp.h"
+#import "JOYDonation.h"
 
 @interface JOYConfirmAddressViewController ()
 
@@ -15,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *addTwoTF;
 @property (weak, nonatomic) IBOutlet UITextField *addThreeTF;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonBottomConstrint;
+@property (strong, nonatomic) JOYDonation *donation;
 
 @property (nonatomic) BOOL showingKeyboard;
 
@@ -25,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.showingKeyboard = NO;
+    self.donation = [[JOYDonation alloc] init];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillAppers:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillDisappers:) name:UIKeyboardWillHideNotification object:nil];
 }
@@ -64,14 +68,43 @@
 
 - (IBAction)submitButtonClicked:(id)sender
 {
-    
+    self.donation.donatee = self.donateeNGO;
+    self.donation.numBoxes = self.boxCount;
+    self.donation.category = [self stringToCategory];
+    self.donation.slotId = self.slotID;
+    self.donation.slot = self.slot;
+    [self performSegueWithIdentifier:@"donationSummary" sender:self];
+    [self sendPostRequest];
 }
 
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
+    JOYDonationSummaryCancelPickUp *pickVC = segue.destinationViewController;
+    pickVC.donation = self.donation;
+    
 }
 
+- (void)sendPostRequest{
+    
+}
+
+- (JOYAcceptedDonationCategories)stringToCategory{
+    if([self.donationType isEqualToString:@"BOOKS"]){
+        return JOYAcceptedDonationCategoriesBooks;
+    }
+    else if([self.donationType isEqualToString:@"CLOTHES"]){
+        return JOYAcceptedDonationCategoriesClothes;
+
+    }
+    else if([self.donationType isEqualToString:@"TOYS"]) {
+        return JOYAcceptedDonationCategoriesToys;
+
+    }
+    else {
+        return JOYAcceptedDonationCategoriesUnknown;
+    }
+}
 
 @end
