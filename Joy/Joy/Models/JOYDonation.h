@@ -8,6 +8,8 @@
 
 #import "MTLModel.h"
 
+@class Donatee;
+
 @interface JOYDonation : MTLModel
 
 @property (copy, nonatomic, readonly) NSString* donationID;
@@ -18,5 +20,7 @@
 @property (assign, nonatomic, readonly) JOYDonationStatus status;
 @property (assign, nonatomic, readonly) NSUInteger minQuantity;
 @property (assign, nonatomic, readonly) NSUInteger maxQuantity;
+
+@property (strong, nonatomic, readonly) Donatee *donatee;
 
 @end
