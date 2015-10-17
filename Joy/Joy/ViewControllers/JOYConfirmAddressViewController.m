@@ -10,6 +10,7 @@
 #import "JOYDonationSummaryCancelPickUp.h"
 #import "JOYDonation.h"
 #import "JOYSuccessViewController.h"
+#import "JOYUser.h"
 
 @interface JOYConfirmAddressViewController ()
 
@@ -121,6 +122,38 @@
 
 - (void)sendPostRequest{
     
+
+    
+    NSString *urlString = @"http://bhargavs-macbook-pro.local/hackathon/api/v1/donation";
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setHTTPMethod:@"POST"];
+//    NSDictionary *mapData = [NSDictionary dictionaryWithObject:@(isLoggedIn) forKey:@"logged"];
+    NSDictionary *mapData = [NSDictionary dictionaryWithObjects:@[@([self mapCategory]),[JOYUser sharedUser].userID,self.donateeNGO.donateeID, @(self.slotID), @(self.boxCount),@"blabla",self.addOneTF.text, self.addTwoTF.text,self.addThreeTF.text] forKeys:@[@"category_id",@"user_id",@"ngo_id",@"slot_id",@"number_of_boxes",@"notes",@"address_1",@"address_2",@"address_3"]];
+    
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:mapData options:0 error:nil];
+    [request setHTTPBody:postData];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[postData length]] forHTTPHeaderField:@"Content-Length"];
+    
+    
+    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if(error){
+            NSLog(@"got error while fetching cards data %@", error);
+        }
+        if(data && !error){
+            NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            self.donation.donationID = dataDict[@"donation_id"];
+        }
+    }];
+    [postDataTask resume];
+
+    
 }
 
 - (JOYAcceptedDonationCategories)stringToCategory{
@@ -138,6 +171,24 @@
     else {
         return JOYAcceptedDonationCategoriesUnknown;
     }
+}
+
+- (NSUInteger)mapCategory{
+    NSUInteger i = 0;
+    if([self.donationType isEqualToString:@"BOOKS"]){
+        return 1;
+    }
+    else if([self.donationType isEqualToString:@"CLOTHES"]){
+        return 2;
+    }
+    else if([self.donationType isEqualToString:@"TOYS"]){
+        return 3;
+    }
+    else {
+        return i;
+    }
+
+    
 }
 
 @end
