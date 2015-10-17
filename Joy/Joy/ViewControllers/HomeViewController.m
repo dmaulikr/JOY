@@ -11,6 +11,7 @@
 #import "JOYMakeDonationTableViewCell.h"
 #import "JOYUser.h"
 #import "JOYDonation.h"
+#import "JOYDonationSummaryCancelPickUp.h"
 
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -18,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *noDonationsView;
 @property (weak, nonatomic) IBOutlet UIView *donationsView;
-
+@property (strong, nonatomic) JOYDonation *selectedDonation;
 @property (strong, nonatomic) NSArray *donationsArray;
 - (IBAction)makeDonationButtonClicked:(UIButton *)button;
 
@@ -89,7 +90,8 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
 {
     if (indexPath.section == 1)
     {
-        
+        self.selectedDonation = self.donationsArray[indexPath.row];
+        [self performSegueWithIdentifier:@"donationsHomeSummary" sender:self];
     }
 }
 
@@ -116,6 +118,10 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:kSelectDonationSegueKey]) {
         
+    }
+    else if([[segue identifier] isEqualToString:@"donationsHomeSummary"]){
+        JOYDonationSummaryCancelPickUp *vc = segue.destinationViewController;
+        vc.donation = self.selectedDonation;
     }
 }
 

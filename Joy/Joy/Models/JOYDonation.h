@@ -14,7 +14,7 @@
 
 @interface JOYDonation : MTLModel<MTLJSONSerializing>
 
-@property (copy, nonatomic, readonly) NSString *donationID;
+@property (copy, nonatomic) NSString *donationID;
 @property (strong, nonatomic) NSString *address;
 @property (assign, nonatomic) JOYAcceptedDonationCategories category;
 @property (assign, nonatomic) JOYDonationStatus status;

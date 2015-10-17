@@ -107,7 +107,7 @@
     [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setHTTPMethod:@"POST"];
 //    NSDictionary *mapData = [NSDictionary dictionaryWithObject:@(isLoggedIn) forKey:@"logged"];
-    NSDictionary *mapData = [NSDictionary dictionaryWithObjects:@[@([self mapCategory]),[JOYUser sharedUser].userID,self.donateeNGO.donateeID, @(self.slotID), @(self.boxCount),@"blabla"] forKeys:@[@"category_id",@"user_id",@"ngo_id",@"slot_id",@"number_of_boxes",@"notes"]];
+    NSDictionary *mapData = [NSDictionary dictionaryWithObjects:@[@([self mapCategory]),[JOYUser sharedUser].userID,self.donateeNGO.donateeID, @(self.slotID), @(self.boxCount),@"blabla",self.addOneTF.text, self.addTwoTF.text,self.addThreeTF.text] forKeys:@[@"category_id",@"user_id",@"ngo_id",@"slot_id",@"number_of_boxes",@"notes",@"address_1",@"address_2",@"address_3"]];
     
     NSData *postData = [NSJSONSerialization dataWithJSONObject:mapData options:0 error:nil];
     [request setHTTPBody:postData];
@@ -119,8 +119,10 @@
         if(error){
             NSLog(@"got error while fetching cards data %@", error);
         }
-//        if(data && !error){
-//        }
+        if(data && !error){
+            NSDictionary *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            self.donation.donationID = dataDict[@"donation_id"];
+        }
     }];
     [postDataTask resume];
 
