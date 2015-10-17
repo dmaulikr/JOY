@@ -13,6 +13,7 @@
 @property (nonatomic) NSInteger weekDay;
 @property (nonatomic, strong) NSNumber *to;
 @property (nonatomic, strong) NSNumber *from;
+@property (nonatomic) NSInteger slotID;
 
 - (NSString *)date;
 - (NSString *)slot;
