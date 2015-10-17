@@ -69,7 +69,8 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
         ((UILabel *)[previousDonationCell viewWithTag:1]).text = ((JOYDonation *)self.donationsArray[indexPath.row]).donatee.name;
         ((UILabel *)[previousDonationCell viewWithTag:2]).text = [NSString stringWithFormat:@"%@ %@ donations",[((JOYDonation *)self.donationsArray[indexPath.row]) numBoxesToString], [((JOYDonation *)self.donationsArray[indexPath.row]) categoryToString]];
         ((UILabel *)[previousDonationCell viewWithTag:3]).text = [NSString stringWithFormat:@"donation made on %@ at %@ ", ((JOYDonation *)self.donationsArray[indexPath.row]).donationDate, ((JOYDonation *)self.donationsArray[indexPath.row]).timeSlots];
-//        ((UIImageView *)[previousDonationCell viewWithTag:4]).image;
+        UIImageView *imageView = (UIImageView *)[previousDonationCell viewWithTag:4];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:((JOYDonation *)self.donationsArray[indexPath.row]).donatee.iconImageURL]];
 
 
         cell = previousDonationCell;
@@ -113,7 +114,9 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
 
 - (void)fetchData
 {
-    NSURLSessionDataTask *ngoLists = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[ NSString stringWithFormat:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/user/%@/donations", [JOYUser sharedUser].userID]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSString *postURLString = [kRemoteAPIBaseURL stringByAppendingString:@"/hackathon/api/v1/user/%@/donations"];
+
+    NSURLSessionDataTask *ngoLists = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[ NSString stringWithFormat:postURLString, [JOYUser sharedUser].userID]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if(error || !data) return;
         

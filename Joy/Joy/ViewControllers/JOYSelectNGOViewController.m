@@ -128,7 +128,7 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 }
 
 - (void)fetchNGOListings{
-    NSURLSessionDataTask *ngoLists = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/ngos"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURLSessionDataTask *ngoLists = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[kRemoteAPIBaseURL stringByAppendingString:@"/hackathon/api/v1/ngos"]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if(error || !data) return;
         NSMutableArray *array = [NSMutableArray array];

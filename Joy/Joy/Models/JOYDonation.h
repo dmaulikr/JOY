@@ -10,6 +10,8 @@
 #import "JOYDonatee.h"
 #import "JOYDonateeSlot.h"
 
+@class Donatee;
+
 @interface JOYDonation : MTLModel<MTLJSONSerializing>
 
 @property (copy, nonatomic, readonly) NSString *donationID;
