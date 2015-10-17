@@ -120,7 +120,8 @@
     // Creating the request
     NSError *error;
     NSData *json = [NSJSONSerialization dataWithJSONObject:params options:0 error:&error];
-    NSString *postURLString = @"http://bhargavs-macbook-pro.local/hackathon/api/v1/user/abc/update";
+    
+    NSString *postURLString = [kRemoteAPIBaseURL stringByAppendingString:@"/hackathon/api/v1/user/abc/update"];
     NSURL *postURL = [NSURL URLWithString:postURLString];
     
     NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] init];

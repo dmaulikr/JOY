@@ -119,7 +119,7 @@ static NSString * const kHSGUserPersistenceKey = @"HSGUserInstance";
 {
     NSURLSession *defaultSession = [NSURLSession sharedSession];
     
-    NSURL * url = [NSURL URLWithString:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/login"];
+    NSURL * url = [NSURL URLWithString:[kRemoteAPIBaseURL stringByAppendingString:@"/hackathon/api/v1/login"]];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setObject:self.signinEmailTextField.text forKey:@"email"];
@@ -190,7 +190,7 @@ static NSString * const kHSGUserPersistenceKey = @"HSGUserInstance";
 {
     NSURLSession *defaultSession = [NSURLSession sharedSession];
     
-    NSURL * url = [NSURL URLWithString:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/register"];
+    NSURL * url = [NSURL URLWithString:[kRemoteAPIBaseURL stringByAppendingString:@"/hackathon/api/v1/register"]];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setObject:self.signupEmailTextField.text forKey:@"email"];

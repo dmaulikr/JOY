@@ -11,6 +11,8 @@
 #ifndef JOYConstants_h
 #define JOYConstants_h
 
+static NSString * const kRemoteAPIBaseURL = @"http://bhargavs-macbook-pro.local";
+
 
 typedef NS_ENUM(NSUInteger, JOYDonationStatus) {
     JOYDonationStatusUnknown,
