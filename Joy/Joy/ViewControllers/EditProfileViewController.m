@@ -51,7 +51,7 @@
     
     if([JOYUser sharedUser].profileImageURL != nil){
         NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[JOYUser sharedUser].profileImageURL]];
-        self.profilePicImageView.image = [UIImage imageWithData:imageData];
+//        self.profilePicImageView.image = [UIImage imageWithData:imageData];
     }else {
         // Writing image to the disk
         NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
@@ -61,7 +61,8 @@
         UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
         
         // Setting the retrieved imafge
-        self.profilePicImageView.image = loadedImage;
+        if (loadedImage)
+            self.profilePicImageView.image = loadedImage;
     }
     
     if([JOYUser sharedUser].name){
@@ -88,8 +89,6 @@
 - (void)setupStyles {
     self.tabBarController.tabBar.hidden = YES;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.profilePicContainerView.layer.cornerRadius = 50;
-    self.profilePicContainerView.layer.masksToBounds = YES;
     self.overlayView.layer.cornerRadius = 50;
     self.overlayView.layer.masksToBounds = YES;
     [self.overlayView setAlpha:0.5f];
@@ -209,14 +208,15 @@
     
     if([JOYUser sharedUser].profileImageURL != nil){
         NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[JOYUser sharedUser].profileImageURL]];
-        self.profilePicImageView.image = [UIImage imageWithData:imageData];
+//        self.profilePicImageView.image = [UIImage imageWithData:imageData];
     }else {
         // Retrieving the image from disk
         NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
         UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
     
         // Setting the retrieved imafge
-        self.profilePicImageView.image = loadedImage;
+        if (loadedImage)
+            self.profilePicImageView.image = loadedImage;
     }
     [self enableSaveButton];
 }

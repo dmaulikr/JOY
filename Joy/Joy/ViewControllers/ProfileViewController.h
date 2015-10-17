@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *profilePicContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @end

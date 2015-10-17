@@ -16,11 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupUserInfo];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self setupUserInfo];
     [self setupStyles];
 }
 
@@ -34,8 +34,10 @@
 - (void)setupUserInfo {
     
     if([JOYUser sharedUser].profileImageURL != nil){
-        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[JOYUser sharedUser].profileImageURL]];
-        self.profilePicImageView.image = [UIImage imageWithData:imageData];
+//        [self.profilePicImageView sd_setImageWithURL:[NSURL URLWithString:[JOYUser sharedUser].profileImageURL ] placeholderImage:[UIImage imageNamed:@"profilepic"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//            if (image == nil)
+//                image = [UIImage imageNamed:@"profilepic"];
+//        }];
     }else {
         // Writing image to the disk
         NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
@@ -45,7 +47,8 @@
         UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
         
         // Setting the retrieved imafge
-        self.profilePicImageView.image = loadedImage;
+        if (loadedImage)
+            self.profilePicImageView.image = loadedImage;
     }
     
     if([JOYUser sharedUser].name){
@@ -55,8 +58,6 @@
     }
 }
 - (void)setupStyles {
-    self.profilePicContainerView.layer.cornerRadius = 50;
-    self.profilePicContainerView.layer.masksToBounds = YES;
     self.navigationController.navigationBarHidden = YES;
 }
 
