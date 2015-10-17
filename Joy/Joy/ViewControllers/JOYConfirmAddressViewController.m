@@ -69,6 +69,21 @@
 
 - (IBAction)submitButtonClicked:(id)sender
 {
+    BOOL isValid = [self validateForm];
+    if (!isValid)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"JOY"
+                                                        message:@"Addressfield Can't be left empty"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alert show];
+        });
+   
+        return;
+    }
+    
     self.donation.donatee = self.donateeNGO;
     self.donation.numBoxes = self.boxCount;
     self.donation.category = [self stringToCategory];
@@ -78,6 +93,17 @@
     [self sendPostRequest];
 }
 
+- (BOOL)validateForm
+{
+    BOOL isValid = YES;
+    if (self.addOneTF.text.length == 0)
+        isValid = NO;
+    
+    if (self.addTwoTF.text.length == 0)
+        isValid = NO;
+    
+    return isValid;
+}
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
