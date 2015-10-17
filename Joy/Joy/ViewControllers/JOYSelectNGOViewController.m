@@ -1,43 +1,37 @@
 //
-//  PartnersViewController.m
+//  JOYSelectNGOViewController.m
 //  Joy
 //
-//  Created by SANCHIT GOEL on 16/10/2015.
+//  Created by SANCHIT GOEL on 17/10/2015.
 //  Copyright © 2015 Pirates of Powai. All rights reserved.
 //
 
-#import "PartnersViewController.h"
+#import "JOYSelectNGOViewController.h"
 #import "JOYPartnerTableViewCell.h"
 #import "JOYDonatee.h"
-#import "JOYNGODetailViewController.h"
+#import "UIImageView+WebCache.h"
+#import "JOYSelectSlotViewController.h"
 
-@interface PartnersViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface JOYSelectNGOViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchBarViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *NGOArray;
 @property (strong, nonatomic) NSArray *NGODisplayArray;
-@property (strong, nonatomic) JOYDonatee *donateeSelected;
+@property (strong, nonatomic) JOYDonatee *donateeNGO;
 
 @end
 
 static NSString * const kPartnerCellIdentifier = @"PartnerCell";
-static NSString * const kDetailSegueIdentifier = @"detailNGOView";
 
-@implementation PartnersViewController
+@implementation JOYSelectNGOViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.NGOArray = [NSArray array];
     self.NGOArray = self.NGODisplayArray;
     [self fetchNGOListings];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    self.navigationController.navigationBarHidden = YES;
-    self.navigationController.tabBarController.tabBar.hidden = NO;
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,13 +76,14 @@ static NSString * const kDetailSegueIdentifier = @"detailNGOView";
     cell.NGODonationType.text = donationString;
     NSString *imgURL = ((JOYDonatee *)self.NGODisplayArray[indexPath.row]).iconImageURL;
     [cell.NGOImageView sd_setImageWithURL:[NSURL URLWithString:imgURL]];
-
+    
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.donateeSelected = self.NGODisplayArray[indexPath.row];
-    [self performSegueWithIdentifier:kDetailSegueIdentifier sender:self];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.donateeNGO = self.NGODisplayArray[indexPath.row];
+    [self performSegueWithIdentifier:@"showTimeSlots" sender:self];
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
@@ -106,12 +101,12 @@ static NSString * const kDetailSegueIdentifier = @"detailNGOView";
         [self.tableView reloadData];
         self.searchBar.text = @"";
     }];
-
+    
 }
 
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-
+    
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@",searchText];
     self.NGODisplayArray = [NSMutableArray arrayWithArray:[self.NGOArray filteredArrayUsingPredicate:predicate]];
     if([searchText isEqualToString:@""]){
@@ -121,15 +116,15 @@ static NSString * const kDetailSegueIdentifier = @"detailNGOView";
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-   
+    
     searchBar.showsCancelButton = NO;
-
+    
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         [self.searchBar layoutIfNeeded];
     } completion:^(BOOL finished) {
         [searchBar resignFirstResponder];
     }];
-
+    
 }
 
 - (void)fetchNGOListings{
@@ -153,11 +148,17 @@ static NSString * const kDetailSegueIdentifier = @"detailNGOView";
     [ngoLists resume];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:kDetailSegueIdentifier]) {
-        [((JOYNGODetailViewController *)segue.destinationViewController) setDonatee:self.donateeSelected];
-    }
+- (IBAction)backButtonClicked:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    JOYSelectSlotViewController *vc = segue.destinationViewController;
+    vc.donateeNGO = self.donateeNGO;
+    vc.boxCount = self.boxCount;
+    vc.donationType = self.donationType;
 }
 
 @end

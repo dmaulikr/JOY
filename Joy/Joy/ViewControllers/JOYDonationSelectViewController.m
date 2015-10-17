@@ -8,11 +8,13 @@
 
 #import "JOYDonationSelectViewController.h"
 #import "JOYDonationSelectTableViewCell.h"
+#import "JOYSelectQuantityViewController.h"
 
 @interface JOYDonationSelectViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewDonation;
 @property (strong, nonatomic) NSArray *donationTypes;
+@property (nonatomic) NSInteger selectedRow;
 
 @end
 
@@ -41,9 +43,22 @@ static NSString * const kDonationSelectCellIdentifier = @"donationCell";
     cell.donationType.text = self.donationTypes[indexPath.row];
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedRow = indexPath.row;
+    [self performSegueWithIdentifier:@"selectQuantity" sender:self];
+}
+
 - (IBAction)BackButtonPressed:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    JOYSelectQuantityViewController *vc = segue.destinationViewController;
+    vc.donationType = self.donationTypes[self.selectedRow];
 }
 
 

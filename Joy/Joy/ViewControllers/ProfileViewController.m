@@ -8,7 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "ProfileViewControllerTableViewCell.h"
-
+#import "JOYUser.h"
 @interface ProfileViewController ()<UITableViewDataSource, UITableViewDelegate>
 @end
 
@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupUserInfo];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -30,6 +31,29 @@
 
 
 #pragma mark Styling Methods
+- (void)setupUserInfo {
+    
+    if([JOYUser sharedUser].profileImageURL != nil){
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[JOYUser sharedUser].profileImageURL]];
+        self.profilePicImageView.image = [UIImage imageWithData:imageData];
+    }else {
+        // Writing image to the disk
+        NSString* path = [NSHomeDirectory() stringByAppendingString:@"/Documents/myImage.png"];
+        
+        // Retrieving the image from disk
+        NSFileHandle* myFileHandle = [NSFileHandle fileHandleForReadingAtPath:path];
+        UIImage* loadedImage = [UIImage imageWithData:[myFileHandle readDataToEndOfFile]];
+        
+        // Setting the retrieved imafge
+        self.profilePicImageView.image = loadedImage;
+    }
+    
+    if([JOYUser sharedUser].name){
+        self.userName.text = [JOYUser sharedUser].name;
+    }else{
+        self.userName.text = @"Vivek Ravi";
+    }
+}
 - (void)setupStyles {
     self.profilePicContainerView.layer.cornerRadius = 50;
     self.profilePicContainerView.layer.masksToBounds = YES;

@@ -9,6 +9,9 @@
 #import "HomeViewController.h"
 #import "JOYPreviousDonationsTableViewCell.h"
 #import "JOYMakeDonationTableViewCell.h"
+#import "JOYUser.h"
+#import "JOYDonation.h"
+
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -27,9 +30,9 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self fetchData];
     self.noDonationsView.hidden = YES;
-    self.donationsView.hidden = NO;
-    self.donationsArray = @[@"abc", @"def", @"ghi", @"as", @"asas", @"qwiyd", @"duqw"];
+    self.donationsView.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,14 +62,17 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
         JOYMakeDonationTableViewCell *makeDonationCell = (JOYMakeDonationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"makeDonationCell" forIndexPath:indexPath];
         [makeDonationCell.makeDonationButton addTarget:self action:@selector(makeDonationButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         cell = makeDonationCell;
-        cell.backgroundColor = [UIColor redColor];
     }
     else
     {
         JOYPreviousDonationsTableViewCell *previousDonationCell = (JOYPreviousDonationsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"ngoCell" forIndexPath:indexPath];
-        
+        ((UILabel *)[previousDonationCell viewWithTag:1]).text = ((JOYDonation *)self.donationsArray[indexPath.row]).donatee.name;
+        ((UILabel *)[previousDonationCell viewWithTag:2]).text = [NSString stringWithFormat:@"%@ %@ donations",[((JOYDonation *)self.donationsArray[indexPath.row]) numBoxesToString], [((JOYDonation *)self.donationsArray[indexPath.row]) categoryToString]];
+        ((UILabel *)[previousDonationCell viewWithTag:3]).text = [NSString stringWithFormat:@"donation made on %@ at %@ ", ((JOYDonation *)self.donationsArray[indexPath.row]).donationDate, ((JOYDonation *)self.donationsArray[indexPath.row]).timeSlots];
+//        ((UIImageView *)[previousDonationCell viewWithTag:4]).image;
+
+
         cell = previousDonationCell;
-        cell.backgroundColor = [UIColor greenColor];
     }
     return cell;
 }
@@ -82,43 +88,14 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0)
-        return 250.0;
+        return 232.0;
     else
         return 110.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (section == 1)
-        return 50;
-    
     return 0;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *headerView;
-    if (section == 0)
-    {
-        headerView = [[UIView alloc] initWithFrame:CGRectZero];
-        headerView.backgroundColor = [UIColor grayColor];
-    }
-    else
-    {
-        headerView = [[UIView alloc] initWithFrame:CGRectZero];
-        CGRect frame = CGRectZero;
-        frame.size.width = self.tableView.bounds.size.width;
-        frame.size.height = 50.0;
-        headerView.frame = frame;
-        
-        UILabel *label = [[UILabel alloc] init];
-        label.text = @"PREVIOUS DONATIONS";
-        label.font = [UIFont systemFontOfSize:14.0];
-        [label sizeToFit];
-        [headerView addSubview:label];
-        headerView.backgroundColor = [UIColor grayColor];
-    }
-    return headerView;
 }
 
 #pragma mark - IBAction Methods
@@ -132,6 +109,44 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
     if ([[segue identifier] isEqualToString:kSelectDonationSegueKey]) {
         
     }
+}
+
+- (void)fetchData
+{
+    NSURLSessionDataTask *ngoLists = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[ NSString stringWithFormat:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/user/%@/donations", [JOYUser sharedUser].userID]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if(error || !data) return;
+        
+       __block NSMutableArray *array = [NSMutableArray array];
+        NSArray *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        [dataDict enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            JOYDonation *donation = [MTLJSONAdapter modelOfClass:JOYDonation.class fromJSONDictionary:obj error:nil];
+            NSLog(@"Donation, %@", donation);
+            [array addObject:donation];
+        }];
+        
+        if (array.count == 0)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.noDonationsView.hidden = NO;
+                self.donationsView.hidden = YES;
+            });
+        }
+        else
+        {
+            self.donationsArray = [NSArray arrayWithArray:array];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.noDonationsView.hidden = YES;
+                self.donationsView.hidden = NO;
+                [self.tableView reloadData];
+
+            });
+        }
+        }];
+
+    [ngoLists resume];
+
 }
 
 @end

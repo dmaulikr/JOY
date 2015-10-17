@@ -11,8 +11,13 @@
 		1171E4021BD0E900006FBCB9 /* PartnersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E4011BD0E900006FBCB9 /* PartnersViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1171E40B1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E40A1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		1171E40E1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E40D1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		11A568FC1BD1EED4003E106C /* JOYDonateeSlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A568FB1BD1EED4003E106C /* JOYDonateeSlot.m */; settings = {ASSET_TAGS = (); }; };
 		11BEB16E1BD11D460097EC27 /* JOYLoginSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB16D1BD11D460097EC27 /* JOYLoginSignupViewController.m */; settings = {ASSET_TAGS = (); }; };
 		11BEB1771BD16F4D0097EC27 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BEB1761BD16F4D0097EC27 /* login.storyboard */; settings = {ASSET_TAGS = (); }; };
+		11BEB17B1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB17A1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11BEB17E1BD18A090097EC27 /* JOYSelectNGOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB17D1BD18A090097EC27 /* JOYSelectNGOViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11BEB1811BD18E3E0097EC27 /* JOYSelectSlotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB1801BD18E3E0097EC27 /* JOYSelectSlotViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11BEB1861BD1D9DE0097EC27 /* JOYConfirmAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB1851BD1D9DE0097EC27 /* JOYConfirmAddressViewController.m */; settings = {ASSET_TAGS = (); }; };
 		70562C931BD0DDB700E16999 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562C921BD0DDB700E16999 /* main.m */; };
 		70562C961BD0DDB700E16999 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562C951BD0DDB700E16999 /* AppDelegate.m */; };
 		70562CAF1BD0DDB700E16999 /* JoyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CAE1BD0DDB700E16999 /* JoyTests.m */; };
@@ -23,9 +28,6 @@
 		70562CD91BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		70562CDA1BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		70562CDB1BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
-		70562CDC1BD0DE4E00E16999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD41BD0DE4E00E16999 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		70562CDD1BD0DE4E00E16999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD41BD0DE4E00E16999 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		70562CDE1BD0DE4E00E16999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70562CD41BD0DE4E00E16999 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		70562D061BD0DFF300E16999 /* EXTRuntimeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CE41BD0DFF300E16999 /* EXTRuntimeExtensions.m */; settings = {ASSET_TAGS = (); }; };
 		70562D071BD0DFF300E16999 /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CE61BD0DFF300E16999 /* EXTScope.m */; settings = {ASSET_TAGS = (); }; };
 		70562D081BD0DFF300E16999 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70562CE81BD0DFF300E16999 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
@@ -44,7 +46,6 @@
 		70562D151BD0DFF300E16999 /* NSValueTransformer+MTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D031BD0DFF300E16999 /* NSValueTransformer+MTLInversionAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		70562D161BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D051BD0DFF300E16999 /* NSValueTransformer+MTLPredefinedTransformerAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		70562D191BD0F9E100E16999 /* JOYDonation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D181BD0F9E100E16999 /* JOYDonation.m */; settings = {ASSET_TAGS = (); }; };
-		CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		70562D211BD10F8C00E16999 /* JOYDonatee.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D201BD10F8C00E16999 /* JOYDonatee.m */; settings = {ASSET_TAGS = (); }; };
 		70562D441BD1156900E16999 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D241BD1156900E16999 /* MKAnnotationView+WebCache.m */; settings = {ASSET_TAGS = (); }; };
 		70562D451BD1156900E16999 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D261BD1156900E16999 /* NSData+ImageContentType.m */; settings = {ASSET_TAGS = (); }; };
@@ -63,6 +64,8 @@
 		70562D521BD1156900E16999 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D411BD1156900E16999 /* UIImageView+WebCache.m */; settings = {ASSET_TAGS = (); }; };
 		70562D531BD1156900E16999 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D431BD1156900E16999 /* UIView+WebCacheOperation.m */; settings = {ASSET_TAGS = (); }; };
 		70562D561BD146BC00E16999 /* JOYUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562D551BD146BC00E16999 /* JOYUser.m */; settings = {ASSET_TAGS = (); }; };
+		CA37639B1BD1968C00237A8D /* JOYNGODetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA37639A1BD1968B00237A8D /* JOYNGODetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		CA7A59801BD1B35500D6ABAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7A597F1BD1B35500D6ABAF /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565F61BD122BE000E8F21 /* JOYDonationSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565F51BD122BE000E8F21 /* JOYDonationSelectViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565FA1BD12913000E8F21 /* JOYDonationSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565F91BD12913000E8F21 /* JOYDonationSelectTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -97,9 +100,19 @@
 		1171E40A1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYMakeDonationTableViewCell.m; sourceTree = "<group>"; };
 		1171E40C1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYPreviousDonationsTableViewCell.h; sourceTree = "<group>"; };
 		1171E40D1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYPreviousDonationsTableViewCell.m; sourceTree = "<group>"; };
+		11A568FA1BD1EED4003E106C /* JOYDonateeSlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYDonateeSlot.h; sourceTree = "<group>"; };
+		11A568FB1BD1EED4003E106C /* JOYDonateeSlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYDonateeSlot.m; sourceTree = "<group>"; };
 		11BEB16C1BD11D460097EC27 /* JOYLoginSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYLoginSignupViewController.h; sourceTree = "<group>"; };
 		11BEB16D1BD11D460097EC27 /* JOYLoginSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYLoginSignupViewController.m; sourceTree = "<group>"; };
 		11BEB1761BD16F4D0097EC27 /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
+		11BEB1791BD17E5F0097EC27 /* JOYSelectQuantityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYSelectQuantityViewController.h; sourceTree = "<group>"; };
+		11BEB17A1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYSelectQuantityViewController.m; sourceTree = "<group>"; };
+		11BEB17C1BD18A090097EC27 /* JOYSelectNGOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYSelectNGOViewController.h; sourceTree = "<group>"; };
+		11BEB17D1BD18A090097EC27 /* JOYSelectNGOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYSelectNGOViewController.m; sourceTree = "<group>"; };
+		11BEB17F1BD18E3E0097EC27 /* JOYSelectSlotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYSelectSlotViewController.h; sourceTree = "<group>"; };
+		11BEB1801BD18E3E0097EC27 /* JOYSelectSlotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYSelectSlotViewController.m; sourceTree = "<group>"; };
+		11BEB1841BD1D9DE0097EC27 /* JOYConfirmAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYConfirmAddressViewController.h; sourceTree = "<group>"; };
+		11BEB1851BD1D9DE0097EC27 /* JOYConfirmAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYConfirmAddressViewController.m; sourceTree = "<group>"; };
 		70562C8E1BD0DDB700E16999 /* Joy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70562C921BD0DDB700E16999 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70562C941BD0DDB700E16999 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -113,7 +126,6 @@
 		70562CBB1BD0DDB800E16999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70562CD01BD0DE4E00E16999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70562CD31BD0DE4E00E16999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		70562CD51BD0DE4E00E16999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70562CE21BD0DFF300E16999 /* EXTKeyPathCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTKeyPathCoding.h; sourceTree = "<group>"; };
 		70562CE31BD0DFF300E16999 /* EXTRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXTRuntimeExtensions.h; sourceTree = "<group>"; };
 		70562CE41BD0DFF300E16999 /* EXTRuntimeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EXTRuntimeExtensions.m; sourceTree = "<group>"; };
@@ -154,8 +166,6 @@
 		70562D181BD0F9E100E16999 /* JOYDonation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYDonation.m; sourceTree = "<group>"; };
 		70562D1B1BD1037000E16999 /* JOYConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JOYConstants.h; sourceTree = "<group>"; };
 		70562D1E1BD1089D00E16999 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		CAE565EA1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYPartnerTableViewCell.h; sourceTree = "<group>"; };
-		CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYPartnerTableViewCell.m; sourceTree = "<group>"; };
 		70562D1F1BD10F8C00E16999 /* JOYDonatee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYDonatee.h; sourceTree = "<group>"; };
 		70562D201BD10F8C00E16999 /* JOYDonatee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYDonatee.m; sourceTree = "<group>"; };
 		70562D231BD1156900E16999 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -193,6 +203,9 @@
 		70562D431BD1156900E16999 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		70562D541BD146BC00E16999 /* JOYUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYUser.h; sourceTree = "<group>"; };
 		70562D551BD146BC00E16999 /* JOYUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYUser.m; sourceTree = "<group>"; };
+		CA3763991BD1968B00237A8D /* JOYNGODetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYNGODetailViewController.h; sourceTree = "<group>"; };
+		CA37639A1BD1968B00237A8D /* JOYNGODetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYNGODetailViewController.m; sourceTree = "<group>"; };
+		CA7A597F1BD1B35500D6ABAF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CAE565EA1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYPartnerTableViewCell.h; sourceTree = "<group>"; };
 		CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYPartnerTableViewCell.m; sourceTree = "<group>"; };
 		CAE565F41BD122BE000E8F21 /* JOYDonationSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYDonationSelectViewController.h; sourceTree = "<group>"; };
@@ -308,14 +321,22 @@
 				CAE565F01BD1210F000E8F21 /* HomeControllers */,
 				CAE565F41BD122BE000E8F21 /* JOYDonationSelectViewController.h */,
 				CAE565F51BD122BE000E8F21 /* JOYDonationSelectViewController.m */,
+				11BEB1791BD17E5F0097EC27 /* JOYSelectQuantityViewController.h */,
+				11BEB17A1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m */,
+				11BEB17C1BD18A090097EC27 /* JOYSelectNGOViewController.h */,
+				11BEB17D1BD18A090097EC27 /* JOYSelectNGOViewController.m */,
+				11BEB17F1BD18E3E0097EC27 /* JOYSelectSlotViewController.h */,
+				11BEB1801BD18E3E0097EC27 /* JOYSelectSlotViewController.m */,
 				1171E3FD1BD0E8EF006FBCB9 /* HomeViewController.h */,
 				1171E3FE1BD0E8EF006FBCB9 /* HomeViewController.m */,
 				1171E4001BD0E900006FBCB9 /* PartnersViewController.h */,
 				1171E4011BD0E900006FBCB9 /* PartnersViewController.m */,
-				1171E4031BD0E90F006FBCB9 /* ProfileViewController.h */,
-				1171E4041BD0E90F006FBCB9 /* ProfileViewController.m */,
 				11BEB16C1BD11D460097EC27 /* JOYLoginSignupViewController.h */,
 				11BEB16D1BD11D460097EC27 /* JOYLoginSignupViewController.m */,
+				CA3763991BD1968B00237A8D /* JOYNGODetailViewController.h */,
+				CA37639A1BD1968B00237A8D /* JOYNGODetailViewController.m */,
+				11BEB1841BD1D9DE0097EC27 /* JOYConfirmAddressViewController.h */,
+				11BEB1851BD1D9DE0097EC27 /* JOYConfirmAddressViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -329,6 +350,8 @@
 				70562D201BD10F8C00E16999 /* JOYDonatee.m */,
 				70562D541BD146BC00E16999 /* JOYUser.h */,
 				70562D551BD146BC00E16999 /* JOYUser.m */,
+				11A568FA1BD1EED4003E106C /* JOYDonateeSlot.h */,
+				11A568FB1BD1EED4003E106C /* JOYDonateeSlot.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -347,7 +370,7 @@
 				CAE565F71BD128B4000E8F21 /* DonationSelectTableViewCell */,
 				CAE565E91BD0FA60000E8F21 /* PartnerTableview */,
 				70562CD21BD0DE4E00E16999 /* LaunchScreen.storyboard */,
-				70562CD41BD0DE4E00E16999 /* Main.storyboard */,
+				CA7A597F1BD1B35500D6ABAF /* Main.storyboard */,
 				11BEB1761BD16F4D0097EC27 /* login.storyboard */,
 				1171E40C1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.h */,
 				1171E40D1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m */,
@@ -587,8 +610,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				70562D081BD0DFF300E16999 /* Info.plist in Resources */,
-				70562CDC1BD0DE4E00E16999 /* Main.storyboard in Resources */,
 				70562CD61BD0DE4E00E16999 /* Assets.xcassets in Resources */,
+				CA7A59801BD1B35500D6ABAF /* Main.storyboard in Resources */,
 				11BEB1771BD16F4D0097EC27 /* login.storyboard in Resources */,
 				70562CD91BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -598,7 +621,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70562CDD1BD0DE4E00E16999 /* Main.storyboard in Resources */,
 				70562CD71BD0DE4E00E16999 /* Assets.xcassets in Resources */,
 				70562CDA1BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -608,7 +630,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70562CDE1BD0DE4E00E16999 /* Main.storyboard in Resources */,
 				70562CD81BD0DE4E00E16999 /* Assets.xcassets in Resources */,
 				70562CDB1BD0DE4E00E16999 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -621,6 +642,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11BEB17B1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m in Sources */,
 				70562D071BD0DFF300E16999 /* EXTScope.m in Sources */,
 				70562D531BD1156900E16999 /* UIView+WebCacheOperation.m in Sources */,
 				70562D151BD0DFF300E16999 /* NSValueTransformer+MTLInversionAdditions.m in Sources */,
@@ -632,6 +654,7 @@
 				70562D451BD1156900E16999 /* NSData+ImageContentType.m in Sources */,
 				70562D141BD0DFF300E16999 /* NSObject+MTLComparisonAdditions.m in Sources */,
 				70562D4D1BD1156900E16999 /* UIButton+WebCache.m in Sources */,
+				11BEB1811BD18E3E0097EC27 /* JOYSelectSlotViewController.m in Sources */,
 				70562D4C1BD1156900E16999 /* SDWebImagePrefetcher.m in Sources */,
 				1171E3FF1BD0E8EF006FBCB9 /* HomeViewController.m in Sources */,
 				CC0C428E1BD14169007E86C3 /* EditProfileViewController.m in Sources */,
@@ -650,6 +673,7 @@
 				70562C961BD0DDB700E16999 /* AppDelegate.m in Sources */,
 				70562D0E1BD0DFF300E16999 /* MTLValueTransformer.m in Sources */,
 				11BEB16E1BD11D460097EC27 /* JOYLoginSignupViewController.m in Sources */,
+				11BEB1861BD1D9DE0097EC27 /* JOYConfirmAddressViewController.m in Sources */,
 				70562D0A1BD0DFF300E16999 /* MTLModel+NSCoding.m in Sources */,
 				70562D4F1BD1156900E16999 /* UIImage+MultiFormat.m in Sources */,
 				70562D4A1BD1156900E16999 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -657,15 +681,18 @@
 				70562D0C1BD0DFF300E16999 /* MTLReflection.m in Sources */,
 				70562D101BD0DFF300E16999 /* NSDictionary+MTLJSONKeyPath.m in Sources */,
 				70562D481BD1156900E16999 /* SDWebImageDecoder.m in Sources */,
+				CA37639B1BD1968C00237A8D /* JOYNGODetailViewController.m in Sources */,
 				70562D501BD1156900E16999 /* UIImage+WebP.m in Sources */,
 				70562D471BD1156900E16999 /* SDWebImageCompat.m in Sources */,
 				70562C931BD0DDB700E16999 /* main.m in Sources */,
+				11A568FC1BD1EED4003E106C /* JOYDonateeSlot.m in Sources */,
 				CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */,
 				70562D561BD146BC00E16999 /* JOYUser.m in Sources */,
 				70562D111BD0DFF300E16999 /* NSDictionary+MTLManipulationAdditions.m in Sources */,
 				70562D491BD1156900E16999 /* SDWebImageDownloader.m in Sources */,
 				70562D441BD1156900E16999 /* MKAnnotationView+WebCache.m in Sources */,
 				1171E40B1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m in Sources */,
+				11BEB17E1BD18A090097EC27 /* JOYSelectNGOViewController.m in Sources */,
 				70562D191BD0F9E100E16999 /* JOYDonation.m in Sources */,
 				70562D0D1BD0DFF300E16999 /* MTLTransformerErrorHandling.m in Sources */,
 				70562D461BD1156900E16999 /* SDImageCache.m in Sources */,
@@ -710,14 +737,6 @@
 				70562CD31BD0DE4E00E16999 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		70562CD41BD0DE4E00E16999 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				70562CD51BD0DE4E00E16999 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -813,7 +832,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = Joy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.housing.iphone.hack2.joy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -826,7 +845,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = Joy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.housing.iphone.hack2.joy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
