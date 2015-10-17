@@ -82,6 +82,9 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
 
         UIImageView *imageView1 = (UIImageView *)[previousDonationCell viewWithTag:5];
         imageView1.image = [UIImage imageNamed:[((JOYDonation *)self.donationsArray[indexPath.row]) categoryToString]];
+        if(((JOYDonation *)self.donationsArray[indexPath.row]).status == JOYDonationStatusRejectByNGO || ((JOYDonation *)self.donationsArray[indexPath.row]).status == JOYDonationStatusRejectByUser){
+            ((UILabel *)[previousDonationCell viewWithTag:3]).text = @"CANCELLED";
+        }
         
         cell = previousDonationCell;
     }
