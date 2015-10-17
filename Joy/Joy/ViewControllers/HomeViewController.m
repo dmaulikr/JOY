@@ -74,7 +74,7 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
     else
     {
         JOYPreviousDonationsTableViewCell *previousDonationCell = (JOYPreviousDonationsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"ngoCell" forIndexPath:indexPath];
-        ((UILabel *)[previousDonationCell viewWithTag:1]).text = [((JOYDonation *)self.donationsArray[indexPath.row]).donatee.name capitalizedString];
+        ((UILabel *)[previousDonationCell viewWithTag:1]).text = [((JOYDonation *)self.donationsArray[indexPath.row]).donatee.name uppercaseString];
         ((UILabel *)[previousDonationCell viewWithTag:2]).text = [[NSString stringWithFormat:@"%@ %@ donations",[((JOYDonation *)self.donationsArray[indexPath.row]) numBoxesToString], [((JOYDonation *)self.donationsArray[indexPath.row]) categoryToString]] capitalizedString];
         ((UILabel *)[previousDonationCell viewWithTag:3]).text = [[NSString stringWithFormat:@"donation made on %@ at %@ ", ((JOYDonation *)self.donationsArray[indexPath.row]).donationDate, ((JOYDonation *)self.donationsArray[indexPath.row]).timeSlots] capitalizedString];
         UIImageView *imageView = (UIImageView *)[previousDonationCell viewWithTag:4];
@@ -110,7 +110,38 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    if (section == 1)
+        return 50.0;
+    
     return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+        return [[UIView alloc] initWithFrame:CGRectZero];
+    else
+    {
+        UIView *headerView = [[UIView alloc] initWithFrame:CGRectZero];
+        headerView.backgroundColor = [UIColor whiteColor];
+        CGRect frame = CGRectZero;
+        frame.size.width = self.tableView.frame.size.width;
+        frame.size.height = 50;
+        
+        UILabel *label = [[UILabel alloc] init];
+        label.text = @"PREVIOUS DONATIONS";
+        label.font = [UIFont systemFontOfSize:12.0];
+        label.textColor = [UIColor colorWithRed:65/255 green:65/255 blue:65/255 alpha:1];
+        [label sizeToFit];
+        frame = CGRectZero;
+        frame.origin.x = 20;
+        frame.origin.y = 20;
+        frame.size.height = label.frame.size.height;
+        frame.size.width = label.frame.size.width;
+        label.frame = frame;
+        [headerView addSubview:label];
+        return headerView;
+    }
 }
 
 #pragma mark - IBAction Methods
