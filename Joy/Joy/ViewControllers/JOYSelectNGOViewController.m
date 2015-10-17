@@ -99,7 +99,7 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
     } completion:^(BOOL finished) {
         [searchBar resignFirstResponder];
         [self.tableView reloadData];
-        self.searchBar.text = @"";  
+        self.searchBar.text = @"";
     }];
     
 }
