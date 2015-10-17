@@ -57,6 +57,7 @@
 
 - (void)keyboardWillDisappers:(NSNotification *)notif
 {
+    self.showingKeyboard = NO;
     self.buttonBottomConstrint.constant = 0;
     self.scrollView.contentInset = UIEdgeInsetsZero;
 }

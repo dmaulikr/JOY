@@ -331,6 +331,14 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
+    CGFloat height = 100;
+    if (textField == self.flatNoField)
+        height = 200;
+    else if (textField == self.societyNameField)
+        height = 200;
+    else if (textField == self.landmarkField)
+        height = 200;
+    [self.scrollView setContentOffset:CGPointMake(0, height) animated:YES];
 }
 
 @end
