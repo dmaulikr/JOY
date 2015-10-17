@@ -44,7 +44,11 @@
 
 - (NSString *)slot
 {
-    NSString *combined = [[self.from stringValue] stringByAppendingString:[NSString stringWithFormat:@"-%@",[self.to stringValue]]];
+    NSInteger toString = [[self.to stringValue] integerValue];
+    NSInteger fromString = [[self.from stringValue] integerValue];
+    NSString *to = [NSString stringWithFormat:@"%ld:00",(toString/100)];
+    NSString *from = [NSString stringWithFormat:@"%ld:00",(fromString/100)];
+    NSString *combined = [from stringByAppendingString:[NSString stringWithFormat:@"-%@",to]];
     return combined;
 }
 

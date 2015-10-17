@@ -16,7 +16,7 @@
                                    @"donateeID"           :           @"ngo_id",
                                    @"name"                :           @"name",
                                    @"descriptionText"     :           @"description",
-                                   @"iconImageURL"        :           @"image_path",
+                                   @"iconImageURL"        :           @"image",
                                    @"url"                 :           @"link",
                                    @"mobileNum"           :           @"phone_no",
                                    @"accpetedDonationCategories" :    @"category",

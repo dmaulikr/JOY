@@ -41,7 +41,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     UILabel *label = (UILabel *)[cell viewWithTag:2000];
     JOYDonateeSlot *slot = self.slotsArray[indexPath.row];
-    label.text = [NSString stringWithFormat:@"%@ %@", [slot date], [slot slot]];
+    label.text = [NSString stringWithFormat:@"Date : %@  Time Slot : %@", [slot date], [slot slot]];
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:3000];
     imageView.image = [UIImage imageNamed:@""];
@@ -78,6 +78,7 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -86,7 +87,7 @@
     vc.donateeNGO = self.donateeNGO;
     vc.donationType = self.donationType;
     vc.boxCount = self.boxCount;
-    vc.slotID = self.slotsArray[self.selectedRow].slotID;
+    vc.slotID = self.slotsArray[self.selectedRow].slotID;   
 }
 
 
