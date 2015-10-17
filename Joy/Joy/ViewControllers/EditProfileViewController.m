@@ -323,7 +323,7 @@
 }
 
 - (void)showAlertWithMessage:(NSString *)message{
-    UIAlertView *alertEmpty = [[UIAlertView alloc] initWithTitle:@"Housing" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alertEmpty = [[UIAlertView alloc] initWithTitle:@"JOY" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     dispatch_async(dispatch_get_main_queue(), ^(void){
         [alertEmpty show];
     });

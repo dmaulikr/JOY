@@ -101,7 +101,7 @@
     return [MTLValueTransformer transformerUsingForwardBlock:^id(id obj, BOOL *success, NSError *__autoreleasing *error) {
         
         __block JOYDonationStatus temp = JOYDonationStatusUnknown;
-        if([obj isEqualToString:@"COMPLETE"]) {
+        if([obj isEqualToString:@"DELIVERED"]) {
             temp = JOYDonationStatusCompleted;
         }
         else if([obj isEqualToString:@"REJECT_BY_NGO"]){
@@ -119,9 +119,9 @@
         else if([obj isEqualToString:@"TRANSIT"]){
             temp = JOYDonationStatusInTransit;
         }
-        else if([obj isEqualToString:@"COMPLETE"]){
-            temp = JOYDonationStatusCompleted;
-        }
+//        else if([obj isEqualToString:@"DELIVERED"]){
+//            temp = JOYDonationStatusCompleted;
+//        }
         
         return [NSNumber numberWithInteger:temp];
     }];
