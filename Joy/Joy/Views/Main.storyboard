@@ -277,12 +277,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3056.5" y="-346.5"/>
+            <point key="canvasLocation" x="2987.5" y="-485.5"/>
         </scene>
         <!--Donation Select-->
         <scene sceneID="AkJ-mV-VF1">
             <objects>
-                <viewController id="731-xe-rfZ" userLabel="Donation Select" customClass="JOYDonationSelectViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="731-xe-rfZ" userLabel="Donation Select" customClass="JOYDonationSelectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="diQ-Fp-HrF"/>
                         <viewControllerLayoutGuide type="bottom" id="k2h-DJ-cjO"/>
@@ -765,7 +765,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjI-Z7-UPd">
-                                <rect key="frame" x="0.0" y="558" width="375" height="60"/>
+                                <rect key="frame" x="20" y="538" width="335" height="60"/>
                                 <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="v8p-gO-O0T"/>
@@ -779,7 +779,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wx6-aU-YMf">
-                                <rect key="frame" x="0.0" y="482" width="375" height="60"/>
+                                <rect key="frame" x="20" y="462" width="335" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.6588235294117647" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="oT0-zG-k2A"/>
@@ -793,7 +793,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wrap" translatesAutoresizingMaskIntoConstraints="NO" id="oPx-Pr-1WT">
-                                <rect key="frame" x="58" y="243" width="259" height="109"/>
+                                <rect key="frame" x="58" y="223" width="259" height="109"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="jUg-EE-F6p"/>
                                 </constraints>
@@ -802,18 +802,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bkj-mr-Pqq" firstAttribute="centerX" secondItem="zZt-Lm-AkC" secondAttribute="centerX" id="2Bb-o7-Flv"/>
-                            <constraint firstAttribute="trailing" secondItem="Wx6-aU-YMf" secondAttribute="trailing" id="3M0-ih-2oo"/>
+                            <constraint firstAttribute="trailing" secondItem="Wx6-aU-YMf" secondAttribute="trailing" constant="20" id="3M0-ih-2oo"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="bkj-mr-Pqq" secondAttribute="trailing" constant="8" id="3gf-hI-hIg"/>
-                            <constraint firstItem="Wx6-aU-YMf" firstAttribute="leading" secondItem="zZt-Lm-AkC" secondAttribute="leading" id="4ov-uY-EgR"/>
+                            <constraint firstItem="Wx6-aU-YMf" firstAttribute="leading" secondItem="zZt-Lm-AkC" secondAttribute="leading" constant="20" id="4ov-uY-EgR"/>
                             <constraint firstItem="bkj-mr-Pqq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zZt-Lm-AkC" secondAttribute="leadingMargin" constant="8" id="BfK-Sm-RPA"/>
-                            <constraint firstItem="BjI-Z7-UPd" firstAttribute="leading" secondItem="zZt-Lm-AkC" secondAttribute="leading" id="CtO-2U-Bta"/>
+                            <constraint firstItem="BjI-Z7-UPd" firstAttribute="leading" secondItem="zZt-Lm-AkC" secondAttribute="leading" constant="20" id="CtO-2U-Bta"/>
                             <constraint firstItem="rH8-v7-uSK" firstAttribute="centerX" secondItem="zZt-Lm-AkC" secondAttribute="centerX" id="MsS-0C-Z8x"/>
                             <constraint firstItem="rH8-v7-uSK" firstAttribute="top" secondItem="Egu-83-HFY" secondAttribute="bottom" constant="80" id="TWX-bO-s4v"/>
                             <constraint firstItem="rH8-v7-uSK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zZt-Lm-AkC" secondAttribute="leadingMargin" constant="8" id="aqH-U9-LsK"/>
-                            <constraint firstAttribute="trailing" secondItem="BjI-Z7-UPd" secondAttribute="trailing" id="eqt-1q-ajW"/>
+                            <constraint firstAttribute="trailing" secondItem="BjI-Z7-UPd" secondAttribute="trailing" constant="20" id="eqt-1q-ajW"/>
                             <constraint firstItem="Wx6-aU-YMf" firstAttribute="top" secondItem="oPx-Pr-1WT" secondAttribute="bottom" constant="130" id="i9a-DM-E8S"/>
                             <constraint firstItem="bkj-mr-Pqq" firstAttribute="top" secondItem="rH8-v7-uSK" secondAttribute="bottom" constant="14" id="nqA-OR-kpe"/>
-                            <constraint firstItem="Kyn-Ah-rCD" firstAttribute="top" secondItem="BjI-Z7-UPd" secondAttribute="bottom" id="o6u-ws-uA9"/>
+                            <constraint firstItem="Kyn-Ah-rCD" firstAttribute="top" secondItem="BjI-Z7-UPd" secondAttribute="bottom" constant="20" id="o6u-ws-uA9"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="rH8-v7-uSK" secondAttribute="trailing" constant="8" id="pZE-RF-CEL"/>
                             <constraint firstItem="BjI-Z7-UPd" firstAttribute="top" secondItem="Wx6-aU-YMf" secondAttribute="bottom" constant="16" id="qCT-nI-144"/>
                             <constraint firstItem="oPx-Pr-1WT" firstAttribute="centerX" secondItem="zZt-Lm-AkC" secondAttribute="centerX" id="r82-fn-Gq7"/>
@@ -1044,7 +1044,7 @@
         <!--EDIT PROFILE-->
         <scene sceneID="sfH-Xj-f5h">
             <objects>
-                <viewController id="j7t-FN-Pfm" customClass="EditProfileViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="j7t-FN-Pfm" customClass="EditProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e5y-31-pqw"/>
                         <viewControllerLayoutGuide type="bottom" id="CMs-dw-iVv"/>
@@ -2032,7 +2032,7 @@
         <!--Detail View Controller-->
         <scene sceneID="mqH-7m-2vy">
             <objects>
-                <viewController id="vXb-mF-oot" customClass="JOYNGODetailViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="vXb-mF-oot" customClass="JOYNGODetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ioK-QC-kKJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Gpv-ld-Bai"/>
@@ -2256,6 +2256,6 @@
         <image name="wrap" width="200" height="109"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BGA-qm-FPG"/>
+        <segue reference="3OO-8g-WsP"/>
     </inferredMetricsTieBreakers>
 </document>
