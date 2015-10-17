@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray <JOYDonateeSlot *>* slotsArray;
 @property (nonatomic) NSInteger selectedRow;
+@property (strong, nonatomic) JOYDonateeSlot *slot;
 
 @end
 
@@ -54,6 +55,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.selectedRow = indexPath.row;
+    self.slot = self.slotsArray[indexPath.row];
     [self.tableView reloadData];
 }
 
@@ -84,6 +86,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     JOYConfirmAddressViewController *vc = segue.destinationViewController;
     vc.donateeNGO = self.donateeNGO;
+    vc.slot = self.slot;
     vc.donationType = self.donationType;
     vc.boxCount = self.boxCount;
     vc.slotID = self.slotsArray[self.selectedRow].slotID;

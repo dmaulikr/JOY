@@ -535,18 +535,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tn-8R-3mQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="3bu-69-zFb"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="DONATION SUMMARY" id="rde-Rp-xgV">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="V9P-I3-JE6"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="V9P-I3-JE6">
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="KQF-Xt-rsi" id="H8c-ge-Tmq"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHC-0A-pO3">
-                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5x-zg-gkv" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -571,25 +575,25 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Boxes of Books" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCb-Lr-HFe">
-                                                <rect key="frame" x="167" y="263" width="125" height="20"/>
+                                                <rect key="frame" x="167" y="263" width="125" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 pm - 6 pm, 18th Sep 15" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsQ-sN-26O">
-                                                <rect key="frame" x="167" y="314" width="184" height="20"/>
+                                                <rect key="frame" x="167" y="313.5" width="183.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PICK UP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDZ-0C-ljZ">
-                                                <rect key="frame" x="27" y="314" width="52" height="16"/>
+                                                <rect key="frame" x="27" y="313.5" width="52" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                 <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avanti Fellow" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vB6-Zl-rok">
-                                                <rect key="frame" x="167" y="364" width="95" height="20"/>
+                                                <rect key="frame" x="167" y="364" width="94.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -601,13 +605,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTACT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lg-Aw-ELR">
-                                                <rect key="frame" x="27" y="415" width="63" height="16"/>
+                                                <rect key="frame" x="27" y="414.5" width="62.5" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                 <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="022-26125149" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFt-an-Lg1">
-                                                <rect key="frame" x="167" y="415" width="109" height="20"/>
+                                                <rect key="frame" x="167" y="414.5" width="108.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -676,7 +680,13 @@
                             <constraint firstItem="qHC-0A-pO3" firstAttribute="top" secondItem="9Tn-8R-3mQ" secondAttribute="bottom" id="mPD-PG-28c"/>
                             <constraint firstItem="9Tn-8R-3mQ" firstAttribute="leading" secondItem="Awx-uy-Gz7" secondAttribute="leading" id="me4-8e-NRf"/>
                             <constraint firstAttribute="trailing" secondItem="ezp-77-XZb" secondAttribute="trailing" id="yML-4T-y5E"/>
+                            <constraint firstItem="9Tn-8R-3mQ" firstAttribute="top" secondItem="hWN-Gt-lgd" secondAttribute="bottom" id="zlv-LM-4XA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="37F-zx-9lH"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

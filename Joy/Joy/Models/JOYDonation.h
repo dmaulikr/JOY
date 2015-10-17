@@ -8,11 +8,13 @@
 
 #import "MTLModel.h"
 #import "JOYDonatee.h"
+#import "JOYDonateeSlot.h"
 
 @interface JOYDonation : MTLModel<MTLJSONSerializing>
 
 @property (copy, nonatomic, readonly) NSString *donationID;
-@property (assign, nonatomic, readonly) JOYAcceptedDonationCategories category;
+@property (strong, nonatomic) NSString *address;
+@property (assign, nonatomic) JOYAcceptedDonationCategories category;
 @property (assign, nonatomic) JOYDonationStatus status;
 @property (assign, nonatomic) NSUInteger numBoxes;
 @property (nonatomic, strong) NSString *feedBackImgURL;
@@ -20,7 +22,9 @@
 @property (nonatomic, strong, getter = timeSlots) NSString *timeSlots;
 @property (nonatomic, strong) NSString *donationDate;
 
-@property (strong, nonatomic, readonly) JOYDonatee *donatee;
+@property (strong, nonatomic) JOYDonatee *donatee;
+@property (nonatomic) NSUInteger slotId;
+@property (strong, nonatomic) JOYDonateeSlot *slot;
 
 - (NSString *)categoryToString;
 - (NSString *)numBoxesToString;

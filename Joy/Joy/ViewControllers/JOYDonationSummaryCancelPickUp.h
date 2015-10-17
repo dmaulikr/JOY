@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JOYDonation.h"
 
 @interface JOYDonationSummaryCancelPickUp : UIViewController
+
+@property (strong, nonatomic) JOYDonation *donation;
+
 
 @end
