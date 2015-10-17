@@ -32,7 +32,7 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
     [super viewDidLoad];
     [self fetchData];
     self.noDonationsView.hidden = YES;
-    self.donationsView.hidden = NO;
+    self.donationsView.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,7 +62,6 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
         JOYMakeDonationTableViewCell *makeDonationCell = (JOYMakeDonationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"makeDonationCell" forIndexPath:indexPath];
         [makeDonationCell.makeDonationButton addTarget:self action:@selector(makeDonationButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         cell = makeDonationCell;
-        cell.backgroundColor = [UIColor redColor];
     }
     else
     {
@@ -74,7 +73,6 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
 
 
         cell = previousDonationCell;
-        cell.backgroundColor = [UIColor greenColor];
     }
     return cell;
 }
@@ -127,11 +125,24 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
             NSLog(@"Donation, %@", donation);
             [array addObject:donation];
         }];
-        self.donationsArray = [NSArray arrayWithArray:array];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
+        
+        if (array.count == 0)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.noDonationsView.hidden = NO;
+                self.donationsView.hidden = YES;
+            });
+        }
+        else
+        {
+            self.donationsArray = [NSArray arrayWithArray:array];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.noDonationsView.hidden = YES;
+                self.donationsView.hidden = NO;
+                [self.tableView reloadData];
 
-        });
+            });
+        }
         }];
 
     [ngoLists resume];

@@ -19,5 +19,6 @@
 @property (copy, nonatomic, readonly) NSString *slogan;
 @property (copy, nonatomic, readonly) NSString *descriptionText;
 @property (assign, nonatomic, readonly) JOYAcceptedDonationCategories accpetedDonationCategories;
+@property (copy, nonatomic, readonly) NSArray *slotsArray;
 
 @end

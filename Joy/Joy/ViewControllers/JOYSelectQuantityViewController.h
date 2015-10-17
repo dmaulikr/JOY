@@ -10,4 +10,6 @@
 
 @interface JOYSelectQuantityViewController : UIViewController
 
+@property (nonatomic, strong) NSString *donationType;
+
 @end

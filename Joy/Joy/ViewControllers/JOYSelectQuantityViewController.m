@@ -7,18 +7,19 @@
 //
 
 #import "JOYSelectQuantityViewController.h"
+#import "JOYSelectNGOViewController.h"
 
 @interface JOYSelectQuantityViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
-
+@property (weak, nonatomic) IBOutlet UILabel *quantityLabel;
 @end
 
 @implementation JOYSelectQuantityViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.quantityLabel.text = @"1";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,12 +35,19 @@
 - (IBAction)submitButtonClicked:(id)sender
 {
     [self performSegueWithIdentifier:@"showNGO" sender:self];
-    
+}
+
+- (IBAction)boxValueChanged:(UIStepper *)stepper
+{
+    self.quantityLabel.text = [NSString stringWithFormat:@"%.f", stepper.value];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    JOYSelectNGOViewController *vc = segue.destinationViewController;
+    NSString *str = self.quantityLabel.text;
+    vc.boxCount = [str integerValue];
+    vc.donationType = self.donationType;
 }
 
 @end

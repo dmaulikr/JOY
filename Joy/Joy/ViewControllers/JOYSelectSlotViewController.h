@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JOYDonatee.h"
 
 @interface JOYSelectSlotViewController : UIViewController
+
+@property (strong, nonatomic) JOYDonatee *donateeNGO;
+@property (nonatomic) NSInteger boxCount;
+@property (nonatomic, strong) NSString *donationType;
 
 @end

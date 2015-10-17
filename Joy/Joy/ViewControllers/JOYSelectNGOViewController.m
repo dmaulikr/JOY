@@ -10,6 +10,7 @@
 #import "JOYPartnerTableViewCell.h"
 #import "JOYDonatee.h"
 #import "UIImageView+WebCache.h"
+#import "JOYSelectSlotViewController.h"
 
 @interface JOYSelectNGOViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
@@ -18,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *NGOArray;
 @property (strong, nonatomic) NSArray *NGODisplayArray;
-@property (strong, nonatomic) JOYDonatee *donatee;
+@property (strong, nonatomic) JOYDonatee *donateeNGO;
 
 @end
 
@@ -81,6 +82,7 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.donateeNGO = self.NGODisplayArray[indexPath.row];
     [self performSegueWithIdentifier:@"showTimeSlots" sender:self];
 }
 
@@ -153,7 +155,10 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    JOYSelectSlotViewController *vc = segue.destinationViewController;
+    vc.donateeNGO = self.donateeNGO;
+    vc.boxCount = self.boxCount;
+    vc.donationType = self.donationType;
 }
 
 @end

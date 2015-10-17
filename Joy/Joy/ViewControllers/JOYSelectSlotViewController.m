@@ -7,11 +7,12 @@
 //
 
 #import "JOYSelectSlotViewController.h"
+#import "JOYDonateeSlot.h"
 
 @interface JOYSelectSlotViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *slotsArray;
+@property (strong, nonatomic) NSArray <JOYDonateeSlot *>* slotsArray;
 @property (strong, nonatomic) NSIndexPath *selectedIndexPath;
 
 @end
@@ -21,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.slotsArray = @[@"qjsd", @"lejd", @"wpeid", @"welil"];
+    self.slotsArray = self.donateeNGO.slotsArray;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,7 +38,8 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     UILabel *label = (UILabel *)[cell viewWithTag:2000];
-    label.text = self.slotsArray[indexPath.row];
+    JOYDonateeSlot *slot = self.slotsArray[indexPath.row];
+    label.text = [NSString stringWithFormat:@"%@ %@", [slot date], [slot slot]];
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:3000];
     imageView.image = [UIImage imageNamed:@""];
@@ -58,6 +60,10 @@
     [self performSegueWithIdentifier:@"confirmAddressVC" sender:self];
 }
 
+- (IBAction)backClicked:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

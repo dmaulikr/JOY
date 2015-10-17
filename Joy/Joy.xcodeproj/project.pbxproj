@@ -11,6 +11,7 @@
 		1171E4021BD0E900006FBCB9 /* PartnersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E4011BD0E900006FBCB9 /* PartnersViewController.m */; settings = {ASSET_TAGS = (); }; };
 		1171E40B1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E40A1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		1171E40E1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1171E40D1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		11A568FC1BD1EED4003E106C /* JOYDonateeSlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A568FB1BD1EED4003E106C /* JOYDonateeSlot.m */; settings = {ASSET_TAGS = (); }; };
 		11BEB16E1BD11D460097EC27 /* JOYLoginSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB16D1BD11D460097EC27 /* JOYLoginSignupViewController.m */; settings = {ASSET_TAGS = (); }; };
 		11BEB1771BD16F4D0097EC27 /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11BEB1761BD16F4D0097EC27 /* login.storyboard */; settings = {ASSET_TAGS = (); }; };
 		11BEB17B1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB17A1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -99,6 +100,8 @@
 		1171E40A1BD0FD29006FBCB9 /* JOYMakeDonationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYMakeDonationTableViewCell.m; sourceTree = "<group>"; };
 		1171E40C1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYPreviousDonationsTableViewCell.h; sourceTree = "<group>"; };
 		1171E40D1BD10193006FBCB9 /* JOYPreviousDonationsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYPreviousDonationsTableViewCell.m; sourceTree = "<group>"; };
+		11A568FA1BD1EED4003E106C /* JOYDonateeSlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYDonateeSlot.h; sourceTree = "<group>"; };
+		11A568FB1BD1EED4003E106C /* JOYDonateeSlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYDonateeSlot.m; sourceTree = "<group>"; };
 		11BEB16C1BD11D460097EC27 /* JOYLoginSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYLoginSignupViewController.h; sourceTree = "<group>"; };
 		11BEB16D1BD11D460097EC27 /* JOYLoginSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYLoginSignupViewController.m; sourceTree = "<group>"; };
 		11BEB1761BD16F4D0097EC27 /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 				70562D201BD10F8C00E16999 /* JOYDonatee.m */,
 				70562D541BD146BC00E16999 /* JOYUser.h */,
 				70562D551BD146BC00E16999 /* JOYUser.m */,
+				11A568FA1BD1EED4003E106C /* JOYDonateeSlot.h */,
+				11A568FB1BD1EED4003E106C /* JOYDonateeSlot.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -680,6 +685,7 @@
 				70562D501BD1156900E16999 /* UIImage+WebP.m in Sources */,
 				70562D471BD1156900E16999 /* SDWebImageCompat.m in Sources */,
 				70562C931BD0DDB700E16999 /* main.m in Sources */,
+				11A568FC1BD1EED4003E106C /* JOYDonateeSlot.m in Sources */,
 				CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */,
 				70562D561BD146BC00E16999 /* JOYUser.m in Sources */,
 				70562D111BD0DFF300E16999 /* NSDictionary+MTLManipulationAdditions.m in Sources */,

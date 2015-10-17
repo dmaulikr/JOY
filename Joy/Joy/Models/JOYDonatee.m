@@ -7,6 +7,7 @@
 //
 
 #import "JOYDonatee.h"
+#import "JOYDonateeSlot.h"
 
 @implementation JOYDonatee
 
@@ -19,7 +20,8 @@
                                    @"url"                 :           @"link",
                                    @"mobileNum"           :           @"phone_no",
                                    @"accpetedDonationCategories" :    @"category",
-                                   @"address" : @"address"
+                                   @"address" : @"address",
+                                   @"slotsArray"            :         @"slots"
                                    };
 }
 
@@ -40,6 +42,11 @@
         }];
         return [NSNumber numberWithInteger:temp];
     }];
+}
+
++ (NSValueTransformer *)slotsArrayJSONTransformer
+{
+    return [MTLJSONAdapter arrayTransformerWithModelClass:[JOYDonateeSlot class]];
 }
 
 @end
