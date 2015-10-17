@@ -72,7 +72,9 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
         UIImageView *imageView = (UIImageView *)[previousDonationCell viewWithTag:4];
         [imageView sd_setImageWithURL:[NSURL URLWithString:((JOYDonation *)self.donationsArray[indexPath.row]).donatee.iconImageURL]];
 
-
+        UIImageView *imageView1 = (UIImageView *)[previousDonationCell viewWithTag:5];
+        imageView1.image = [UIImage imageNamed:[((JOYDonation *)self.donationsArray[indexPath.row]) categoryToString]];
+        
         cell = previousDonationCell;
     }
     return cell;

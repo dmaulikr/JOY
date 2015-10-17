@@ -19,7 +19,7 @@
                                    @"iconImageURL"        :           @"image",
                                    @"url"                 :           @"link",
                                    @"mobileNum"           :           @"phone_no",
-                                   @"accpetedDonationCategories" :    @"category",
+                                   @"accpetedDonationCategories" :    @"categories",
                                    @"address" : @"address",
                                    @"slotsArray"            :         @"slots"
                                    };

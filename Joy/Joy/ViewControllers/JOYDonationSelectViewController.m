@@ -41,6 +41,8 @@ static NSString * const kDonationSelectCellIdentifier = @"donationCell";
     
     JOYDonationSelectTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kDonationSelectCellIdentifier forIndexPath:indexPath];
     cell.donationType.text = self.donationTypes[indexPath.row];
+    NSString *imagename = [NSString stringWithFormat:@"%@-1",self.donationTypes[indexPath.row]];
+    cell.neImageView.image = [UIImage imageNamed:imagename];
     return cell;
 }
 

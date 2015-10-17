@@ -11,5 +11,6 @@
 @interface JOYDonationSelectTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *donationType;
+@property (weak, nonatomic) IBOutlet UIImageView *neImageView;
 
 @end
