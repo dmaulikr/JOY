@@ -12,7 +12,7 @@
 #import "JOYSuccessViewController.h"
 #import "JOYUser.h"
 
-@interface JOYConfirmAddressViewController ()
+@interface JOYConfirmAddressViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextField *addOneTF;
@@ -31,6 +31,7 @@
     [super viewDidLoad];
     self.showingKeyboard = NO;
     self.donation = [[JOYDonation alloc] init];
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillAppers:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillDisappers:) name:UIKeyboardWillHideNotification object:nil];
 }
@@ -44,16 +45,39 @@
     [super didReceiveMemoryWarning];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == self.addOneTF) {
+       [self.addTwoTF becomeFirstResponder];
+    }
+    else if(textField == self.addTwoTF) {
+        [self.addThreeTF becomeFirstResponder];
+    }
+    else {
+        [self submitButtonClicked:nil];
+    }
+    return YES;
+}
+
 - (void)keyboardWillAppers:(NSNotification *)notif
 {
-    if (self.showingKeyboard)
-        return;
+    NSDictionary *info1 = [notif userInfo];
+    NSTimeInterval animationDuration = [[info1 objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGSize kbSize1 = [[info1 objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
-    NSDictionary* info = [notif userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    self.buttonBottomConstrint.constant = kbSize.height - 45;
-    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, kbSize.height - 200, 0);
-    self.showingKeyboard = YES;
+    if (!self.showingKeyboard) {
+        self.buttonBottomConstrint.constant =  kbSize1.height;
+    } else {
+//        self.buttonBottomConstrint.constant =  0;
+    }
+    
+    [UIView animateWithDuration:animationDuration animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    
+    self.showingKeyboard = !self.showingKeyboard;
+    if(!self.showingKeyboard){
+        [self.view resignFirstResponder];
+    }
 }
 
 - (void)keyboardWillDisappers:(NSNotification *)notif

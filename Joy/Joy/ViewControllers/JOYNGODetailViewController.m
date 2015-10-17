@@ -26,7 +26,7 @@
     [self refreshViewForDonateeObject];
     self.tabBarController.tabBar.hidden = YES;
     self.navigationController.navigationBarHidden = NO;
-    self.navigationController.navigationBar.topItem.title = @"Confirm Organization";
+    self.navigationController.navigationBar.topItem.title = [@"Organization Details" uppercaseString];
 //    UIButton* customButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //    [customButton setImage:[UIImage imageNamed:@"backarrow"] forState:UIControlStateNormal];
 //    [customButton sizeToFit];
