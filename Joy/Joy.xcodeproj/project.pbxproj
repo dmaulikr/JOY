@@ -16,6 +16,7 @@
 		11BEB17B1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB17A1BD17E5F0097EC27 /* JOYSelectQuantityViewController.m */; settings = {ASSET_TAGS = (); }; };
 		11BEB17E1BD18A090097EC27 /* JOYSelectNGOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB17D1BD18A090097EC27 /* JOYSelectNGOViewController.m */; settings = {ASSET_TAGS = (); }; };
 		11BEB1811BD18E3E0097EC27 /* JOYSelectSlotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB1801BD18E3E0097EC27 /* JOYSelectSlotViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11BEB1861BD1D9DE0097EC27 /* JOYConfirmAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11BEB1851BD1D9DE0097EC27 /* JOYConfirmAddressViewController.m */; settings = {ASSET_TAGS = (); }; };
 		70562C931BD0DDB700E16999 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562C921BD0DDB700E16999 /* main.m */; };
 		70562C961BD0DDB700E16999 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562C951BD0DDB700E16999 /* AppDelegate.m */; };
 		70562CAF1BD0DDB700E16999 /* JoyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70562CAE1BD0DDB700E16999 /* JoyTests.m */; };
@@ -107,6 +108,8 @@
 		11BEB17D1BD18A090097EC27 /* JOYSelectNGOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYSelectNGOViewController.m; sourceTree = "<group>"; };
 		11BEB17F1BD18E3E0097EC27 /* JOYSelectSlotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYSelectSlotViewController.h; sourceTree = "<group>"; };
 		11BEB1801BD18E3E0097EC27 /* JOYSelectSlotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYSelectSlotViewController.m; sourceTree = "<group>"; };
+		11BEB1841BD1D9DE0097EC27 /* JOYConfirmAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYConfirmAddressViewController.h; sourceTree = "<group>"; };
+		11BEB1851BD1D9DE0097EC27 /* JOYConfirmAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYConfirmAddressViewController.m; sourceTree = "<group>"; };
 		70562C8E1BD0DDB700E16999 /* Joy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Joy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70562C921BD0DDB700E16999 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70562C941BD0DDB700E16999 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -329,6 +332,8 @@
 				11BEB16D1BD11D460097EC27 /* JOYLoginSignupViewController.m */,
 				CA3763991BD1968B00237A8D /* JOYNGODetailViewController.h */,
 				CA37639A1BD1968B00237A8D /* JOYNGODetailViewController.m */,
+				11BEB1841BD1D9DE0097EC27 /* JOYConfirmAddressViewController.h */,
+				11BEB1851BD1D9DE0097EC27 /* JOYConfirmAddressViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -663,6 +668,7 @@
 				70562C961BD0DDB700E16999 /* AppDelegate.m in Sources */,
 				70562D0E1BD0DFF300E16999 /* MTLValueTransformer.m in Sources */,
 				11BEB16E1BD11D460097EC27 /* JOYLoginSignupViewController.m in Sources */,
+				11BEB1861BD1D9DE0097EC27 /* JOYConfirmAddressViewController.m in Sources */,
 				70562D0A1BD0DFF300E16999 /* MTLModel+NSCoding.m in Sources */,
 				70562D4F1BD1156900E16999 /* UIImage+MultiFormat.m in Sources */,
 				70562D4A1BD1156900E16999 /* SDWebImageDownloaderOperation.m in Sources */,

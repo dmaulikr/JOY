@@ -8,9 +8,11 @@
 
 #import "JOYSelectSlotViewController.h"
 
-@interface JOYSelectSlotViewController ()
+@interface JOYSelectSlotViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePickerView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *slotsArray;
+@property (strong, nonatomic) NSIndexPath *selectedIndexPath;
 
 @end
 
@@ -18,18 +20,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.datePickerView.minimumDate = [NSDate date];
-    self.datePickerView.maximumDate = [NSDate dateWithTimeInterval:604800 sinceDate:[NSDate date]];//max 5 days ahead
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.slotsArray = @[@"qjsd", @"lejd", @"wpeid", @"welil"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)dateChanged:(UIDatePicker *)picker
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSData *selectedDate = [NSDate dateWithTimeInterval:86400 sinceDate:picker.date];
+    return self.slotsArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    UILabel *label = (UILabel *)[cell viewWithTag:2000];
+    label.text = self.slotsArray[indexPath.row];
     
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:3000];
+    imageView.image = [UIImage imageNamed:@""];
+    if ([indexPath isEqual:self.selectedIndexPath])
+        imageView.image = [UIImage imageNamed:@""];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedIndexPath = indexPath;
+    [self.tableView reloadData];
+}
+
+- (IBAction)scheduleVisitClicked:(id)sender
+{
+    [self performSegueWithIdentifier:@"confirmAddressVC" sender:self];
 }
 
 #pragma mark - Navigation

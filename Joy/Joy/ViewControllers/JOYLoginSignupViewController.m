@@ -47,6 +47,11 @@ static NSString * const kHSGUserPersistenceKey = @"HSGUserInstance";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillDisappers:) name:UIKeyboardWillHideNotification object:nil];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)keyboardWillAppers:(NSNotification *)notif
 {
     NSDictionary* info = [notif userInfo];
