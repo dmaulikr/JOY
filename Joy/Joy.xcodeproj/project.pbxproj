@@ -67,6 +67,7 @@
 		CA37639B1BD1968C00237A8D /* JOYNGODetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA37639A1BD1968B00237A8D /* JOYNGODetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CA7A59801BD1B35500D6ABAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7A597F1BD1B35500D6ABAF /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		CA7A59831BD1FF8D00D6ABAF /* JOYDonationSummaryCancelPickUp.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7A59821BD1FF8D00D6ABAF /* JOYDonationSummaryCancelPickUp.m */; settings = {ASSET_TAGS = (); }; };
+		CA7A59861BD21CAA00D6ABAF /* JOYSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7A59851BD21CAA00D6ABAF /* JOYSuccessViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565EC1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565F61BD122BE000E8F21 /* JOYDonationSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565F51BD122BE000E8F21 /* JOYDonationSelectViewController.m */; settings = {ASSET_TAGS = (); }; };
 		CAE565FA1BD12913000E8F21 /* JOYDonationSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE565F91BD12913000E8F21 /* JOYDonationSelectTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -209,6 +210,8 @@
 		CA7A597F1BD1B35500D6ABAF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CA7A59811BD1FF8D00D6ABAF /* JOYDonationSummaryCancelPickUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYDonationSummaryCancelPickUp.h; sourceTree = "<group>"; };
 		CA7A59821BD1FF8D00D6ABAF /* JOYDonationSummaryCancelPickUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYDonationSummaryCancelPickUp.m; sourceTree = "<group>"; };
+		CA7A59841BD21CAA00D6ABAF /* JOYSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYSuccessViewController.h; sourceTree = "<group>"; };
+		CA7A59851BD21CAA00D6ABAF /* JOYSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYSuccessViewController.m; sourceTree = "<group>"; };
 		CAE565EA1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYPartnerTableViewCell.h; sourceTree = "<group>"; };
 		CAE565EB1BD0FAB5000E8F21 /* JOYPartnerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JOYPartnerTableViewCell.m; sourceTree = "<group>"; };
 		CAE565F41BD122BE000E8F21 /* JOYDonationSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JOYDonationSelectViewController.h; sourceTree = "<group>"; };
@@ -342,6 +345,8 @@
 				11BEB1851BD1D9DE0097EC27 /* JOYConfirmAddressViewController.m */,
 				CA7A59811BD1FF8D00D6ABAF /* JOYDonationSummaryCancelPickUp.h */,
 				CA7A59821BD1FF8D00D6ABAF /* JOYDonationSummaryCancelPickUp.m */,
+				CA7A59841BD21CAA00D6ABAF /* JOYSuccessViewController.h */,
+				CA7A59851BD21CAA00D6ABAF /* JOYSuccessViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -662,6 +667,7 @@
 				70562D4D1BD1156900E16999 /* UIButton+WebCache.m in Sources */,
 				11BEB1811BD18E3E0097EC27 /* JOYSelectSlotViewController.m in Sources */,
 				70562D4C1BD1156900E16999 /* SDWebImagePrefetcher.m in Sources */,
+				CA7A59861BD21CAA00D6ABAF /* JOYSuccessViewController.m in Sources */,
 				1171E3FF1BD0E8EF006FBCB9 /* HomeViewController.m in Sources */,
 				CC0C428E1BD14169007E86C3 /* EditProfileViewController.m in Sources */,
 				CAE565FA1BD12913000E8F21 /* JOYDonationSelectTableViewCell.m in Sources */,

@@ -9,6 +9,7 @@
 #import "JOYConfirmAddressViewController.h"
 #import "JOYDonationSummaryCancelPickUp.h"
 #import "JOYDonation.h"
+#import "JOYSuccessViewController.h"
 
 @interface JOYConfirmAddressViewController ()
 
@@ -73,7 +74,7 @@
     self.donation.category = [self stringToCategory];
     self.donation.slotId = self.slotID;
     self.donation.slot = self.slot;
-    [self performSegueWithIdentifier:@"donationSummary" sender:self];
+    [self performSegueWithIdentifier:@"successController" sender:self];
     [self sendPostRequest];
 }
 
@@ -81,9 +82,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
-    JOYDonationSummaryCancelPickUp *pickVC = segue.destinationViewController;
+//    JOYDonationSummaryCancelPickUp *pickVC = segue.destinationViewController;
+//    pickVC.donation = self.donation;
+//    
+    JOYSuccessViewController *pickVC = segue.destinationViewController;
     pickVC.donation = self.donation;
+
     
+
 }
 
 - (void)sendPostRequest{
