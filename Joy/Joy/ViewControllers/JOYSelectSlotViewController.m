@@ -52,8 +52,8 @@
     }
     else
     {
-        label1.textColor = [UIColor colorWithRed:66 green:66 blue:66 alpha:0.7];
-        label2.textColor =  [UIColor colorWithRed:66 green:66 blue:66 alpha:0.7];
+        label1.textColor = [UIColor blackColor];
+        label2.textColor =  [UIColor blackColor];
     }
     
     return cell;
