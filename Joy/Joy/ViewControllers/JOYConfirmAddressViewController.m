@@ -67,7 +67,7 @@
     if (!self.showingKeyboard) {
         self.buttonBottomConstrint.constant =  kbSize1.height;
     } else {
-        self.buttonBottomConstrint.constant =  0;
+//        self.buttonBottomConstrint.constant =  0;
     }
     
     [UIView animateWithDuration:animationDuration animations:^{
