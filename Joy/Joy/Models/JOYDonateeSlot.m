@@ -14,7 +14,8 @@
     return @{
              @"weekDay" : @"week_day",
              @"to" : @"to",
-             @"from":@"from"
+             @"from":@"from",
+             @"slotID" : @""
     };
 }
 

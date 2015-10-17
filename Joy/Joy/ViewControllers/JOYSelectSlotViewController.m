@@ -8,12 +8,13 @@
 
 #import "JOYSelectSlotViewController.h"
 #import "JOYDonateeSlot.h"
+#import "JOYConfirmAddressViewController.h"
 
 @interface JOYSelectSlotViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray <JOYDonateeSlot *>* slotsArray;
-@property (strong, nonatomic) NSIndexPath *selectedIndexPath;
+@property (nonatomic) NSInteger selectedRow;
 
 @end
 
@@ -23,6 +24,7 @@
     [super viewDidLoad];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.slotsArray = self.donateeNGO.slotsArray;
+    self.selectedRow = -1;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +45,7 @@
     
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:3000];
     imageView.image = [UIImage imageNamed:@""];
-    if ([indexPath isEqual:self.selectedIndexPath])
+    if (indexPath.row == self.selectedRow)
         imageView.image = [UIImage imageNamed:@""];
     
     return cell;
@@ -51,13 +53,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.selectedIndexPath = indexPath;
+    self.selectedRow = indexPath.row;
     [self.tableView reloadData];
 }
 
 - (IBAction)scheduleVisitClicked:(id)sender
 {
-    [self performSegueWithIdentifier:@"confirmAddressVC" sender:self];
+    if (self.selectedRow < 0)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"JOY"
+                                                        message:@"Please select a slot for pickup"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alert show];
+        });
+    }
+    else
+        [self performSegueWithIdentifier:@"confirmAddressVC" sender:self];
 }
 
 - (IBAction)backClicked:(id)sender
@@ -68,7 +82,11 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    JOYConfirmAddressViewController *vc = segue.destinationViewController;
+    vc.donateeNGO = self.donateeNGO;
+    vc.donationType = self.donationType;
+    vc.boxCount = self.boxCount;
+    vc.slotID = self.slotsArray[self.selectedRow].slotID;
 }
 
 
