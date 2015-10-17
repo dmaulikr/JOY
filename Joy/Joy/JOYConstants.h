@@ -14,10 +14,12 @@
 
 typedef NS_ENUM(NSUInteger, JOYDonationStatus) {
     JOYDonationStatusUnknown,
-    JOYDonationStatusScheduled,
+    JOYDonationStatusRequest,
+    JOYDonationStatusPending,
     JOYDonationStatusInTransit,
-    JOYDonationStatusDelivered,
-    JOYDonationStatusFeedbackReceived
+    JOYDonationStatusCompleted,
+    JOYDonationStatusRejectByNGO,
+    JOYDonationStatusRejectByUser
 };
 
 typedef NS_OPTIONS(NSUInteger, JOYAcceptedDonationCategories) {

@@ -10,6 +10,8 @@
 #import "JOYPreviousDonationsTableViewCell.h"
 #import "JOYMakeDonationTableViewCell.h"
 #import "JOYUser.h"
+#import "JOYDonation.h"
+
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -31,7 +33,6 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
     [self fetchData];
     self.noDonationsView.hidden = YES;
     self.donationsView.hidden = NO;
-    self.donationsArray = @[@"abc", @"def", @"ghi", @"as", @"asas", @"qwiyd", @"duqw"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +67,12 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
     else
     {
         JOYPreviousDonationsTableViewCell *previousDonationCell = (JOYPreviousDonationsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"ngoCell" forIndexPath:indexPath];
-        
+        ((UILabel *)[previousDonationCell viewWithTag:1]).text = ((JOYDonation *)self.donationsArray[indexPath.row]).donatee.name;
+        ((UILabel *)[previousDonationCell viewWithTag:2]).text = [NSString stringWithFormat:@"%@ %@ donations",[((JOYDonation *)self.donationsArray[indexPath.row]) numBoxesToString], [((JOYDonation *)self.donationsArray[indexPath.row]) categoryToString]];
+        ((UILabel *)[previousDonationCell viewWithTag:3]).text = [NSString stringWithFormat:@"donation made on %@ at %@ ", ((JOYDonation *)self.donationsArray[indexPath.row]).donationDate, ((JOYDonation *)self.donationsArray[indexPath.row]).timeSlots];
+//        ((UIImageView *)[previousDonationCell viewWithTag:4]).image;
+
+
         cell = previousDonationCell;
         cell.backgroundColor = [UIColor greenColor];
     }
@@ -112,10 +118,22 @@ static NSString * const kSelectDonationSegueKey = @"selectDonation";
     NSURLSessionDataTask *ngoLists = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[ NSString stringWithFormat:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/user/%@/donations", [JOYUser sharedUser].userID]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if(error || !data) return;
-        NSMutableArray *array = [NSMutableArray array];
-        NSArray *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         
+       __block NSMutableArray *array = [NSMutableArray array];
+        NSArray *dataDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        [dataDict enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            JOYDonation *donation = [MTLJSONAdapter modelOfClass:JOYDonation.class fromJSONDictionary:obj error:nil];
+            NSLog(@"Donation, %@", donation);
+            [array addObject:donation];
         }];
+        self.donationsArray = [NSArray arrayWithArray:array];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+
+        });
+        }];
+
     [ngoLists resume];
 
 }
