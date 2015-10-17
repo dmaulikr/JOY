@@ -32,6 +32,7 @@ static NSString * const kHSGUserPersistenceKey = @"HSGUserInstance";
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *signInButtonBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *createAccountButtonBottomConstraint;
 @property (nonatomic) BOOL firstTime;
+@property (nonatomic) BOOL showingKeyboard;
 
 
 @end
@@ -42,6 +43,7 @@ static NSString * const kHSGUserPersistenceKey = @"HSGUserInstance";
     [super viewDidLoad];
     [self changeToSignUp:nil];
     self.firstTime = YES;
+    self.showingKeyboard = NO;
     [self checkForLoggedIn];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillAppers:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillDisappers:) name:UIKeyboardWillHideNotification object:nil];
@@ -60,12 +62,46 @@ static NSString * const kHSGUserPersistenceKey = @"HSGUserInstance";
 
 - (void)keyboardWillAppers:(NSNotification *)notif
 {
-    NSDictionary* info = [notif userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    self.signInButtonBottomConstraint.constant = kbSize.height;
-    self.createAccountButtonBottomConstraint.constant = kbSize.height;;
-    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, kbSize.height, 0);
+//    NSDictionary* info = [notif userInfo];
+//    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+//    self.signInButtonBottomConstraint.constant = kbSize.height;
+//    self.createAccountButtonBottomConstraint.constant = kbSize.height;;
+//    self.scrollView.contentInset = UIEdgeInsetsMake(0, 0, kbSize.height, 0);
+//    
+ 
+    NSDictionary *info1 = [notif userInfo];
+    NSTimeInterval animationDuration = [[info1 objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGSize kbSize1 = [[info1 objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
+    if (!self.showingKeyboard) {
+        self.signInButtonBottomConstraint.constant =  kbSize1.height;
+        self.createAccountButtonBottomConstraint.constant = kbSize1.height;
+    } else {
+        self.signInButtonBottomConstraint.constant =  0;
+        self.createAccountButtonBottomConstraint.constant = 0;
+    }
+    
+    [UIView animateWithDuration:animationDuration animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    
+    self.showingKeyboard = !self.showingKeyboard;
+    if(!self.showingKeyboard){
+        [self.view resignFirstResponder];
+    }
+    
+}
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    if(textField == self.signinPasswordTextField) {
+        [self signInButtonClicked:nil];
+    }
+    else if(textField == self.signunPasswordTextField){
+        [self createAccountButtonClicked:nil];
+    }
+    return true;
 }
 
 - (void)keyboardWillDisappers:(NSNotification *)notif
@@ -73,6 +109,7 @@ static NSString * const kHSGUserPersistenceKey = @"HSGUserInstance";
     self.signInButtonBottomConstraint.constant = 0;
     self.createAccountButtonBottomConstraint.constant = 0;
     self.scrollView.contentInset = UIEdgeInsetsZero;
+    self.showingKeyboard = NO;
 }
 
 - (void)didReceiveMemoryWarning {
