@@ -40,20 +40,32 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    UILabel *label = (UILabel *)[cell viewWithTag:2000];
+    UILabel *label1 = (UILabel *)[cell viewWithTag:2000];
     JOYDonateeSlot *slot = self.slotsArray[indexPath.row];
-    label.text = [NSString stringWithFormat:@"Date : %@  Time Slot : %@", [slot date], [slot slot]];
-    
-    UIImageView *imageView = (UIImageView *)[cell viewWithTag:3000];
-    imageView.image = [UIImage imageNamed:@""];
+    label1.text = [slot date];
+    UILabel *label2 = (UILabel *)[cell viewWithTag:3000];
+    label2.text = [slot slot];
     if (indexPath.row == self.selectedRow)
-        imageView.image = [UIImage imageNamed:@""];
+    {
+        label1.textColor = [UIColor colorWithRed:0 green:168 blue:182 alpha:1];
+        label2.textColor =  [UIColor colorWithRed:0 green:168 blue:182 alpha:1];
+    }
+    else
+    {
+        label1.textColor = [UIColor colorWithRed:66 green:66 blue:66 alpha:0.7];
+        label2.textColor =  [UIColor colorWithRed:66 green:66 blue:66 alpha:0.7];
+    }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    UILabel *label1 = (UILabel *)[cell viewWithTag:2000];
+    UILabel *label2 = (UILabel *)[cell viewWithTag:3000];
+    label1.textColor = [UIColor colorWithRed:0 green:168 blue:182 alpha:1];
+    label2.textColor =  [UIColor colorWithRed:0 green:168 blue:182 alpha:1];
     self.selectedRow = indexPath.row;
     self.slot = self.slotsArray[indexPath.row];
     [self.tableView reloadData];
