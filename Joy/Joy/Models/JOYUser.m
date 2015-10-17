@@ -8,6 +8,7 @@
 
 #import "JOYUser.h"
 
+
 @implementation JOYUser
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {

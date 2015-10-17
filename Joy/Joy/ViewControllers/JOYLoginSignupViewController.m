@@ -9,6 +9,8 @@
 #import "JOYLoginSignupViewController.h"
 #import "JOYUser.h"
 
+static NSString * const kHSGUserPersistenceKey = @"HSGUserInstance";
+
 @interface JOYLoginSignupViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -40,6 +42,7 @@
     [super viewDidLoad];
     [self changeToSignUp:nil];
     self.firstTime = YES;
+    [self checkForLoggedIn];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillAppers:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillDisappers:) name:UIKeyboardWillHideNotification object:nil];
 }
@@ -142,10 +145,33 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self startMainFlow];
             });
+            [self saveUser];
             NSLog(@"here");
         }
         else
         {
+            NSInteger errorCode = [dict[@"error_code"] integerValue];
+            NSString *message;
+            if (errorCode == 1001)
+            {
+                message = @"Please verify your Email Address to login.";
+            }
+            else if (errorCode == 1002)
+            {
+                message = @"You are not registered. Please register to continue.";
+            }
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"JOY"
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [alert show];
+                [self changeToSignUp:nil];
+                self.signinEmailTextField.text = @"";
+                self.signinPasswordTextField.text = @"";
+            });
+
             //show error
         }
         NSLog(@"%@", dict);
@@ -159,7 +185,7 @@
 {
     NSURLSession *defaultSession = [NSURLSession sharedSession];
     
-    NSURL * url = [NSURL URLWithString:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/login"];
+    NSURL * url = [NSURL URLWithString:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/register"];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     NSMutableDictionary *param = [NSMutableDictionary dictionary];
     [param setObject:self.signupEmailTextField.text forKey:@"email"];
@@ -178,11 +204,33 @@
         if (dict && [dict[@"status"] isEqualToString:@"ok"])
         {
             
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"JOY"
+                                                            message:@"Verify your Email Address to login"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [alert show];
+                [self signInButtonClicked:nil];
+            });
         }
         else
         {
             //show error
+            NSString *errorString = [dict[@"errors"] firstObject];
+            if (errorString.length == 0)
+                errorString = @"Please try again later.";
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR"
+                                                            message:errorString
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [alert show];
+            });
         }
+
         NSLog(@"%@", dict);
         
         
@@ -195,6 +243,36 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UITabBarController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"tabVC"];
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)saveUser
+{
+    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:[JOYUser sharedUser]] forKey:kHSGUserPersistenceKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+}
+
+- (void)checkForLoggedIn
+{
+    NSData *savedUserData = [[NSUserDefaults standardUserDefaults] objectForKey:kHSGUserPersistenceKey];
+    JOYUser *new ;
+    if(savedUserData) {
+        new = [NSKeyedUnarchiver unarchiveObjectWithData:savedUserData];
+        JOYUser *user = [JOYUser sharedUser];
+        user.name = new.name;
+        user.userID = new.userID;
+        user.number = new.number;
+        user.addOne = new.addOne;
+        user.addTwo = new.addTwo;
+        user.addThree = new.addThree;
+        user.emailID = new.emailID;
+        user.isVerified = new.isVerified;
+        user.profileImageURL = new.profileImageURL;
+        user.isLoggedIn = YES;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self startMainFlow];
+        });
+    }
 }
 
 
