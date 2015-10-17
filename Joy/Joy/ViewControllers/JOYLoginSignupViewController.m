@@ -47,6 +47,12 @@ static NSString * const kHSGUserPersistenceKey = @"HSGUserInstance";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillDisappers:) name:UIKeyboardWillHideNotification object:nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self changeToSignUp:nil];
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -216,7 +222,7 @@ static NSString * const kHSGUserPersistenceKey = @"HSGUserInstance";
                                                   otherButtonTitles:nil];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [alert show];
-                [self signInButtonClicked:nil];
+                [self changeToSignIn:nil];
             });
         }
         else

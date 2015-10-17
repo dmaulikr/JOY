@@ -8,7 +8,7 @@
 
 #import "EditProfileViewController.h"
 #import "JOYUser.h"
-@interface EditProfileViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface EditProfileViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 @end
 
 @implementation EditProfileViewController
@@ -19,8 +19,18 @@
     [self setupViews];
     [self setupObservers];
     [self setupGestureRecognizers];
+    [self loadUserInfo];
 }
 
+- (void)loadUserInfo
+{
+    JOYUser *user = [JOYUser sharedUser];
+    self.phoneNumberField.text = user.number;
+    self.emailIDField.text = user.emailID;
+    self.flatNoField.text = user.addOne;
+    self.societyNameField.text = user.addTwo;
+    self.landmarkField.text = user.addThree;
+}
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self setupStyles];
@@ -277,7 +287,7 @@
     
     // The change in attributes
     if (notif.name == UIKeyboardWillShowNotification){
-        self.saveChangeButtonBottomConstraint.constant = keyboardEventualFrame.size.height;
+        self.saveChangeButtonBottomConstraint.constant = keyboardEventualFrame.size.height - self.saveChangeButton.frame.size.height;
     }else {
         self.saveChangeButtonBottomConstraint.constant = 0;
     }
@@ -317,6 +327,10 @@
     dispatch_async(dispatch_get_main_queue(), ^(void){
         [alertEmpty show];
     });
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
 }
 
 @end

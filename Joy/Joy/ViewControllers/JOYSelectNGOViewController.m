@@ -99,7 +99,7 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
     } completion:^(BOOL finished) {
         [searchBar resignFirstResponder];
         [self.tableView reloadData];
-        self.searchBar.text = @"";
+        self.searchBar.text = @"";  
     }];
     
 }
@@ -128,7 +128,20 @@ static NSString * const kPartnerCellIdentifier = @"PartnerCell";
 }
 
 - (void)fetchNGOListings{
-    NSURLSessionDataTask *ngoLists = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[kRemoteAPIBaseURL stringByAppendingString:@"/hackathon/api/v1/ngos"]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSInteger typeCode = 0;
+    if ([self.donationType isEqualToString:@"BOOKS"])
+    {
+        typeCode = 1;
+    }
+    else if ([self.donationType isEqualToString:@"CLOTHES"])
+    {
+        typeCode = 2;
+    }
+    else if ([self.donationType isEqualToString:@"TOYS"])
+    {
+        typeCode = 3;
+    }
+    NSURLSessionDataTask *ngoLists = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://bhargavs-macbook-pro.local/hackathon/api/v1/ngos?category=%d", (int)typeCode ]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if(error || !data) return;
         NSMutableArray *array = [NSMutableArray array];

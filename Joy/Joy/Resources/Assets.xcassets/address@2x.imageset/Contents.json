@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Envelope.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Layout 1.png",
       "scale" : "2x"
     },
     {
