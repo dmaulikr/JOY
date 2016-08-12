@@ -1,4 +1,4 @@
-This application eases the process of donation
+This application eases the process of donation, The code quality may not be upto the mark as it was developed in the hackathon of 31 hrs.
 
 Have a look at what it does
 
